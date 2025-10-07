@@ -22,6 +22,9 @@ module.exports = {
     'react/react-in-jsx-scope': 'off', // Next.js no requiere importar React
     'react/jsx-uses-vars': 'error',
 
+    // Next.js rules
+    '@next/next/no-img-element': 'off', // Project uses unoptimized images
+
     // TypeScript rules que pueden chocar con Next.js - los desactivamos
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
