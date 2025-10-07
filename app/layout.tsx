@@ -1,5 +1,4 @@
 import type React from 'react';
-import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Neuton } from 'next/font/google';
@@ -13,19 +12,14 @@ const neuton = Neuton({
   variable: '--font-neuton',
 });
 
-export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
-};
-
+// Root layout - solo estructura HTML básica, sin metadata
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='es'>
+    <html suppressHydrationWarning>
       <body
         className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${neuton.variable}`}
       >

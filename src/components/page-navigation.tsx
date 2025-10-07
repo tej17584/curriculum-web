@@ -2,21 +2,29 @@
 
 import { ChevronLeft, ChevronRight, Languages, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/lib/language-context';
 import { useEffect, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import type { Lang } from '@/types';
 
 type PageNavigationProps = {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
+  lang: Lang;
+  pageText: string;
+  ofText: string;
 };
 
 export function PageNavigation({
   currentPage,
   totalPages,
   onPageChange,
+  lang,
+  pageText,
+  ofText,
 }: PageNavigationProps) {
-  const { language, setLanguage, t } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
@@ -36,6 +44,12 @@ export function PageNavigation({
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
   };
 
+  const toggleLanguage = () => {
+    const newLang = lang === 'en' ? 'es' : 'en';
+    const newPath = pathname.replace(`/${lang}`, `/${newLang}`);
+    router.push(newPath);
+  };
+
   return (
     <div className='border-border bg-card/95 fixed bottom-4 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full border-2 px-3 py-2 shadow-xl backdrop-blur-md sm:bottom-8 sm:gap-3 sm:px-6 sm:py-3'>
       <Button
@@ -49,7 +63,7 @@ export function PageNavigation({
       </Button>
 
       <span className='text-foreground font-serif text-sm sm:text-base'>
-        {t('page')} {currentPage} {t('of')} {totalPages}
+        {pageText} {currentPage} {ofText} {totalPages}
       </span>
 
       <Button
@@ -81,7 +95,7 @@ export function PageNavigation({
       <Button
         variant='ghost'
         size='icon'
-        onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}
+        onClick={toggleLanguage}
         className='h-10 w-10 transition-all hover:scale-110 sm:h-9 sm:w-9'
         aria-label='Toggle language'
       >

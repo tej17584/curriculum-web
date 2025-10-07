@@ -1,25 +1,43 @@
 {
-  "name": "Alejandro Tejada",
-  "title": "Software Engineer 3",
-  "bio": "A positive person, fond of learning, reading, family and God.",
-  "email": "Email",
-  "chapterAbout": "Chapter I: About",
-  "chapterExperience": "Chapter II: Experience",
-  "chapterProjects": "Chapter III: Featured Projects",
-  "chapterSkills": "Chapter IV: Skills & Technologies",
-  "chapterEducation": "Chapter V: Education",
-  "aboutText1": "Currently, I'm a Senior Software Engineer at TechCorp, specializing in front-end architecture. I contribute to the creation and maintenance of UI components that power our platform's frontend, ensuring our applications meet web accessibility standards and best practices to deliver an inclusive user experience.",
-  "aboutText2": "In the past, I've had the opportunity to develop software across a variety of settings — from advertising agencies and large corporations to start-ups and small digital product studios. Additionally, I also released a comprehensive video course a few years ago, guiding learners through building a web app with modern technologies.",
-  "programmingLanguages": "Programming Languages",
-  "frameworks": "Frameworks & Libraries",
-  "tools": "Tools & Platforms",
-  "spokenLanguages": "Spoken Languages",
-  "spanish": "Spanish",
-  "english": "English",
-  "native": "Native",
-  "advanced": "Full Professional Proficiency",
-  "certifications": "Certifications",
-  "present": "Present",
-  "page": "Page",
-  "of": "of"
+  "seo": {
+    "defaultTitle": "Alejandro Tejada - Software Engineer",
+    "siteName": "Alejandro Tejada Portfolio",
+    "defaultDescription": "Senior Software Engineer specializing in front-end architecture with React, Next.js and TypeScript. Experience in UI component development and accessible web applications.",
+    "keywords": "Software Engineer, Frontend, React, Next.js, TypeScript, UI Components, Web Accessibility, Web Development"
+  },
+  "common": {
+    "page": "Page",
+    "of": "of",
+    "present": "Present",
+    "email": "Email"
+  },
+  "profile": {
+    "name": "Alejandro Tejada",
+    "title": "Software Engineer 3",
+    "bio": "A positive person, fond of learning, reading, family and God."
+  },
+  "chapters": {
+    "about": "Chapter I: About",
+    "experience": "Chapter II: Experience",
+    "projects": "Chapter III: Featured Projects",
+    "skills": "Chapter IV: Skills & Technologies",
+    "education": "Chapter V: Education"
+  },
+  "about": {
+    "text1": "Currently, I'm a Senior Software Engineer at TechCorp, specializing in front-end architecture. I contribute to the creation and maintenance of UI components that power our platform's frontend, ensuring our applications meet web accessibility standards and best practices to deliver an inclusive user experience.",
+    "text2": "In the past, I've had the opportunity to develop software across a variety of settings — from advertising agencies and large corporations to start-ups and small digital product studios. Additionally, I also released a comprehensive video course a few years ago, guiding learners through building a web app with modern technologies."
+  },
+  "skills": {
+    "programmingLanguages": "Programming Languages",
+    "frameworks": "Frameworks & Libraries",
+    "tools": "Tools & Platforms",
+    "spokenLanguages": "Spoken Languages",
+    "certifications": "Certifications"
+  },
+  "languages": {
+    "spanish": "Spanish",
+    "english": "English",
+    "native": "Native",
+    "advanced": "Full Professional Proficiency"
+  }
 }

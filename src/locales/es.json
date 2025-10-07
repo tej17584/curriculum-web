@@ -1,25 +1,43 @@
 {
-  "name": "Alejandro Tejada",
-  "title": "Ingeniero de Software 3",
-  "bio": "Una persona positiva, gustosa del aprendizaje, la lectura, la familia y Dios.",
-  "email": "Correo",
-  "chapterAbout": "Capítulo I: Acerca de",
-  "chapterExperience": "Capítulo II: Experiencia",
-  "chapterProjects": "Capítulo III: Proyectos Destacados",
-  "chapterSkills": "Capítulo IV: Habilidades y Tecnologías",
-  "chapterEducation": "Capítulo V: Educación",
-  "aboutText1": "Actualmente, soy Ingeniero de Software Senior en TechCorp, especializado en arquitectura front-end. Contribuyo a la creación y mantenimiento de componentes de UI que impulsan el frontend de nuestra plataforma, asegurando que nuestras aplicaciones cumplan con los estándares de accesibilidad web y las mejores prácticas para ofrecer una experiencia de usuario inclusiva.",
-  "aboutText2": "En el pasado, he tenido la oportunidad de desarrollar software en una variedad de entornos: desde agencias de publicidad y grandes corporaciones hasta startups y pequeños estudios de productos digitales. Además, también lancé un curso de video completo hace unos años, guiando a los estudiantes a través de la construcción de una aplicación web con tecnologías modernas.",
-  "programmingLanguages": "Lenguajes de Programación",
-  "frameworks": "Frameworks y Librerías",
-  "tools": "Herramientas y Plataformas",
-  "spokenLanguages": "Idiomas",
-  "spanish": "Español",
-  "english": "Inglés",
-  "native": "Nativo",
-  "advanced": "Dominio Profesional Completo",
-  "certifications": "Certificaciones",
-  "present": "Presente",
-  "page": "Página",
-  "of": "de"
+  "seo": {
+    "defaultTitle": "Alejandro Tejada - Ingeniero de Software",
+    "siteName": "Alejandro Tejada Portfolio",
+    "defaultDescription": "Ingeniero de Software Senior especializado en arquitectura front-end con React, Next.js y TypeScript. Experiencia en desarrollo de componentes UI y aplicaciones web accesibles.",
+    "keywords": "Ingeniero de Software, Frontend, React, Next.js, TypeScript, UI Components, Accesibilidad Web, Desarrollo Web"
+  },
+  "common": {
+    "page": "Página",
+    "of": "de",
+    "present": "Presente",
+    "email": "Correo"
+  },
+  "profile": {
+    "name": "Alejandro Tejada",
+    "title": "Ingeniero de Software 3",
+    "bio": "Una persona positiva, gustosa del aprendizaje, la lectura, la familia y Dios."
+  },
+  "chapters": {
+    "about": "Capítulo I: Acerca de",
+    "experience": "Capítulo II: Experiencia",
+    "projects": "Capítulo III: Proyectos Destacados",
+    "skills": "Capítulo IV: Habilidades y Tecnologías",
+    "education": "Capítulo V: Educación"
+  },
+  "about": {
+    "text1": "Actualmente, soy Ingeniero de Software Senior en TechCorp, especializado en arquitectura front-end. Contribuyo a la creación y mantenimiento de componentes de UI que impulsan el frontend de nuestra plataforma, asegurando que nuestras aplicaciones cumplan con los estándares de accesibilidad web y las mejores prácticas para ofrecer una experiencia de usuario inclusiva.",
+    "text2": "En el pasado, he tenido la oportunidad de desarrollar software en una variedad de entornos: desde agencias de publicidad y grandes corporaciones hasta startups y pequeños estudios de productos digitales. Además, también lancé un curso de video completo hace unos años, guiando a los estudiantes a través de la construcción de una aplicación web con tecnologías modernas."
+  },
+  "skills": {
+    "programmingLanguages": "Lenguajes de Programación",
+    "frameworks": "Frameworks y Librerías",
+    "tools": "Herramientas y Plataformas",
+    "spokenLanguages": "Idiomas",
+    "certifications": "Certificaciones"
+  },
+  "languages": {
+    "spanish": "Español",
+    "english": "Inglés",
+    "native": "Nativo",
+    "advanced": "Dominio Profesional Completo"
+  }
 }

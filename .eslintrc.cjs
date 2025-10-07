@@ -25,6 +25,9 @@ module.exports = {
     // Next.js rules
     '@next/next/no-img-element': 'off', // Project uses unoptimized images
 
+    // Accessibility rules
+    'jsx-a11y/html-has-lang': 'off', // Dynamic lang attribute from route params
+
     // TypeScript rules que pueden chocar con Next.js - los desactivamos
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
