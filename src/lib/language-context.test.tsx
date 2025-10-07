@@ -9,17 +9,25 @@ function Consumer() {
     null,
     React.createElement('span', { 'data-testid': 'lang' }, language),
     React.createElement('span', { 'data-testid': 'text' }, t('chapterAbout')),
-    React.createElement('button', { onClick: () => setLanguage('es') }, 'es'),
+    React.createElement('button', { onClick: () => setLanguage('es') }, 'es')
   );
 }
 
 test('useLanguage provides t() that returns translations', async () => {
-  render(React.createElement(LanguageProvider, null, React.createElement(Consumer)));
+  render(
+    React.createElement(LanguageProvider, null, React.createElement(Consumer))
+  );
 
-  expect(screen.getByTestId('text').textContent).toMatch(/Chapter I|Capítulo I/);
+  expect(screen.getByTestId('text').textContent).toMatch(
+    /Chapter I|Capítulo I/
+  );
   expect(screen.getByTestId('lang').textContent).toBe('en');
   fireEvent.click(screen.getByText('es'));
 
-  await waitFor(() => expect(screen.getByTestId('lang').textContent).toBe('es'));
-  await waitFor(() => expect(screen.getByTestId('text').textContent).toMatch(/Capítulo I/));
+  await waitFor(() =>
+    expect(screen.getByTestId('lang').textContent).toBe('es')
+  );
+  await waitFor(() =>
+    expect(screen.getByTestId('text').textContent).toMatch(/Capítulo I/)
+  );
 });

@@ -1,5 +1,32 @@
-node_modules
-.next
-dist
-coverage
-public
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Production builds
+dist/
+build/
+
+# Environment files
+.env*
+
+# Logs
+*.log
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Coverage
+coverage/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -12,7 +12,11 @@ module.exports = {
     jest: true,
   },
   plugins: ['@typescript-eslint'],
-  extends: ['next/core-web-vitals', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: [
+    'next/core-web-vitals',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
   rules: {
     // React rules
     'react/react-in-jsx-scope': 'off', // Next.js no requiere importar React
