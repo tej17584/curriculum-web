@@ -2,16 +2,17 @@
 
 import { ExternalLink } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import type { Dictionary } from '@/hooks/getDictionary';
 
 interface Chapter5EducationProps {
-  t: (key: string) => string;
+  dict: Dictionary;
 }
 
-export function Chapter5Education({ t }: Chapter5EducationProps) {
+export function Chapter5Education({ dict }: Chapter5EducationProps) {
   return (
     <section className='mb-16'>
       <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
-        {t('chapterEducation')}
+        {dict.chapters.education}
       </h2>
       <Card className='border-l-primary bg-card border-l-4 p-8 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg'>
         <div className='mb-4 flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>

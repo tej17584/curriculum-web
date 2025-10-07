@@ -3,23 +3,24 @@
 import { Code2, BookOpen, Wrench, Globe, Award } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import type { Dictionary } from '@/hooks/getDictionary';
 
 interface Chapter4SkillsProps {
-  t: (key: string) => string;
+  dict: Dictionary;
 }
 
-export function Chapter4Skills({ t }: Chapter4SkillsProps) {
+export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
   return (
     <>
       <section className='mb-16'>
         <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
-          {t('chapterSkills')}
+          {dict.chapters.skills}
         </h2>
         <div className='space-y-8'>
           <Card className='border-primary/20 bg-card border-2 p-6 shadow-md transition-all hover:scale-[1.02] hover:shadow-xl'>
             <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
               <Code2 className='text-primary h-6 w-6' />
-              {t('programmingLanguages')}
+              {dict.skills.programmingLanguages}
             </h3>
             <div className='flex flex-wrap gap-3'>
               <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
@@ -46,7 +47,7 @@ export function Chapter4Skills({ t }: Chapter4SkillsProps) {
           <Card className='border-primary/20 bg-card border-2 p-6 shadow-md transition-all hover:scale-[1.02] hover:shadow-xl'>
             <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
               <BookOpen className='text-primary h-6 w-6' />
-              {t('frameworks')}
+              {dict.skills.frameworks}
             </h3>
             <div className='flex flex-wrap gap-3'>
               <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
@@ -73,7 +74,7 @@ export function Chapter4Skills({ t }: Chapter4SkillsProps) {
           <Card className='border-primary/20 bg-card border-2 p-6 shadow-md transition-all hover:scale-[1.02] hover:shadow-xl'>
             <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
               <Wrench className='text-primary h-6 w-6' />
-              {t('tools')}
+              {dict.skills.tools}
             </h3>
             <div className='flex flex-wrap gap-3'>
               <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
@@ -100,14 +101,14 @@ export function Chapter4Skills({ t }: Chapter4SkillsProps) {
           <Card className='border-primary/20 bg-card border-2 p-6 shadow-md transition-all hover:scale-[1.02] hover:shadow-xl'>
             <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
               <Globe className='text-primary h-6 w-6' />
-              {t('spokenLanguages')}
+              {dict.skills.spokenLanguages}
             </h3>
             <div className='flex flex-wrap gap-3'>
               <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                {t('spanish')} — {t('native')}
+                {dict.languages.spanish} — {dict.languages.native}
               </Badge>
               <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                {t('english')} — {t('advanced')}
+                {dict.languages.english} — {dict.languages.advanced}
               </Badge>
             </div>
           </Card>
@@ -127,7 +128,7 @@ export function Chapter4Skills({ t }: Chapter4SkillsProps) {
       <section>
         <h3 className='text-foreground mb-6 flex items-center gap-2 font-serif text-2xl font-semibold'>
           <Award className='text-primary h-6 w-6' />
-          {t('certifications')}
+          {dict.skills.certifications}
         </h3>
         <div className='space-y-4'>
           <Card className='border-l-primary bg-card border-l-4 p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg'>

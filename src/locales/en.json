@@ -11,6 +11,9 @@
     "present": "Present",
     "email": "Email"
   },
+  "footer": {
+    "copyright": "Alejandro Tejada. All rights reserved."
+  },
   "profile": {
     "name": "Alejandro Tejada",
     "title": "Software Engineer 3",

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { i18n } from '@/i18n.config';
 import { getDictionary } from '@/hooks/getDictionary';
 import { type Lang } from '@/types';
+import { Footer } from '@/components/footer';
 
 // Generar metadatos dinámicos por idioma
 export async function generateMetadata({
@@ -58,9 +59,13 @@ export default async function LocaleLayout({
 }>) {
   const { lang: langParam } = await params;
   const lang = langParam as Lang;
+  const dict = await getDictionary(lang);
 
   return (
     /* eslint-disable-next-line @next/next/no-head-element */
-    <div lang={lang}>{children}</div>
+    <div lang={lang}>
+      {children}
+      <Footer dict={dict} />
+    </div>
   );
 }

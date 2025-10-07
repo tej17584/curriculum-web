@@ -2,23 +2,24 @@
 
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import type { Dictionary } from '@/hooks/getDictionary';
 
 interface Chapter1AboutProps {
-  t: (key: string) => string;
+  dict: Dictionary;
 }
 
-export function Chapter1About({ t }: Chapter1AboutProps) {
+export function Chapter1About({ dict }: Chapter1AboutProps) {
   return (
     <>
       <header className='border-primary/20 mb-16 border-b-2 pb-8'>
         <h1 className='text-foreground mb-3 font-serif text-5xl font-bold tracking-tight lg:text-6xl'>
-          {t('name')}
+          {dict.profile.name}
         </h1>
         <p className='text-primary mb-4 font-serif text-xl italic lg:text-2xl'>
-          {t('title')}
+          {dict.profile.title}
         </p>
         <p className='text-muted-foreground mb-6 max-w-2xl font-serif text-lg leading-relaxed'>
-          {t('bio')}
+          {dict.profile.bio}
         </p>
         <div className='flex flex-wrap gap-3'>
           <Button
@@ -32,7 +33,7 @@ export function Chapter1About({ t }: Chapter1AboutProps) {
               className='flex items-center gap-2'
             >
               <Mail className='h-4 w-4' />
-              {t('email')}
+              {dict.common.email}
             </a>
           </Button>
           <Button
@@ -72,13 +73,13 @@ export function Chapter1About({ t }: Chapter1AboutProps) {
 
       <section className='mb-16'>
         <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
-          {t('chapterAbout')}
+          {dict.chapters.about}
         </h2>
         <div className='text-foreground space-y-4 font-serif text-lg leading-relaxed'>
           <p className='first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:leading-none first-letter:font-bold'>
-            {t('aboutText1')}
+            {dict.about.text1}
           </p>
-          <p>{t('aboutText2')}</p>
+          <p>{dict.about.text2}</p>
         </div>
 
         <div className='mt-12 flex justify-center'>

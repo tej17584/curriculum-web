@@ -3,16 +3,17 @@
 import { ExternalLink } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { TechBadge } from '@/components/tech-badge';
+import type { Dictionary } from '@/hooks/getDictionary';
 
 interface Chapter3ProjectsProps {
-  t: (key: string) => string;
+  dict: Dictionary;
 }
 
-export function Chapter3Projects({ t }: Chapter3ProjectsProps) {
+export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
   return (
     <section className='mb-16'>
       <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
-        {t('chapterProjects')}
+        {dict.chapters.projects}
       </h2>
       <div className='grid gap-6 md:grid-cols-2'>
         <Card className='bg-card overflow-hidden shadow-sm transition-all hover:scale-[1.03] hover:shadow-lg'>
@@ -140,9 +141,9 @@ export function Chapter3Projects({ t }: Chapter3ProjectsProps) {
               strategies.
             </p>
             <div className='flex flex-wrap gap-2'>
-              <TechBadge name='Education' />
               <TechBadge name='React' />
-              <TechBadge name='Full-Stack' />
+              <TechBadge name='TypeScript' />
+              <TechBadge name='Express' />
             </div>
           </div>
         </Card>

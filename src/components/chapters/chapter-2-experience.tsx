@@ -3,16 +3,17 @@
 import { ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import type { Dictionary } from '@/hooks/getDictionary';
 
 interface Chapter2ExperienceProps {
-  t: (key: string) => string;
+  dict: Dictionary;
 }
 
-export function Chapter2Experience({ t }: Chapter2ExperienceProps) {
+export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
   return (
     <section className='mb-16'>
       <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
-        {t('chapterExperience')}
+        {dict.chapters.experience}
       </h2>
       <div className='space-y-8'>
         <Card className='border-l-primary bg-card border-l-4 p-8 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg'>
@@ -32,7 +33,7 @@ export function Chapter2Experience({ t }: Chapter2ExperienceProps) {
               </a>
             </div>
             <span className='text-muted-foreground font-serif text-base italic'>
-              Oct 2022 — {t('present')}
+              Oct 2022 — {dict.common.present}
             </span>
           </div>
           <p className='text-muted-foreground mb-4 font-serif text-base leading-relaxed'>
