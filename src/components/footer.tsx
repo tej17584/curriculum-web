@@ -94,26 +94,53 @@ export function Footer({ dict }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='bg-background border-border fixed right-0 bottom-0 left-0 z-30 border-t'>
-      <div className='mx-auto max-w-7xl px-6 py-8 md:flex md:items-center md:justify-between lg:px-8'>
-        <div className='flex justify-center gap-x-6 md:order-2'>
-          {navigation.map(item => (
-            <a
-              key={item.name}
-              href={item.href}
-              className='text-muted-foreground hover:text-foreground transition-colors'
-            >
-              <span className='sr-only'>{item.name}</span>
-              <item.icon
-                aria-hidden='true'
-                className='size-6'
-              />
-            </a>
-          ))}
+    <footer className='bg-background/95 border-border fixed right-0 bottom-0 left-0 z-30 border-t backdrop-blur-md'>
+      <div className='mx-auto max-w-7xl px-4 py-4 sm:px-6 sm:py-6 lg:px-8'>
+        {/* Mobile layout - stacked vertically */}
+        <div className='flex flex-col gap-3 md:hidden'>
+          {/* Social Links */}
+          <div className='flex justify-center gap-x-4'>
+            {navigation.map(item => (
+              <a
+                key={item.name}
+                href={item.href}
+                className='text-muted-foreground hover:text-foreground transition-colors'
+              >
+                <span className='sr-only'>{item.name}</span>
+                <item.icon
+                  aria-hidden='true'
+                  className='h-5 w-5'
+                />
+              </a>
+            ))}
+          </div>
+          {/* Copyright */}
+          <p className='text-muted-foreground text-center text-xs'>
+            &copy; {currentYear} {dict.footer.copyright}
+          </p>
         </div>
-        <p className='text-muted-foreground mt-8 text-center text-sm md:order-1 md:mt-0'>
-          &copy; {currentYear} {dict.footer.copyright}
-        </p>
+
+        {/* Desktop layout - horizontal */}
+        <div className='hidden md:flex md:items-center md:justify-between'>
+          <p className='text-muted-foreground text-sm'>
+            &copy; {currentYear} {dict.footer.copyright}
+          </p>
+          <div className='flex justify-center gap-x-6'>
+            {navigation.map(item => (
+              <a
+                key={item.name}
+                href={item.href}
+                className='text-muted-foreground hover:text-foreground transition-colors'
+              >
+                <span className='sr-only'>{item.name}</span>
+                <item.icon
+                  aria-hidden='true'
+                  className='size-6'
+                />
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );

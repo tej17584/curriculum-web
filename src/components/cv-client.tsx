@@ -64,7 +64,7 @@ export default function CVClientWrapper({
     <div className='bg-background from-background via-background to-muted/20 min-h-screen overflow-x-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]'>
       <div
         ref={containerRef}
-        className='hide-scrollbar relative mx-auto max-w-4xl overflow-x-hidden overflow-y-auto px-4 py-8 pb-[180px] sm:px-6 sm:py-12 sm:pb-[200px] lg:px-8 lg:py-16'
+        className='hide-scrollbar relative mx-auto max-w-4xl overflow-x-hidden overflow-y-auto px-4 py-8 pb-[140px] sm:px-6 sm:py-12 sm:pb-[180px] lg:px-8 lg:py-16'
       >
         {/* Render children with page animations */}
         {Array.isArray(children) ? (

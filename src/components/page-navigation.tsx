@@ -51,18 +51,18 @@ export function PageNavigation({
   };
 
   return (
-    <div className='border-border bg-card/95 fixed bottom-24 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full border-2 px-3 py-2 shadow-xl backdrop-blur-md sm:bottom-28 sm:gap-3 sm:px-6 sm:py-3'>
+    <div className='border-border bg-card/95 fixed bottom-[90px] left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full border-2 px-3 py-2 shadow-xl backdrop-blur-md sm:bottom-28 sm:gap-3 sm:px-6 sm:py-3'>
       <Button
         variant='ghost'
         size='icon'
         onClick={() => onPageChange(Math.max(1, currentPage - 1))}
         disabled={currentPage === 1}
-        className='h-10 w-10 sm:h-9 sm:w-9'
+        className='h-9 w-9 sm:h-9 sm:w-9'
       >
-        <ChevronLeft className='h-5 w-5 sm:h-4 sm:w-4' />
+        <ChevronLeft className='h-4 w-4 sm:h-4 sm:w-4' />
       </Button>
 
-      <span className='text-foreground font-serif text-sm sm:text-base'>
+      <span className='text-foreground font-serif text-sm whitespace-nowrap sm:text-base'>
         {pageText} {currentPage} {ofText} {totalPages}
       </span>
 
@@ -71,24 +71,24 @@ export function PageNavigation({
         size='icon'
         onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
         disabled={currentPage === totalPages}
-        className='h-10 w-10 sm:h-9 sm:w-9'
+        className='h-9 w-9 sm:h-9 sm:w-9'
       >
-        <ChevronRight className='h-5 w-5 sm:h-4 sm:w-4' />
+        <ChevronRight className='h-4 w-4 sm:h-4 sm:w-4' />
       </Button>
 
-      <div className='bg-border h-6 w-px' />
+      <div className='bg-border h-5 w-px sm:h-6' />
 
       <Button
         variant='ghost'
         size='icon'
         onClick={toggleTheme}
-        className='h-10 w-10 transition-all hover:scale-110 sm:h-9 sm:w-9'
+        className='h-9 w-9 transition-all hover:scale-110 sm:h-9 sm:w-9'
         aria-label='Toggle theme'
       >
         {theme === 'light' ? (
-          <Moon className='text-primary h-5 w-5 sm:h-4 sm:w-4' />
+          <Moon className='text-primary h-4 w-4 sm:h-4 sm:w-4' />
         ) : (
-          <Sun className='text-primary h-5 w-5 sm:h-4 sm:w-4' />
+          <Sun className='text-primary h-4 w-4 sm:h-4 sm:w-4' />
         )}
       </Button>
 
@@ -96,10 +96,10 @@ export function PageNavigation({
         variant='ghost'
         size='icon'
         onClick={toggleLanguage}
-        className='h-10 w-10 transition-all hover:scale-110 sm:h-9 sm:w-9'
+        className='h-9 w-9 transition-all hover:scale-110 sm:h-9 sm:w-9'
         aria-label='Toggle language'
       >
-        <Languages className='text-primary h-5 w-5 sm:h-4 sm:w-4' />
+        <Languages className='text-primary h-4 w-4 sm:h-4 sm:w-4' />
       </Button>
     </div>
   );
