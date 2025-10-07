@@ -20,9 +20,6 @@ export default function CVClientWrapper({
 }: CVClientWrapperProps) {
   const [showLoader, setShowLoader] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [previousPage, setPreviousPage] = useState(1);
-  const [isForward, setIsForward] = useState(true);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const totalPages = 5;
 
@@ -33,31 +30,20 @@ export default function CVClientWrapper({
   }, [currentPage]);
 
   const handlePageChange = (newPage: number) => {
-    setIsForward(newPage > currentPage);
-    setPreviousPage(currentPage);
     setCurrentPage(newPage);
   };
 
   const getPageClassName = (pageNumber: number) => {
-    if (currentPage === pageNumber) {
-      // La página nueva que entra debe estar absolute para superponerse
-      return 'translate-x-0 opacity-100 absolute inset-0 z-10';
+    const isActive = currentPage === pageNumber;
+
+    if (isActive) {
+      // Página actual: visible con animación de entrada
+      return 'block opacity-100 translate-x-0';
     }
 
-    if (previousPage === pageNumber) {
-      if (isForward) {
-        // Página anterior se mantiene relative para conservar altura durante la transición
-        return 'page-turn-exit relative z-0 pointer-events-none';
-      } else {
-        // Página anterior se desliza hacia la derecha y se mantiene en el flujo
-        return 'translate-x-full opacity-0 relative z-0 pointer-events-none transition-all duration-700';
-      }
-    }
-
-    // Páginas que no están en transición se ocultan completamente
-    return 'hidden';
+    // Páginas inactivas: completamente ocultas
+    return 'hidden opacity-0';
   };
-
   if (showLoader) {
     return <BookLoader onComplete={() => setShowLoader(false)} />;
   }
@@ -66,20 +52,25 @@ export default function CVClientWrapper({
     <div className='bg-background from-background via-background to-muted/20 overflow-x-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]'>
       <div
         ref={containerRef}
-        className='hide-scrollbar relative mx-auto max-w-4xl overflow-x-hidden overflow-y-auto px-4 py-8 pb-[140px] sm:px-6 sm:py-12 sm:pb-[180px] lg:px-8 lg:py-16'
+        className='hide-scrollbar relative mx-auto max-w-4xl overflow-x-hidden overflow-y-auto px-4 py-8 pb-[140px] sm:px-6 sm:py-12 sm:pb-[180px] lg:px-8 lg:pb-32'
       >
-        {/* Render children with page animations */}
+        {/* Render children - only one page at a time */}
         {Array.isArray(children) ? (
-          <>
-            {(children as React.ReactElement[]).map((child, index) => (
-              <div
-                key={index}
-                className={`min-h-[500px] transition-all duration-700 ${getPageClassName(index + 1)}`}
-              >
-                {child}
-              </div>
-            ))}
-          </>
+          <div className='relative w-full'>
+            {(children as React.ReactElement[]).map((child, index) => {
+              const pageNumber = index + 1;
+              const pageClasses = getPageClassName(pageNumber);
+
+              return (
+                <div
+                  key={index}
+                  className={`w-full transition-opacity duration-500 ${pageClasses}`}
+                >
+                  {child}
+                </div>
+              );
+            })}
+          </div>
         ) : (
           children
         )}
