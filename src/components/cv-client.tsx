@@ -20,6 +20,7 @@ export default function CVClientWrapper({
 }: CVClientWrapperProps) {
   const [showLoader, setShowLoader] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isForward, setIsForward] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const totalPages = 5;
 
@@ -30,19 +31,24 @@ export default function CVClientWrapper({
   }, [currentPage]);
 
   const handlePageChange = (newPage: number) => {
+    setIsForward(newPage > currentPage);
     setCurrentPage(newPage);
   };
 
   const getPageClassName = (pageNumber: number) => {
     const isActive = currentPage === pageNumber;
 
-    if (isActive) {
-      // Página actual: visible con animación de entrada
-      return 'block opacity-100 translate-x-0';
+    if (!isActive) {
+      // Páginas no activas: completamente ocultas
+      return 'hidden';
     }
 
-    // Páginas inactivas: completamente ocultas
-    return 'hidden opacity-0';
+    // Página actual: animación de entrada según dirección
+    if (isForward) {
+      return 'block animate-slide-in-right';
+    } else {
+      return 'block animate-slide-in-left';
+    }
   };
   if (showLoader) {
     return <BookLoader onComplete={() => setShowLoader(false)} />;
@@ -54,7 +60,7 @@ export default function CVClientWrapper({
         ref={containerRef}
         className='hide-scrollbar relative mx-auto max-w-4xl overflow-x-hidden overflow-y-auto px-4 py-8 pb-[140px] sm:px-6 sm:py-12 sm:pb-[180px] lg:px-8 lg:pb-32'
       >
-        {/* Render children - only one page at a time */}
+        {/* Render children with simple slide animations */}
         {Array.isArray(children) ? (
           <div className='relative w-full'>
             {(children as React.ReactElement[]).map((child, index) => {
@@ -64,7 +70,7 @@ export default function CVClientWrapper({
               return (
                 <div
                   key={index}
-                  className={`w-full transition-opacity duration-500 ${pageClasses}`}
+                  className={`w-full ${pageClasses}`}
                 >
                   {child}
                 </div>
