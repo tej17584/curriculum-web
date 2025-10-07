@@ -23,7 +23,9 @@ This repository is a Next.js (app-router) front-end for a curriculum/CV site gen
   - dev: npm run dev (or pnpm dev) — runs the Next dev server
   - build: npm run build — Next production build (note: `next.config.mjs` disables ESLint/TS errors during build)
   - start: npm run start — run built app
-  - lint: npm run lint — run Next's linting
+  - lint: npm run lint — run Next's linting (uses eslint-config-next)
+  - test: npm run test — run Jest tests; npm run test:watch — watch mode; npm run test:coverage — with coverage
+  - format: npm run format — run Prettier on all files
   - Notes: there is a `pnpm-lock.yaml` in the repo — CI or maintainers may use pnpm. If strict type-checking is required locally, run `npx tsc --noEmit`.
 
 - Integration points / external dependencies
@@ -43,5 +45,7 @@ This repository is a Next.js (app-router) front-end for a curriculum/CV site gen
   - The project relies on Next's app router: avoid moving UI that must be client-side into server-only files without adding "use client".
   - `next.config.mjs` sets `typescript.ignoreBuildErrors` and `eslint.ignoreDuringBuilds` — a green build does not guarantee type- or lint-free code. Run `npx tsc --noEmit` and `npm run lint` during PR preparation.
   - Tailwind version here is 4.x; some community snippets assume Tailwind v3+ — verify class utilities if refactoring styles.
+  - Jest uses `tsconfig.jest.json` (extends main tsconfig but sets `jsx: "react-jsx"`) so tests can compile TSX while Next.js uses `jsx: "preserve"`.
+  - ESLint uses `next/core-web-vitals` config; `@next/next/no-img-element` is disabled because project uses unoptimized images.
 
 If anything in this file is unclear or you want extra sections (tests, CI steps, or example PR checklist), tell me which area to expand and I'll iterate.
