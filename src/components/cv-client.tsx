@@ -22,6 +22,7 @@ export default function CVClientWrapper({
   const [currentPage, setCurrentPage] = useState(1);
   const [previousPage, setPreviousPage] = useState(1);
   const [isForward, setIsForward] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const totalPages = 5;
 
@@ -39,21 +40,22 @@ export default function CVClientWrapper({
 
   const getPageClassName = (pageNumber: number) => {
     if (currentPage === pageNumber) {
-      return 'translate-x-0 opacity-100 relative';
+      // La página nueva que entra debe estar absolute para superponerse
+      return 'translate-x-0 opacity-100 absolute inset-0 z-10';
     }
 
     if (previousPage === pageNumber) {
       if (isForward) {
-        return 'page-turn-exit absolute inset-0 pointer-events-none';
+        // Página anterior se mantiene relative para conservar altura durante la transición
+        return 'page-turn-exit relative z-0 pointer-events-none';
       } else {
-        return 'translate-x-full opacity-0 absolute inset-0 pointer-events-none transition-all duration-700';
+        // Página anterior se desliza hacia la derecha y se mantiene en el flujo
+        return 'translate-x-full opacity-0 relative z-0 pointer-events-none transition-all duration-700';
       }
     }
 
-    if (currentPage > pageNumber) {
-      return '-translate-x-full opacity-0 absolute inset-0 pointer-events-none';
-    }
-    return 'translate-x-full opacity-0 absolute inset-0 pointer-events-none';
+    // Páginas que no están en transición se ocultan completamente
+    return 'hidden';
   };
 
   if (showLoader) {
@@ -61,7 +63,7 @@ export default function CVClientWrapper({
   }
 
   return (
-    <div className='bg-background from-background via-background to-muted/20 min-h-screen overflow-x-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]'>
+    <div className='bg-background from-background via-background to-muted/20 overflow-x-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]'>
       <div
         ref={containerRef}
         className='hide-scrollbar relative mx-auto max-w-4xl overflow-x-hidden overflow-y-auto px-4 py-8 pb-[140px] sm:px-6 sm:py-12 sm:pb-[180px] lg:px-8 lg:py-16'
@@ -72,7 +74,7 @@ export default function CVClientWrapper({
             {(children as React.ReactElement[]).map((child, index) => (
               <div
                 key={index}
-                className={`transition-all duration-700 ${getPageClassName(index + 1)}`}
+                className={`min-h-[500px] transition-all duration-700 ${getPageClassName(index + 1)}`}
               >
                 {child}
               </div>

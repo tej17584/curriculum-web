@@ -11,7 +11,7 @@ interface Chapter1AboutProps {
 export function Chapter1About({ dict }: Chapter1AboutProps) {
   return (
     <>
-      <header className='border-primary/20 mb-16 border-b-2 pb-8'>
+      <header className='border-primary/20 mb-8 border-b-2 pb-8'>
         <h1 className='text-foreground mb-3 font-serif text-5xl font-bold tracking-tight lg:text-6xl'>
           {dict.profile.name}
         </h1>

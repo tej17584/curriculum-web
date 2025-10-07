@@ -11,7 +11,7 @@ interface Chapter3ProjectsProps {
 
 export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
   return (
-    <section className='mb-16'>
+    <section className='mb-8'>
       <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
         {dict.chapters.projects}
       </h2>

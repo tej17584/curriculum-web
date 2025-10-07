@@ -10,7 +10,7 @@ interface Chapter5EducationProps {
 
 export function Chapter5Education({ dict }: Chapter5EducationProps) {
   return (
-    <section className='mb-16'>
+    <section className='mb-8'>
       <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
         {dict.chapters.education}
       </h2>
