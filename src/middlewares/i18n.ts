@@ -29,7 +29,6 @@ export function withI18nMiddleware(middleware: CustomMiddleware) {
     response: NextResponse
   ) => {
     const { pathname, search } = request.nextUrl;
-
     // Extract the locale from the URL path
     const localeFromPath = i18n.locales.find(
       locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
