@@ -228,7 +228,7 @@
   }
 
   .book-cover-right {
-    display: none; /* Solo usamos una cubierta en este diseño */
+    display: none; /* We only use one cover in this design */
   }
 
   @keyframes cover-swing-open {
