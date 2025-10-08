@@ -20,6 +20,7 @@ export default async function Page({
       lang={lang}
       pageText={dict.common.page}
       ofText={dict.common.of}
+      dict={dict}
     >
       {/* Page 1: About */}
       <Chapter1About dict={dict} />

@@ -4,12 +4,14 @@ import { useState, useEffect, useRef } from 'react';
 import { BookLoader } from '@/components/book-loader';
 import { PageNavigation } from '@/components/page-navigation';
 import type { Lang } from '@/types';
+import type { Dictionary } from '@/hooks/getDictionary';
 
 interface CVClientWrapperProps {
   children: React.ReactNode;
   lang: Lang;
   pageText: string;
   ofText: string;
+  dict: Dictionary;
 }
 
 export default function CVClientWrapper({
@@ -17,6 +19,7 @@ export default function CVClientWrapper({
   lang,
   pageText,
   ofText,
+  dict,
 }: CVClientWrapperProps) {
   const [showLoader, setShowLoader] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,7 +54,12 @@ export default function CVClientWrapper({
     }
   };
   if (showLoader) {
-    return <BookLoader onComplete={() => setShowLoader(false)} />;
+    return (
+      <BookLoader
+        onComplete={() => setShowLoader(false)}
+        dict={dict}
+      />
+    );
   }
 
   return (

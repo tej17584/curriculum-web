@@ -1,6 +1,7 @@
 'use client';
 
 import type { Dictionary } from '@/hooks/getDictionary';
+import Link from 'next/link';
 
 const navigation = [
   {
@@ -52,7 +53,7 @@ const navigation = [
   },
   {
     name: 'GitHub',
-    href: '#',
+    href: 'https://github.com/tej17584',
     icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg
         fill='currentColor'
@@ -127,9 +128,10 @@ export function Footer({ dict }: FooterProps) {
           </p>
           <div className='flex justify-center gap-x-6'>
             {navigation.map(item => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
+                target='_blank'
                 className='text-muted-foreground hover:text-foreground transition-colors'
               >
                 <span className='sr-only'>{item.name}</span>
@@ -137,7 +139,7 @@ export function Footer({ dict }: FooterProps) {
                   aria-hidden='true'
                   className='size-6'
                 />
-              </a>
+              </Link>
             ))}
           </div>
         </div>

@@ -12,11 +12,11 @@
     "email": "Email"
   },
   "footer": {
-    "copyright": "Alejandro Tejada. All rights reserved."
+    "copyright": "Alejandro Tejada"
   },
   "profile": {
     "name": "Alejandro Tejada",
-    "title": "Software Engineer 3",
+    "title": "Computer Science and Full Stack Engineer",
     "bio": "A positive person, fond of learning, reading, family and God."
   },
   "chapters": {
@@ -33,7 +33,7 @@
   "experience": {
     "jobs": [
       {
-        "title": "Software Engineer 3",
+        "title": "Senior Software Engineer",
         "company": "Xoom, A PayPal Service",
         "companyUrl": "https://www.xoom.com",
         "period": "Oct 2022",
@@ -146,7 +146,24 @@
     "frameworks": "Frameworks & Libraries",
     "tools": "Tools & Platforms",
     "spokenLanguages": "Spoken Languages",
-    "certifications": "Certifications"
+    "certifications": "Certifications",
+    "programmingList": [
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Python",
+      "SQL"
+    ],
+    "frameworksList": [
+      "React",
+      "Next.js",
+      "Vue.js",
+      "Node.js",
+      "React Native",
+      "Tailwind CSS"
+    ],
+    "toolsList": ["Git", "GitHub", "Mendix", "Visualizer", "Unity", "Figma"]
   },
   "languages": {
     "spanish": "Spanish",
@@ -156,7 +173,8 @@
   },
   "bookLoader": {
     "title": "CV",
-    "subtitle": "Curriculum Vitae"
+    "subtitle": "Curriculum Vitae",
+    "loading": "Opening your story..."
   },
   "social": {
     "github": "GitHub",

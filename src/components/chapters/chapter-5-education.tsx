@@ -18,27 +18,24 @@ export function Chapter5Education({ dict }: Chapter5EducationProps) {
         <div className='mb-4 flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
           <div>
             <h3 className='text-foreground font-serif text-2xl font-semibold'>
-              Bachelor of Science in Computer Science
+              {dict.education.degree}
             </h3>
             <a
-              href='https://www.uvg.edu.gt'
+              href={dict.education.universityUrl}
               target='_blank'
               rel='noopener noreferrer'
               className='text-primary inline-flex items-center gap-1 font-serif text-lg hover:underline'
             >
-              Universidad del Valle de Guatemala
+              {dict.education.university}
               <ExternalLink className='h-4 w-4' />
             </a>
           </div>
           <span className='text-muted-foreground font-serif text-base italic'>
-            2017 — 2022
+            {dict.education.period}
           </span>
         </div>
         <p className='text-muted-foreground font-serif text-base leading-relaxed'>
-          Completed a comprehensive Computer Science degree with focus on
-          software engineering, algorithms, data structures, and modern web
-          technologies. Graduated with honors and participated in various
-          academic projects and research initiatives.
+          {dict.education.description}
         </p>
       </Card>
 
