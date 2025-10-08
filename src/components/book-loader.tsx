@@ -1,8 +1,14 @@
 'use client';
 
 import { useEffect } from 'react';
+import type { Dictionary } from '@/hooks/getDictionary';
 
-export function BookLoader({ onComplete }: { onComplete: () => void }) {
+interface BookLoaderProps {
+  onComplete: () => void;
+  dict: Dictionary;
+}
+
+export function BookLoader({ onComplete, dict }: BookLoaderProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
@@ -23,10 +29,10 @@ export function BookLoader({ onComplete }: { onComplete: () => void }) {
               <div className='book-title'>
                 <div className='text-center'>
                   <div className='text-background/80 font-serif text-2xl font-bold'>
-                    CV
+                    {dict.bookLoader.title}
                   </div>
                   <div className='text-background/60 mt-2 font-serif text-sm'>
-                    Curriculum Vitae
+                    {dict.bookLoader.subtitle}
                   </div>
                 </div>
               </div>
@@ -52,8 +58,8 @@ export function BookLoader({ onComplete }: { onComplete: () => void }) {
       </div>
 
       <div className='absolute bottom-16 left-1/2 -translate-x-1/2'>
-        <p className='text-foreground animate-pulse font-serif text-base sm:text-lg'>
-          Opening your story...
+        <p className='text-foreground animate-pulse font-serif text-xl sm:text-2xl md:text-3xl'>
+          {dict.bookLoader.loading}
         </p>
       </div>
     </div>

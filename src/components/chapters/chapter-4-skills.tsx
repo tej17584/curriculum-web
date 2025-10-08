@@ -1,5 +1,3 @@
-'use client';
-
 import { Code2, BookOpen, Wrench, Globe, Award } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
@@ -23,24 +21,14 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
               {dict.skills.programmingLanguages}
             </h3>
             <div className='flex flex-wrap gap-3'>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                JavaScript
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                TypeScript
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                HTML
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                CSS
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                Python
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                SQL
-              </Badge>
+              {dict.skills.programmingList.map((skill, index) => (
+                <Badge
+                  key={index}
+                  className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'
+                >
+                  {skill}
+                </Badge>
+              ))}
             </div>
           </Card>
 
@@ -50,24 +38,14 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
               {dict.skills.frameworks}
             </h3>
             <div className='flex flex-wrap gap-3'>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                React
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                Next.js
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                Vue.js
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                Node.js
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                React Native
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                Tailwind CSS
-              </Badge>
+              {dict.skills.frameworksList.map((framework, index) => (
+                <Badge
+                  key={index}
+                  className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'
+                >
+                  {framework}
+                </Badge>
+              ))}
             </div>
           </Card>
 
@@ -77,24 +55,14 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
               {dict.skills.tools}
             </h3>
             <div className='flex flex-wrap gap-3'>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                Git
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                GitHub
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                Mendix
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                Visualizer
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                Unity
-              </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
-                Figma
-              </Badge>
+              {dict.skills.toolsList.map((tool, index) => (
+                <Badge
+                  key={index}
+                  className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'
+                >
+                  {tool}
+                </Badge>
+              ))}
             </div>
           </Card>
 
@@ -131,101 +99,28 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
           {dict.skills.certifications}
         </h3>
         <div className='space-y-4'>
-          <Card className='border-l-primary bg-card border-l-4 p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg'>
-            <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
-              <div>
-                <h4 className='text-foreground font-serif text-xl font-semibold'>
-                  Complete Intro to React, v6
-                </h4>
-                <p className='text-muted-foreground font-serif text-base'>
-                  Frontend Masters
-                </p>
+          {dict.certifications.map((cert, index) => (
+            <Card
+              key={index}
+              className={`bg-card border-l-4 p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg ${
+                index === 0 ? 'border-l-primary' : 'border-l-muted'
+              }`}
+            >
+              <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
+                <div>
+                  <h4 className='text-foreground font-serif text-xl font-semibold'>
+                    {cert.title}
+                  </h4>
+                  <p className='text-muted-foreground font-serif text-base'>
+                    {cert.provider}
+                  </p>
+                </div>
+                <span className='text-muted-foreground font-serif text-base italic'>
+                  {cert.date}
+                </span>
               </div>
-              <span className='text-muted-foreground font-serif text-base italic'>
-                Jul 2021
-              </span>
-            </div>
-          </Card>
-
-          <Card className='border-l-muted bg-card border-l-4 p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg'>
-            <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
-              <div>
-                <h4 className='text-foreground font-serif text-xl font-semibold'>
-                  React Native
-                </h4>
-                <p className='text-muted-foreground font-serif text-base'>
-                  Frontend Masters
-                </p>
-              </div>
-              <span className='text-muted-foreground font-serif text-base italic'>
-                Jun 2021
-              </span>
-            </div>
-          </Card>
-
-          <Card className='border-l-muted bg-card border-l-4 p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg'>
-            <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
-              <div>
-                <h4 className='text-foreground font-serif text-xl font-semibold'>
-                  Visual Elements of User Interface Design
-                </h4>
-                <p className='text-muted-foreground font-serif text-base'>
-                  Coursera
-                </p>
-              </div>
-              <span className='text-muted-foreground font-serif text-base italic'>
-                Aug 2020
-              </span>
-            </div>
-          </Card>
-
-          <Card className='border-l-muted bg-card border-l-4 p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg'>
-            <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
-              <div>
-                <h4 className='text-foreground font-serif text-xl font-semibold'>
-                  CSS Grids and Flexbox for Responsive Web Design
-                </h4>
-                <p className='text-muted-foreground font-serif text-base'>
-                  Frontend Masters
-                </p>
-              </div>
-              <span className='text-muted-foreground font-serif text-base italic'>
-                Aug 2020
-              </span>
-            </div>
-          </Card>
-
-          <Card className='border-l-muted bg-card border-l-4 p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg'>
-            <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
-              <div>
-                <h4 className='text-foreground font-serif text-xl font-semibold'>
-                  User Experience: Research & Prototyping
-                </h4>
-                <p className='text-muted-foreground font-serif text-base'>
-                  Coursera
-                </p>
-              </div>
-              <span className='text-muted-foreground font-serif text-base italic'>
-                Jul 2020
-              </span>
-            </div>
-          </Card>
-
-          <Card className='border-l-muted bg-card border-l-4 p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg'>
-            <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
-              <div>
-                <h4 className='text-foreground font-serif text-xl font-semibold'>
-                  Data Visualization
-                </h4>
-                <p className='text-muted-foreground font-serif text-base'>
-                  Frontend Masters
-                </p>
-              </div>
-              <span className='text-muted-foreground font-serif text-base italic'>
-                Jun 2020
-              </span>
-            </div>
-          </Card>
+            </Card>
+          ))}
         </div>
       </section>
     </>

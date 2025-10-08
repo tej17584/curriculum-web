@@ -1,9 +1,9 @@
 {
   "seo": {
-    "defaultTitle": "Alejandro Tejada - Ingeniero de Software",
+    "defaultTitle": "Alejandro Tejada - Senior Software Engineer",
     "siteName": "Alejandro Tejada Portfolio",
-    "defaultDescription": "Ingeniero de Software Senior especializado en arquitectura front-end con React, Next.js y TypeScript. Experiencia en desarrollo de componentes UI y aplicaciones web accesibles.",
-    "keywords": "Ingeniero de Software, Frontend, React, Next.js, TypeScript, UI Components, Accesibilidad Web, Desarrollo Web"
+    "defaultDescription": "Senior Software Engineer especializado en arquitectura front-end con React, Next.js y TypeScript. Experiencia en desarrollo de componentes UI y aplicaciones web accesibles.",
+    "keywords": "Senior Software Engineer, Frontend, React, Next.js, TypeScript, UI Components, Accesibilidad Web, Desarrollo Web"
   },
   "common": {
     "page": "Página",
@@ -12,12 +12,12 @@
     "email": "Correo"
   },
   "footer": {
-    "copyright": "Alejandro Tejada. Todos los derechos reservados."
+    "copyright": "Alejandro Tejada"
   },
   "profile": {
     "name": "Alejandro Tejada",
-    "title": "Ingeniero de Software 3",
-    "bio": "Una persona positiva, gustosa del aprendizaje, la lectura, la familia y Dios."
+    "title": "Computer Science Engineer & Full Stack Developer",
+    "bio": "Explorando la unión entre la tecnología, la creatividad y las historias humanas."
   },
   "chapters": {
     "about": "Capítulo I: Acerca de",
@@ -27,20 +27,232 @@
     "education": "Capítulo V: Educación"
   },
   "about": {
-    "text1": "Actualmente, soy Ingeniero de Software Senior en TechCorp, especializado en arquitectura front-end. Contribuyo a la creación y mantenimiento de componentes de UI que impulsan el frontend de nuestra plataforma, asegurando que nuestras aplicaciones cumplan con los estándares de accesibilidad web y las mejores prácticas para ofrecer una experiencia de usuario inclusiva.",
-    "text2": "En el pasado, he tenido la oportunidad de desarrollar software en una variedad de entornos: desde agencias de publicidad y grandes corporaciones hasta startups y pequeños estudios de productos digitales. Además, también lancé un curso de video completo hace unos años, guiando a los estudiantes a través de la construcción de una aplicación web con tecnologías modernas."
+    "text1": "Actualmente soy Senior Software Engineer en PayPal (Xoom) con más de seis años de experiencia en el mundo tecnológico, desarrollando aplicaciones escalables, centradas en el usuario y con alto impacto. Combino una sólida formación en Ciencias de la Computación con experiencia práctica en React.js, Next.js, TypeScript, AWS y metodologías ágiles como SCRUM. Mi trabajo siempre ha estado orientado al rendimiento, el diseño y la creación de experiencias digitales significativas (y, por qué no, también divertidas).\n",
+    "text2": "Desde mis primeros años en la universidad, he colaborado en proyectos de distintos sectores —como fintech y e-commerce (Pacifiko, Guatemala)— junto a equipos internacionales, aplicando principios de código limpio, accesibilidad y usabilidad.",
+    "text3": "Más allá de la ingeniería, me apasionan la literatura de ciencia ficción, la escritura de relatos cortos, los rompecabezas y el tiempo en familia. Creo que la tecnología es una forma contemporánea de arte, capaz incluso de generar catarsis y transformación en las personas."
   },
+  "experience": {
+    "jobs": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "Xoom, A PayPal Service",
+        "companyUrl": "https://www.xoom.com",
+        "period": "Oct 2022",
+        "description": "Soy Ingeniero de Software Senior en el área web de Xoom, un servicio global de PayPal especializado en remesas digitales. Formo parte del equipo responsable del ecosistema de aplicaciones web, construidas con React, Next.js, Tailwind, JavaScript, Node.js y AWS, asegurando que cada actualización mejore la escalabilidad, el rendimiento y la experiencia del usuario.",
+        "description2": "He liderado iniciativas de modernización y consistencia visual dentro del stack, siendo owner de varias aplicaciones internas centradas en la gestión de estilos y componentes compartidos. Recientemente participé en la actualización integral del header, footer y cuerpo principal de Xoom.com, impulsando una interfaz más coherente, accesible y moderna para una audiencia global.",
+        "tags": [
+          "JavaScript",
+          "React.js",
+          "PayPal",
+          "Next.js",
+          "Tailwind.css",
+          "Node.js",
+          "Devops",
+          "AWS",
+          "UI/UX"
+        ]
+      },
+      {
+        "title": "Freelance Full Stack Engineer",
+        "company": "Uwii & PopAuction",
+        "companyUrl": "https://www.popauctioon.com/",
+        "period": "Oct 2022- Presente",
+        "description": "He trabajado como desarrollador freelance en proyectos web y móviles, liderando principalmente el desarrollo de PopAuction, una plataforma de subastas en tiempo real para artículos de lujo. Diseñé y desarrollé su arquitectura completa con Next.js, Supabase, Stripe, AWS IVS, AWS Cognito y AWS IAM, integrando transmisión en vivo, autenticación avanzada y pagos automatizados. El sistema fue construido para ser seguro, escalable y adaptable al crecimiento, combinando tecnología, diseño y experiencia de usuario en un entorno de alto rendimiento con visión global.",
+        "description2": "También colaboré en Uwii, una plataforma enfocada en el diseño y gestión de viviendas, donde participé en el desarrollo de una aplicación móvil con React Native para la visualización y seguimiento de proyectos residenciales, mejorando la comunicación entre usuarios y posibles compradores",
+        "tags": [
+          "JavaScript",
+          "React.js",
+          "React Native",
+          "Next.js",
+          "Stripe",
+          "Supabase",
+          "Tailwind.css",
+          "AWS IVS",
+          "AWS Cognito",
+          "AWS IAM",
+          "UI/UX"
+        ]
+      },
+      {
+        "title": "Software Engineer",
+        "company": "Cognits",
+        "companyUrl": "https://www.cognits.co",
+        "period": "Aug 2020 — Aug 2022",
+        "description": "Trabajé en el desarrollo de aplicaciones web y móviles para el sector financiero y médico, utilizando herramientas low-code como Mendix y Visualizer, además de entornos personalizados con JavaScript y React. Participé en proyectos de banca digital y seguros, contribuyendo al diseño de interfaces accesibles y flujos eficientes.",
+        "description2": "Colaboré con equipos multidisciplinarios para definir funcionalidades, optimizar rendimiento y mejorar la experiencia del usuario. Esta experiencia fortaleció mis habilidades en comunicación técnica, UX/UI y metodologías ágiles, preparándome para liderar entornos complejos y de alta exigencia.",
+        "tags": ["UI Development", "Mendix", "Visualizer", "Banking", "Agile"]
+      },
+      {
+        "title": "Desarrollador de Software",
+        "company": "Pacifiko.com",
+        "companyUrl": "https://www.pacifiko.com",
+        "period": "Oct 2019 — Jun 2020",
+        "description": "Formé parte del equipo de desarrollo de Pacifiko Guatemala, una plataforma de comercio electrónico en crecimiento. Contribuí a la implementación de funcionalidades en áreas de inventario, finanzas, marketing digital y experiencia de usuario, trabajando tanto en front-end como back-end.",
+        "description2": "Esta experiencia me permitió aplicar buenas prácticas de desarrollo full-stack y adquirir una visión integral del ciclo de vida del producto digital, en un entorno dinámico que combinaba tecnología y estrategia empresarial.",
+        "tags": ["E-Commerce", "Full-Stack", "Inventario", "Finanzas"]
+      },
+      {
+        "title": "Profesor Auxiliar",
+        "company": "Universidad del Valle de Guatemala",
+        "companyUrl": "https://www.uvg.edu.gt",
+        "period": "Ene 2019 — Dic 2020",
+        "description": "Fui profesor auxiliar en cursos de física, estadística, matemáticas, algoritmos y programación, acompañando a estudiantes en su proceso de aprendizaje y en la comprensión de fundamentos lógicos y analíticos.",
+        "description2": "Durante este periodo, fortalecí mi capacidad para comunicar conceptos técnicos, fomentar la curiosidad y adaptar el contenido a distintos niveles, reforzando mi interés por la enseñanza y la formación en disciplinas STEM.",
+        "tags": ["Enseñanza", "Programación", "Matemáticas", "Física", "UVG"]
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "PopAuction",
+        "SVGIcon": true,
+        "url": "https://popauction.com",
+        "description": "Plataforma de subastas en tiempo real para artículos de lujo, diseñada y desarrollada desde cero con Next.js, Supabase, Stripe y AWS IVS. Incluye autenticación avanzada con AWS Cognito, gestión de roles con AWS IAM y transmisión de video en vivo. El sistema fue construido para ser seguro, escalable y preparado para el crecimiento global.",
+        "image": "/projects/popauction-dashboard.webp",
+        "imageAlt": "Plataforma de subastas PopAuction en tiempo real",
+        "tags": [
+          "Next.js",
+          "Supabase",
+          "Stripe",
+          "AWS IVS",
+          "AWS Cognito",
+          "AWS IAM",
+          "Typescript"
+        ]
+      },
+      {
+        "title": "Rediseño de Xoom.com",
+        "SVGIcon": false,
+        "url": "https://www.xoom.com",
+        "description": "Rediseño global de Xoom.com, la plataforma de remesas de PayPal. Contribuí a la modernización del header, footer y estructura principal del sitio utilizando React, Next.js y Tailwind. La actualización mejoró la accesibilidad, el rendimiento y la coherencia visual para millones de usuarios en todo el mundo.",
+        "image": "xpp-logo.svg",
+        "imageAlt": "Rediseño del sitio web Xoom.com",
+        "tags": ["React", "Next.js", "Tailwind", "Typescript", "Accesibilidad"]
+      },
+      {
+        "title": "Gloss and Glow (En Desarrollo)",
+        "SVGIcon": false,
+        "url": "",
+        "description": "Sitio web moderno de belleza y maquillaje con catálogo dinámico, sistema de pagos integrado y diseño elegante y responsivo. Construido con enfoque en rendimiento, accesibilidad y experiencia de usuario.",
+        "image": "/gloss-and-glow.jpeg",
+        "imageAlt": "Sitio web Gloss and Glow",
+        "tags": ["Next.js", "Tailwind", "Stripe", "UX/UI", "Supabase"]
+      },
+      {
+        "title": "AWS Certified Cloud Practitioner",
+        "SVGIcon": false,
+        "url": "https://aws.amazon.com/certification/certified-cloud-practitioner/",
+        "description": "Certificación de AWS que valida conocimientos fundamentales de computación en la nube, arquitectura, seguridad y modelos de despliegue. Complementa la experiencia práctica con AWS IVS, Cognito e IAM en aplicaciones reales.",
+        "image": "/aws-practitioner.webp",
+        "imageAlt": "Certificación AWS Cloud Practitioner",
+        "tags": ["AWS", "Cloud", "Seguridad", "Arquitectura", "Typescript"]
+      }
+    ]
+  },
+  "education": [
+    {
+      "degree": "Ingeniería en Ciencias de la Computación y Tecnologías de la Información",
+      "university": "Universidad del Valle de Guatemala",
+      "universityUrl": "https://www.uvg.edu.gt/carreras/computacion-y-tecnologias-de-la-informacion/",
+      "period": "2017 — May 2022",
+      "description": "Licenciatura completa con enfoque en ingeniería de software, seguridad, gestión de datos y desarrollo web. Participé en asociaciones académicas como el Software Engineering Student Association, el Cybersecurity Lab y el Data Analytics Project Team. También colaboré en proyectos de investigación en Ciencia Computacional y Diseño de Videojuegos."
+    },
+    {
+      "degree": "Máster en Dirección y Gestión de Empresas y Proyectos",
+      "university": "EUDE Business School",
+      "universityUrl": "https://www.eude.es/",
+      "period": "Dic 2024 — Nov 2025",
+      "description": "Máster online con metodología basada en casos prácticos, enfocado en la toma de decisiones estratégicas, liderazgo y dirección integral de proyectos. Incluye módulos de finanzas, marketing, gestión del tiempo, recursos humanos y análisis de riesgos, culminando con un Proyecto Final de Máster (PFM)."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "AWS Certified Cloud Practitioner",
+      "provider": "Amazon Web Services",
+      "date": "Sep 2025"
+    },
+    {
+      "title": "Full-Stack Developer Career Path",
+      "provider": "Codecademy",
+      "date": "2025"
+    },
+    {
+      "title": "Complete Intro to React, v6",
+      "provider": "Frontend Masters",
+      "date": "Mar 2023"
+    },
+    {
+      "title": "React Native",
+      "provider": "Frontend Masters",
+      "date": "Feb 2023"
+    },
+    {
+      "title": "CSS Grids and Flexbox for Responsive Web Design",
+      "provider": "Frontend Masters",
+      "date": "Nov 2022"
+    },
+    {
+      "title": "Visual Elements of User Interface Design",
+      "provider": "Coursera",
+      "date": "Sep 2022"
+    },
+    {
+      "title": "User Experience: Research & Prototyping",
+      "provider": "Coursera",
+      "date": "Jul 2022"
+    },
+    {
+      "title": "Data Visualization",
+      "provider": "Frontend Masters",
+      "date": "May 2022"
+    }
+  ],
   "skills": {
     "programmingLanguages": "Lenguajes de Programación",
     "frameworks": "Frameworks y Librerías",
     "tools": "Herramientas y Plataformas",
     "spokenLanguages": "Idiomas",
-    "certifications": "Certificaciones"
+    "certifications": "Certificaciones",
+    "programmingList": [
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Python",
+      "SQL"
+    ],
+    "frameworksList": [
+      "React",
+      "Next.js",
+      "Node.js",
+      "React Native",
+      "Tailwind CSS"
+    ],
+    "toolsList": [
+      "Git",
+      "GitHub",
+      "Mendix",
+      "Visualizer",
+      "Unity",
+      "Figma",
+      "AWS",
+      "DevOps"
+    ]
   },
   "languages": {
     "spanish": "Español",
     "english": "Inglés",
     "native": "Nativo",
     "advanced": "Dominio Profesional Completo"
+  },
+  "bookLoader": {
+    "title": "CV",
+    "subtitle": "Curriculum Vitae",
+    "loading": "Abriendo tu historia..."
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
   }
 }
