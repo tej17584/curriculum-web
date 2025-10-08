@@ -28,10 +28,10 @@ export function BookLoader({ onComplete, dict }: BookLoaderProps) {
             <div className='book-cover-inner'>
               <div className='book-title'>
                 <div className='text-center'>
-                  <div className='text-background/80 font-serif text-2xl font-bold'>
+                  <div className='text-foreground/80 font-serif text-2xl font-bold'>
                     {dict.bookLoader.title}
                   </div>
-                  <div className='text-background/60 mt-2 font-serif text-sm'>
+                  <div className='text-muted-foreground mt-2 font-serif text-sm'>
                     {dict.bookLoader.subtitle}
                   </div>
                 </div>

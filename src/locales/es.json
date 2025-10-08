@@ -53,12 +53,12 @@
         ]
       },
       {
-        "title": "Freelance Full Stack Engineer",
+        "title": "Desarrollador Full Stack Freelance",
         "company": "Uwii & PopAuction",
         "companyUrl": "https://www.popauctioon.com/",
-        "period": "Oct 2022- Presente",
-        "description": "He trabajado como desarrollador freelance en proyectos web y móviles, liderando principalmente el desarrollo de PopAuction, una plataforma de subastas en tiempo real para artículos de lujo. Diseñé y desarrollé su arquitectura completa con Next.js, Supabase, Stripe, AWS IVS, AWS Cognito y AWS IAM, integrando transmisión en vivo, autenticación avanzada y pagos automatizados. El sistema fue construido para ser seguro, escalable y adaptable al crecimiento, combinando tecnología, diseño y experiencia de usuario en un entorno de alto rendimiento con visión global.",
-        "description2": "También colaboré en Uwii, una plataforma enfocada en el diseño y gestión de viviendas, donde participé en el desarrollo de una aplicación móvil con React Native para la visualización y seguimiento de proyectos residenciales, mejorando la comunicación entre usuarios y posibles compradores",
+        "period": "Oct 2022 — Presente",
+        "description": "Trabajé como desarrollador freelance en proyectos web y móviles, colaborando en el diseño arquitectónico y liderando la implementación de servicios en AWS para PopAuction, una plataforma de subastas en tiempo real de artículos de lujo. Dirigí la integración de AWS IVS, Cognito e IAM, así como los flujos de autenticación, seguridad y transmisión en vivo. La plataforma fue desarrollada con Next.js, Supabase y Stripe, priorizando la escalabilidad, la fiabilidad y una experiencia de usuario fluida a nivel global.",
+        "description2": "También colaboré en Uwii, una plataforma enfocada en el diseño y gestión de viviendas, donde contribuí al desarrollo de una aplicación móvil con React Native para la visualización y seguimiento de proyectos, mejorando la comunicación entre usuarios y posibles compradores.",
         "tags": [
           "JavaScript",
           "React.js",
@@ -83,7 +83,7 @@
         "tags": ["UI Development", "Mendix", "Visualizer", "Banking", "Agile"]
       },
       {
-        "title": "Desarrollador de Software",
+        "title": "Software Developer",
         "company": "Pacifiko.com",
         "companyUrl": "https://www.pacifiko.com",
         "period": "Oct 2019 — Jun 2020",
