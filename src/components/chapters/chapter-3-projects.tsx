@@ -3,6 +3,7 @@ import { Card } from '@/components/ui/card';
 import { TechBadge } from '@/components/tech-badge';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
+import { PopAuctionIcon } from '@/components/icons/icons';
 
 interface Chapter3ProjectsProps {
   dict: Dictionary;
@@ -21,11 +22,17 @@ export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
             className='bg-card overflow-hidden shadow-sm transition-all hover:scale-[1.03] hover:shadow-lg'
           >
             <div className='bg-muted aspect-video w-full overflow-hidden'>
-              <img
-                src={project.image}
-                alt={project.imageAlt}
-                className='h-full w-full object-cover transition-all hover:scale-105'
-              />
+              {project.SVGIcon ? (
+                <div className='from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br p-8'>
+                  <PopAuctionIcon className='h-12 w-auto' />
+                </div>
+              ) : (
+                <img
+                  src={project.image}
+                  alt={project.imageAlt}
+                  className='h-full w-full object-contain transition-all hover:scale-105'
+                />
+              )}
             </div>
             <div className='p-6'>
               <h3 className='text-foreground mb-2 font-serif text-2xl font-semibold'>

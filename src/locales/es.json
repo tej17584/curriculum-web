@@ -105,36 +105,48 @@
   "projects": {
     "items": [
       {
-        "title": "Plataforma E-Commerce",
-        "url": "https://project1.com",
-        "description": "Una plataforma de comercio electrónico completa con gestión de inventario en tiempo real, procesamiento de pagos y panel de administración. Construida con tecnologías modernas para un rendimiento óptimo.",
-        "image": "/modern-e-commerce-platform-dashboard.jpg",
-        "imageAlt": "Plataforma E-Commerce",
-        "tags": ["Next.js", "Stripe", "PostgreSQL"]
+        "title": "PopAuction",
+        "SVGIcon": true,
+        "url": "https://popauction.com",
+        "description": "Plataforma de subastas en tiempo real para artículos de lujo, diseñada y desarrollada desde cero con Next.js, Supabase, Stripe y AWS IVS. Incluye autenticación avanzada con AWS Cognito, gestión de roles con AWS IAM y transmisión de video en vivo. El sistema fue construido para ser seguro, escalable y preparado para el crecimiento global.",
+        "image": "/projects/popauction-dashboard.webp",
+        "imageAlt": "Plataforma de subastas PopAuction en tiempo real",
+        "tags": [
+          "Next.js",
+          "Supabase",
+          "Stripe",
+          "AWS IVS",
+          "AWS Cognito",
+          "AWS IAM",
+          "Typescript"
+        ]
       },
       {
-        "title": "Aplicación de Gestión de Tareas",
-        "url": "https://project2.com",
-        "description": "Una aplicación colaborativa de gestión de tareas con actualizaciones en tiempo real, espacios de trabajo en equipo y filtrado avanzado. Diseñada para productividad y facilidad de uso.",
-        "image": "/task-management-kanban.png",
-        "imageAlt": "Aplicación de Gestión de Tareas",
-        "tags": ["React", "Firebase", "Tailwind"]
+        "title": "Rediseño de Xoom.com",
+        "SVGIcon": false,
+        "url": "https://www.xoom.com",
+        "description": "Rediseño global de Xoom.com, la plataforma de remesas de PayPal. Contribuí a la modernización del header, footer y estructura principal del sitio utilizando React, Next.js y Tailwind. La actualización mejoró la accesibilidad, el rendimiento y la coherencia visual para millones de usuarios en todo el mundo.",
+        "image": "xpp-logo.svg",
+        "imageAlt": "Rediseño del sitio web Xoom.com",
+        "tags": ["React", "Next.js", "Tailwind", "Typescript", "Accesibilidad"]
       },
       {
-        "title": "Constructor de Sitios Web de Portafolio",
-        "url": "https://project3.com",
-        "description": "Un constructor de sitios web de arrastrar y soltar para creativos que desean mostrar su trabajo. Incluye plantillas personalizables, diseño responsive y optimización SEO.",
-        "image": "/portfolio-website-builder-drag-and-drop.jpg",
-        "imageAlt": "Constructor de Sitios Web de Portafolio",
-        "tags": ["Vue.js", "Node.js", "MongoDB"]
+        "title": "Gloss and Glow (En Desarrollo)",
+        "SVGIcon": false,
+        "url": "",
+        "description": "Sitio web moderno de belleza y maquillaje con catálogo dinámico, sistema de pagos integrado y diseño elegante y responsivo. Construido con enfoque en rendimiento, accesibilidad y experiencia de usuario.",
+        "image": "/gloss-and-glow.jpeg",
+        "imageAlt": "Sitio web Gloss and Glow",
+        "tags": ["Next.js", "Tailwind", "Stripe", "UX/UI", "Supabase"]
       },
       {
-        "title": "Curso de Desarrollo Web",
-        "url": "https://course.com",
-        "description": "Un curso de video completo que enseña desarrollo web moderno desde cero. Cubre React, Node.js, bases de datos y estrategias de despliegue.",
-        "image": "/web-development-course-online-learning.jpg",
-        "imageAlt": "Curso de Desarrollo Web",
-        "tags": ["React", "TypeScript", "Express"]
+        "title": "AWS Certified Cloud Practitioner",
+        "SVGIcon": false,
+        "url": "https://aws.amazon.com/certification/certified-cloud-practitioner/",
+        "description": "Certificación de AWS que valida conocimientos fundamentales de computación en la nube, arquitectura, seguridad y modelos de despliegue. Complementa la experiencia práctica con AWS IVS, Cognito e IAM en aplicaciones reales.",
+        "image": "/aws-practitioner.webp",
+        "imageAlt": "Certificación AWS Cloud Practitioner",
+        "tags": ["AWS", "Cloud", "Seguridad", "Arquitectura", "Typescript"]
       }
     ]
   },
