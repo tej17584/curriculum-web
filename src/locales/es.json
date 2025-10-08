@@ -159,34 +159,44 @@
   },
   "certifications": [
     {
+      "title": "AWS Certified Cloud Practitioner",
+      "provider": "Amazon Web Services",
+      "date": "Sep 2025"
+    },
+    {
+      "title": "Full-Stack Developer Career Path",
+      "provider": "Codecademy",
+      "date": "2025"
+    },
+    {
       "title": "Complete Intro to React, v6",
       "provider": "Frontend Masters",
-      "date": "Jul 2021"
+      "date": "Mar 2023"
     },
     {
       "title": "React Native",
       "provider": "Frontend Masters",
-      "date": "Jun 2021"
+      "date": "Feb 2023"
     },
     {
-      "title": "Elementos Visuales del Diseño de Interfaz de Usuario",
-      "provider": "Coursera",
-      "date": "Ago 2020"
-    },
-    {
-      "title": "CSS Grids y Flexbox para Diseño Web Responsive",
+      "title": "CSS Grids and Flexbox for Responsive Web Design",
       "provider": "Frontend Masters",
-      "date": "Ago 2020"
+      "date": "Nov 2022"
     },
     {
-      "title": "Experiencia de Usuario: Investigación y Prototipos",
+      "title": "Visual Elements of User Interface Design",
       "provider": "Coursera",
-      "date": "Jul 2020"
+      "date": "Sep 2022"
     },
     {
-      "title": "Visualización de Datos",
+      "title": "User Experience: Research & Prototyping",
+      "provider": "Coursera",
+      "date": "Jul 2022"
+    },
+    {
+      "title": "Data Visualization",
       "provider": "Frontend Masters",
-      "date": "Jun 2020"
+      "date": "May 2022"
     }
   ],
   "skills": {
@@ -206,12 +216,20 @@
     "frameworksList": [
       "React",
       "Next.js",
-      "Vue.js",
       "Node.js",
       "React Native",
       "Tailwind CSS"
     ],
-    "toolsList": ["Git", "GitHub", "Mendix", "Visualizer", "Unity", "Figma"]
+    "toolsList": [
+      "Git",
+      "GitHub",
+      "Mendix",
+      "Visualizer",
+      "Unity",
+      "Figma",
+      "AWS",
+      "DevOps"
+    ]
   },
   "languages": {
     "spanish": "Español",
