@@ -14,7 +14,7 @@ const neuton = Neuton({
   variable: '--font-neuton',
 });
 
-// Root layout - solo estructura HTML básica, sin metadata
+// Root layout - basic HTML structure only, no metadata
 export default async function RootLayout({
   children,
 }: Readonly<{
