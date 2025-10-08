@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -42,18 +42,24 @@
 
 .dark {
   /* Applied "Twilight Sand" palette - Editorial classic with artisanal luxury */
-  --background: oklch(0.14 0.01 40); /* #1d1915 - Dark brown with sandy texture */
+  --background: oklch(
+    0.14 0.01 40
+  ); /* #1d1915 - Dark brown with sandy texture */
   --foreground: oklch(0.91 0.02 65); /* #f2e7d5 - Warm ivory, legible */
   --card: oklch(0.17 0.01 42); /* #25211d - Light contrast without being gray */
   --card-foreground: oklch(0.91 0.02 65);
   --popover: oklch(0.17 0.01 42);
   --popover-foreground: oklch(0.91 0.02 65);
-  --primary: oklch(0.68 0.09 50); /* #d9a066 - Matte gold, elegant without shine */
+  --primary: oklch(
+    0.68 0.09 50
+  ); /* #d9a066 - Matte gold, elegant without shine */
   --primary-foreground: oklch(0.14 0.01 40);
   --secondary: oklch(0.75 0.09 55); /* #e6b273 - Fair contrast for visibility */
   --secondary-foreground: oklch(0.14 0.01 40);
   --muted: oklch(0.27 0.02 45);
-  --muted-foreground: oklch(0.78 0.03 55); /* #cbbfae - Soft, perfect for subtitles */
+  --muted-foreground: oklch(
+    0.78 0.03 55
+  ); /* #cbbfae - Soft, perfect for subtitles */
   --accent: oklch(0.68 0.09 50);
   --accent-foreground: oklch(0.14 0.01 40);
   --destructive: oklch(0.5 0.18 25);
@@ -174,7 +180,12 @@
     top: 0;
     width: 40px;
     height: 100%;
-    background: linear-gradient(to right, oklch(0.35 0.08 35), oklch(0.42 0.1 38), oklch(0.35 0.08 35));
+    background: linear-gradient(
+      to right,
+      oklch(0.35 0.08 35),
+      oklch(0.42 0.1 38),
+      oklch(0.35 0.08 35)
+    );
     transform: translateX(-50%) translateZ(10px);
     border-radius: 4px 0 0 4px;
     box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.3);
@@ -184,7 +195,11 @@
     position: absolute;
     width: 50%;
     height: 100%;
-    background: linear-gradient(135deg, oklch(0.48 0.12 35), oklch(0.42 0.1 38));
+    background: linear-gradient(
+      135deg,
+      oklch(0.48 0.12 35),
+      oklch(0.42 0.1 38)
+    );
     transform-style: preserve-3d;
     transform-origin: center;
     border-radius: 4px;
@@ -313,5 +328,36 @@
       transform: perspective(2000px) rotateY(0deg);
       opacity: 1;
     }
+  }
+
+  /* Animaciones de deslizamiento horizontal para páginas */
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 }
