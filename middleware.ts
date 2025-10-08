@@ -1,7 +1,9 @@
 import { chain } from '@/middlewares/chain';
 import { withI18nMiddleware } from '@/middlewares/i18n';
+import { withSecurityHeaders } from '@/middlewares/security';
 
-export default chain([withI18nMiddleware]);
+// Chain middlewares in order: security headers first, then i18n
+export default chain([withSecurityHeaders, withI18nMiddleware]);
 
 export const config = {
   matcher: [
