@@ -1,9 +1,9 @@
 {
   "seo": {
-    "defaultTitle": "Alejandro Tejada - Software Engineer",
+    "defaultTitle": "Alejandro Tejada - Senior Software Engineer",
     "siteName": "Alejandro Tejada Portfolio",
     "defaultDescription": "Senior Software Engineer specializing in front-end architecture with React, Next.js and TypeScript. Experience in UI component development and accessible web applications.",
-    "keywords": "Software Engineer, Frontend, React, Next.js, TypeScript, UI Components, Web Accessibility, Web Development"
+    "keywords": "Senior Software Engineer, Frontend, React, Next.js, TypeScript, UI Components, Web Accessibility, Web Development"
   },
   "common": {
     "page": "Page",
@@ -16,8 +16,8 @@
   },
   "profile": {
     "name": "Alejandro Tejada",
-    "title": "Computer Science and Full Stack Engineer",
-    "bio": "A positive person, fond of learning, reading, family and God."
+    "title": "Computer Science Engineer & Full Stack Developer",
+    "bio": "Exploring the intersection between technology, creativity, and human stories."
   },
   "chapters": {
     "about": "Chapter I: About",
@@ -27,8 +27,9 @@
     "education": "Chapter V: Education"
   },
   "about": {
-    "text1": "Currently, I'm a Senior Software Engineer at TechCorp, specializing in front-end architecture. I contribute to the creation and maintenance of UI components that power our platform's frontend, ensuring our applications meet web accessibility standards and best practices to deliver an inclusive user experience.",
-    "text2": "In the past, I've had the opportunity to develop software across a variety of settings — from advertising agencies and large corporations to start-ups and small digital product studios. Additionally, I also released a comprehensive video course a few years ago, guiding learners through building a web app with modern technologies."
+    "text1": "I am currently a Senior Software Engineer at PayPal (Xoom) with over six years of experience in the tech industry, developing scalable, user-focused applications with high impact. I combine a strong background in Computer Science with hands-on experience in React.js, Next.js, TypeScript, AWS, and agile methodologies like SCRUM. My work is always oriented towards performance, design, and creating meaningful (and, why not, fun) digital experiences.",
+    "text2": "Since my early university years, I have collaborated on projects across various sectors — such as fintech and e-commerce (Pacifiko, Guatemala) — with international teams, applying principles of clean code, accessibility, and usability.",
+    "text3": "Beyond engineering, I am passionate about science fiction literature, writing short stories, puzzles, and spending time with family. I believe technology is a contemporary form of art, capable of generating catharsis and transformation in people."
   },
   "experience": {
     "jobs": [
@@ -37,32 +38,68 @@
         "company": "Xoom, A PayPal Service",
         "companyUrl": "https://www.xoom.com",
         "period": "Oct 2022",
-        "description": "Working as a Software Engineer at Xoom, a PayPal service, contributing to the development and maintenance of financial technology solutions that enable international money transfers.",
-        "tags": ["JavaScript", "React", "PayPal", "FinTech"]
+        "description": "I’m a Senior Software Engineer on the Web Team at Xoom, a global PayPal service specializing in digital remittances. I’m part of the team responsible for the web applications ecosystem, built with React, Next.js, Tailwind, JavaScript, Node.js, and AWS, ensuring that every update improves scalability, performance, and user experience.",
+        "description2": "I have led modernization initiatives and visual consistency within the stack, owning several internal applications focused on managing shared styles and components. Recently, I participated in the comprehensive update of the header, footer, and main body of Xoom.com, driving a more cohesive, accessible, and modern interface for a global audience.",
+        "tags": [
+          "JavaScript",
+          "React.js",
+          "PayPal",
+          "Next.js",
+          "Tailwind.css",
+          "Node.js",
+          "Devops",
+          "AWS",
+          "UI/UX"
+        ]
+      },
+      {
+        "title": "Freelance Full Stack Engineer",
+        "company": "Uwii & PopAuction",
+        "companyUrl": "https://www.popauctioon.com/",
+        "period": "Oct 2022 — Present",
+        "description": "Worked as a freelance developer on web and mobile projects, primarily leading the development of PopAuction, a real-time auction platform for luxury items. Designed and built the full architecture using Next.js, Supabase, Stripe, AWS IVS, AWS Cognito, and AWS IAM, integrating live streaming, advanced authentication, and automated payments. The system was engineered for security, scalability, and adaptability, combining technology, design, and user experience in a high-performance, globally oriented environment.",
+        "description2": "Also collaborated on Uwii, a platform focused on housing design and management, where I contributed to the development of a mobile app with React Native for project visualization and tracking, improving communication between users and potential buyers.",
+        "tags": [
+          "JavaScript",
+          "React.js",
+          "React Native",
+          "Next.js",
+          "Stripe",
+          "Supabase",
+          "Tailwind.css",
+          "AWS IVS",
+          "AWS Cognito",
+          "AWS IAM",
+          "UI/UX"
+        ]
       },
       {
         "title": "Software Engineer",
         "company": "Cognits",
-        "companyUrl": "https://www.cognits.com",
+        "companyUrl": "https://www.cognits.co",
         "period": "Aug 2020 — Aug 2022",
-        "description": "Worked as a UI developer on banking projects, utilizing low code tools like Visualizer, Mendix and others to deliver efficient solutions for financial institutions.",
-        "tags": ["UI Development", "Mendix", "Visualizer", "Banking"]
+        "description": "Worked on web and mobile application development for the financial and medical sectors, using low-code tools like Mendix and Visualizer, as well as custom environments with JavaScript and React. Participated in digital banking and insurance projects, contributing to the design of accessible interfaces and efficient workflows.",
+        "description2": "Collaborated with multidisciplinary teams to define features, optimize performance, and improve user experience. This experience strengthened my skills in technical communication, UX/UI, and agile methodologies, preparing me to lead in complex and demanding environments.",
+        "tags": ["UI Development", "Mendix", "Visualizer", "Banking", "Agile"]
       },
+
       {
-        "title": "Auxiliary Teacher",
-        "company": "Universidad del Valle de Guatemala",
-        "companyUrl": "https://www.uvg.edu.gt",
-        "period": "Jan 2019 — Dec 2020",
-        "description": "Teaching physics, statistics, mathematics, algorithms and basic programming to university students, helping them develop strong foundational skills in STEM subjects.",
-        "tags": ["Teaching", "Programming", "Mathematics", "Physics"]
-      },
-      {
-        "title": "Software Developer",
+        "title": "Desarrollador de Software",
         "company": "Pacifiko.com",
         "companyUrl": "https://www.pacifiko.com",
         "period": "Oct 2019 — Jun 2020",
-        "description": "Worked in several areas including publicity, inventory management, finances, and developing features for an e-commerce platform, gaining diverse experience in full-stack development.",
-        "tags": ["E-Commerce", "Full-Stack", "Inventory", "Finance"]
+        "description": "Formé parte del equipo de desarrollo de Pacifiko Guatemala, una plataforma de comercio electrónico en crecimiento. Contribuí a la implementación de funcionalidades en áreas de inventario, finanzas, marketing digital y experiencia de usuario, trabajando tanto en front-end como back-end.",
+        "description2": "Esta experiencia me permitió aplicar buenas prácticas de desarrollo full-stack y adquirir una visión integral del ciclo de vida del producto digital, en un entorno dinámico que combinaba tecnología y estrategia empresarial.",
+        "tags": ["E-Commerce", "Full-Stack", "Inventario", "Finanzas"]
+      },
+      {
+        "title": "Teaching Assistant",
+        "company": "Universidad del Valle de Guatemala",
+        "companyUrl": "https://www.uvg.edu.gt",
+        "period": "Ene 2019 — Dic 2020",
+        "description": "Fui profesor auxiliar en cursos de física, estadística, matemáticas, algoritmos y programación, acompañando a estudiantes en su proceso de aprendizaje y en la comprensión de fundamentos lógicos y analíticos.",
+        "description2": "Durante este periodo, fortalecí mi capacidad para comunicar conceptos técnicos, fomentar la curiosidad y adaptar el contenido a distintos niveles, reforzando mi interés por la enseñanza y la formación en disciplinas STEM.",
+        "tags": ["Enseñanza", "Programación", "Matemáticas", "Física", "UVG"]
       }
     ]
   },

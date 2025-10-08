@@ -1,9 +1,8 @@
-'use client';
-
 import { ExternalLink } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { TechBadge } from '@/components/tech-badge';
 import type { Dictionary } from '@/hooks/getDictionary';
+import Link from 'next/link';
 
 interface Chapter3ProjectsProps {
   dict: Dictionary;
@@ -30,7 +29,7 @@ export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
             </div>
             <div className='p-6'>
               <h3 className='text-foreground mb-2 font-serif text-2xl font-semibold'>
-                <a
+                <Link
                   href={project.url}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -38,7 +37,7 @@ export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
                 >
                   {project.title}
                   <ExternalLink className='h-4 w-4' />
-                </a>
+                </Link>
               </h3>
               <p className='text-muted-foreground mb-4 font-serif text-base leading-relaxed'>
                 {project.description}

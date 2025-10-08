@@ -1,8 +1,7 @@
-'use client';
-
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { Dictionary } from '@/hooks/getDictionary';
+import Link from 'next/link';
 
 interface Chapter1AboutProps {
   dict: Dictionary;
@@ -28,13 +27,13 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
             asChild
             className='border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent transition-all hover:shadow-md'
           >
-            <a
-              href='mailto:your.email@example.com'
+            <Link
+              href='mailto:alejandro.tejada.ui@gmail.com'
               className='flex items-center gap-2'
             >
               <Mail className='h-4 w-4' />
               {dict.common.email}
-            </a>
+            </Link>
           </Button>
           <Button
             variant='outline'
@@ -42,15 +41,15 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
             asChild
             className='border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent transition-all hover:shadow-md'
           >
-            <a
-              href='https://github.com/yourusername'
+            <Link
+              href='https://github.com/tej17584'
               target='_blank'
               rel='noopener noreferrer'
               className='flex items-center gap-2'
             >
               <Github className='h-4 w-4' />
               {dict.social.github}
-            </a>
+            </Link>
           </Button>
           <Button
             variant='outline'
@@ -58,7 +57,7 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
             asChild
             className='border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent transition-all hover:shadow-md'
           >
-            <a
+            <Link
               href='https://linkedin.com/in/alejandrotejada17584'
               target='_blank'
               rel='noopener noreferrer'
@@ -66,7 +65,7 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
             >
               <Linkedin className='h-4 w-4' />
               {dict.social.linkedin}
-            </a>
+            </Link>
           </Button>
         </div>
       </header>
@@ -75,11 +74,12 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
         <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
           {dict.chapters.about}
         </h2>
-        <div className='text-foreground space-y-4 font-serif text-lg leading-relaxed'>
-          <p className='first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:leading-none first-letter:font-bold'>
+        <div className='text-foreground space-y-4 font-serif text-lg leading-relaxed lg:space-y-6 lg:text-xl'>
+          <p className='first-letter:text-primary whitespace-pre-line first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:leading-none first-letter:font-bold'>
             {dict.about.text1}
           </p>
           <p>{dict.about.text2}</p>
+          <p>{dict.about.text3}</p>
         </div>
 
         <div className='mt-12 flex justify-center'>

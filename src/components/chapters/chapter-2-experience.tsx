@@ -1,9 +1,8 @@
-'use client';
-
 import { ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import type { Dictionary } from '@/hooks/getDictionary';
+import Link from 'next/link';
 
 interface Chapter2ExperienceProps {
   dict: Dictionary;
@@ -23,28 +22,30 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
               index === 0 ? 'border-l-primary' : 'border-l-muted'
             }`}
           >
-            <div className='mb-4 flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
+            <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
               <div>
                 <h3 className='text-foreground font-serif text-2xl font-semibold'>
                   {job.title}
                 </h3>
-                <a
+                <Link
                   href={job.companyUrl}
                   target='_blank'
-                  rel='noopener noreferrer'
                   className='text-primary inline-flex items-center gap-1 font-serif text-lg hover:underline'
                 >
                   {job.company}
                   <ExternalLink className='h-4 w-4' />
-                </a>
+                </Link>
               </div>
               <span className='text-muted-foreground font-serif text-base italic'>
                 {job.period}
                 {index === 0 && ` — ${dict.common.present}`}
               </span>
             </div>
-            <p className='text-muted-foreground mb-4 font-serif text-base leading-relaxed'>
+            <p className='text-muted-foreground font-serif text-lg leading-relaxed'>
               {job.description}
+            </p>
+            <p className='text-muted-foreground font-serif text-lg leading-relaxed'>
+              {job.description2}
             </p>
             <div className='flex flex-wrap gap-2'>
               {job.tags.map((tag, tagIndex) => (

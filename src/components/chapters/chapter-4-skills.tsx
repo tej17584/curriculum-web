@@ -1,5 +1,3 @@
-'use client';
-
 import { Code2, BookOpen, Wrench, Globe, Award } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';

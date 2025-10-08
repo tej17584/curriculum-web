@@ -1,5 +1,3 @@
-'use client';
-
 import { ExternalLink } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import type { Dictionary } from '@/hooks/getDictionary';
