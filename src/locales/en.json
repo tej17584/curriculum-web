@@ -30,6 +30,117 @@
     "text1": "Currently, I'm a Senior Software Engineer at TechCorp, specializing in front-end architecture. I contribute to the creation and maintenance of UI components that power our platform's frontend, ensuring our applications meet web accessibility standards and best practices to deliver an inclusive user experience.",
     "text2": "In the past, I've had the opportunity to develop software across a variety of settings — from advertising agencies and large corporations to start-ups and small digital product studios. Additionally, I also released a comprehensive video course a few years ago, guiding learners through building a web app with modern technologies."
   },
+  "experience": {
+    "jobs": [
+      {
+        "title": "Software Engineer 3",
+        "company": "Xoom, A PayPal Service",
+        "companyUrl": "https://www.xoom.com",
+        "period": "Oct 2022",
+        "description": "Working as a Software Engineer at Xoom, a PayPal service, contributing to the development and maintenance of financial technology solutions that enable international money transfers.",
+        "tags": ["JavaScript", "React", "PayPal", "FinTech"]
+      },
+      {
+        "title": "Software Engineer",
+        "company": "Cognits",
+        "companyUrl": "https://www.cognits.com",
+        "period": "Aug 2020 — Aug 2022",
+        "description": "Worked as a UI developer on banking projects, utilizing low code tools like Visualizer, Mendix and others to deliver efficient solutions for financial institutions.",
+        "tags": ["UI Development", "Mendix", "Visualizer", "Banking"]
+      },
+      {
+        "title": "Auxiliary Teacher",
+        "company": "Universidad del Valle de Guatemala",
+        "companyUrl": "https://www.uvg.edu.gt",
+        "period": "Jan 2019 — Dec 2020",
+        "description": "Teaching physics, statistics, mathematics, algorithms and basic programming to university students, helping them develop strong foundational skills in STEM subjects.",
+        "tags": ["Teaching", "Programming", "Mathematics", "Physics"]
+      },
+      {
+        "title": "Software Developer",
+        "company": "Pacifiko.com",
+        "companyUrl": "https://www.pacifiko.com",
+        "period": "Oct 2019 — Jun 2020",
+        "description": "Worked in several areas including publicity, inventory management, finances, and developing features for an e-commerce platform, gaining diverse experience in full-stack development.",
+        "tags": ["E-Commerce", "Full-Stack", "Inventory", "Finance"]
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "E-Commerce Platform",
+        "url": "https://project1.com",
+        "description": "A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard. Built with modern technologies for optimal performance.",
+        "image": "/modern-e-commerce-platform-dashboard.jpg",
+        "imageAlt": "E-Commerce Platform",
+        "tags": ["Next.js", "Stripe", "PostgreSQL"]
+      },
+      {
+        "title": "Task Management App",
+        "url": "https://project2.com",
+        "description": "A collaborative task management application with real-time updates, team workspaces, and advanced filtering. Designed for productivity and ease of use.",
+        "image": "/task-management-kanban.png",
+        "imageAlt": "Task Management App",
+        "tags": ["React", "Firebase", "Tailwind"]
+      },
+      {
+        "title": "Portfolio Website Builder",
+        "url": "https://project3.com",
+        "description": "A drag-and-drop website builder for creatives to showcase their work. Features customizable templates, responsive design, and SEO optimization.",
+        "image": "/portfolio-website-builder-drag-and-drop.jpg",
+        "imageAlt": "Portfolio Website Builder",
+        "tags": ["Vue.js", "Node.js", "MongoDB"]
+      },
+      {
+        "title": "Web Development Course",
+        "url": "https://course.com",
+        "description": "A comprehensive video course teaching modern web development from scratch. Covers React, Node.js, databases, and deployment strategies.",
+        "image": "/web-development-course-online-learning.jpg",
+        "imageAlt": "Web Development Course",
+        "tags": ["React", "TypeScript", "Express"]
+      }
+    ]
+  },
+  "education": {
+    "degree": "Bachelor of Science in Computer Science",
+    "university": "Universidad del Valle de Guatemala",
+    "universityUrl": "https://www.uvg.edu.gt",
+    "period": "2017 — 2022",
+    "description": "Completed a comprehensive Computer Science degree with focus on software engineering, algorithms, data structures, and modern web technologies. Graduated with honors and participated in various academic projects and research initiatives."
+  },
+  "certifications": [
+    {
+      "title": "Complete Intro to React, v6",
+      "provider": "Frontend Masters",
+      "date": "Jul 2021"
+    },
+    {
+      "title": "React Native",
+      "provider": "Frontend Masters",
+      "date": "Jun 2021"
+    },
+    {
+      "title": "Visual Elements of User Interface Design",
+      "provider": "Coursera",
+      "date": "Aug 2020"
+    },
+    {
+      "title": "CSS Grids and Flexbox for Responsive Web Design",
+      "provider": "Frontend Masters",
+      "date": "Aug 2020"
+    },
+    {
+      "title": "User Experience: Research & Prototyping",
+      "provider": "Coursera",
+      "date": "Jul 2020"
+    },
+    {
+      "title": "Data Visualization",
+      "provider": "Frontend Masters",
+      "date": "Jun 2020"
+    }
+  ],
   "skills": {
     "programmingLanguages": "Programming Languages",
     "frameworks": "Frameworks & Libraries",
@@ -42,5 +153,13 @@
     "english": "English",
     "native": "Native",
     "advanced": "Full Professional Proficiency"
+  },
+  "bookLoader": {
+    "title": "CV",
+    "subtitle": "Curriculum Vitae"
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
   }
 }

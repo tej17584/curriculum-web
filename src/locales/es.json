@@ -30,6 +30,117 @@
     "text1": "Actualmente, soy Ingeniero de Software Senior en TechCorp, especializado en arquitectura front-end. Contribuyo a la creación y mantenimiento de componentes de UI que impulsan el frontend de nuestra plataforma, asegurando que nuestras aplicaciones cumplan con los estándares de accesibilidad web y las mejores prácticas para ofrecer una experiencia de usuario inclusiva.",
     "text2": "En el pasado, he tenido la oportunidad de desarrollar software en una variedad de entornos: desde agencias de publicidad y grandes corporaciones hasta startups y pequeños estudios de productos digitales. Además, también lancé un curso de video completo hace unos años, guiando a los estudiantes a través de la construcción de una aplicación web con tecnologías modernas."
   },
+  "experience": {
+    "jobs": [
+      {
+        "title": "Ingeniero de Software 3",
+        "company": "Xoom, A PayPal Service",
+        "companyUrl": "https://www.xoom.com",
+        "period": "Oct 2022",
+        "description": "Trabajando como Ingeniero de Software en Xoom, un servicio de PayPal, contribuyendo al desarrollo y mantenimiento de soluciones de tecnología financiera que permiten transferencias internacionales de dinero.",
+        "tags": ["JavaScript", "React", "PayPal", "FinTech"]
+      },
+      {
+        "title": "Ingeniero de Software",
+        "company": "Cognits",
+        "companyUrl": "https://www.cognits.com",
+        "period": "Ago 2020 — Ago 2022",
+        "description": "Trabajé como desarrollador de UI en proyectos bancarios, utilizando herramientas low code como Visualizer, Mendix y otras para entregar soluciones eficientes para instituciones financieras.",
+        "tags": ["Desarrollo UI", "Mendix", "Visualizer", "Banca"]
+      },
+      {
+        "title": "Profesor Auxiliar",
+        "company": "Universidad del Valle de Guatemala",
+        "companyUrl": "https://www.uvg.edu.gt",
+        "period": "Ene 2019 — Dic 2020",
+        "description": "Enseñanza de física, estadística, matemáticas, algoritmos y programación básica a estudiantes universitarios, ayudándoles a desarrollar habilidades fundamentales sólidas en materias STEM.",
+        "tags": ["Enseñanza", "Programación", "Matemáticas", "Física"]
+      },
+      {
+        "title": "Desarrollador de Software",
+        "company": "Pacifiko.com",
+        "companyUrl": "https://www.pacifiko.com",
+        "period": "Oct 2019 — Jun 2020",
+        "description": "Trabajé en varias áreas incluyendo publicidad, gestión de inventario, finanzas y desarrollo de funcionalidades para una plataforma de comercio electrónico, adquiriendo experiencia diversa en desarrollo full-stack.",
+        "tags": ["E-Commerce", "Full-Stack", "Inventario", "Finanzas"]
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "Plataforma E-Commerce",
+        "url": "https://project1.com",
+        "description": "Una plataforma de comercio electrónico completa con gestión de inventario en tiempo real, procesamiento de pagos y panel de administración. Construida con tecnologías modernas para un rendimiento óptimo.",
+        "image": "/modern-e-commerce-platform-dashboard.jpg",
+        "imageAlt": "Plataforma E-Commerce",
+        "tags": ["Next.js", "Stripe", "PostgreSQL"]
+      },
+      {
+        "title": "Aplicación de Gestión de Tareas",
+        "url": "https://project2.com",
+        "description": "Una aplicación colaborativa de gestión de tareas con actualizaciones en tiempo real, espacios de trabajo en equipo y filtrado avanzado. Diseñada para productividad y facilidad de uso.",
+        "image": "/task-management-kanban.png",
+        "imageAlt": "Aplicación de Gestión de Tareas",
+        "tags": ["React", "Firebase", "Tailwind"]
+      },
+      {
+        "title": "Constructor de Sitios Web de Portafolio",
+        "url": "https://project3.com",
+        "description": "Un constructor de sitios web de arrastrar y soltar para creativos que desean mostrar su trabajo. Incluye plantillas personalizables, diseño responsive y optimización SEO.",
+        "image": "/portfolio-website-builder-drag-and-drop.jpg",
+        "imageAlt": "Constructor de Sitios Web de Portafolio",
+        "tags": ["Vue.js", "Node.js", "MongoDB"]
+      },
+      {
+        "title": "Curso de Desarrollo Web",
+        "url": "https://course.com",
+        "description": "Un curso de video completo que enseña desarrollo web moderno desde cero. Cubre React, Node.js, bases de datos y estrategias de despliegue.",
+        "image": "/web-development-course-online-learning.jpg",
+        "imageAlt": "Curso de Desarrollo Web",
+        "tags": ["React", "TypeScript", "Express"]
+      }
+    ]
+  },
+  "education": {
+    "degree": "Licenciatura en Ciencias de la Computación",
+    "university": "Universidad del Valle de Guatemala",
+    "universityUrl": "https://www.uvg.edu.gt",
+    "period": "2017 — 2022",
+    "description": "Completé un título completo en Ciencias de la Computación con enfoque en ingeniería de software, algoritmos, estructuras de datos y tecnologías web modernas. Me gradué con honores y participé en varios proyectos académicos e iniciativas de investigación."
+  },
+  "certifications": [
+    {
+      "title": "Complete Intro to React, v6",
+      "provider": "Frontend Masters",
+      "date": "Jul 2021"
+    },
+    {
+      "title": "React Native",
+      "provider": "Frontend Masters",
+      "date": "Jun 2021"
+    },
+    {
+      "title": "Elementos Visuales del Diseño de Interfaz de Usuario",
+      "provider": "Coursera",
+      "date": "Ago 2020"
+    },
+    {
+      "title": "CSS Grids y Flexbox para Diseño Web Responsive",
+      "provider": "Frontend Masters",
+      "date": "Ago 2020"
+    },
+    {
+      "title": "Experiencia de Usuario: Investigación y Prototipos",
+      "provider": "Coursera",
+      "date": "Jul 2020"
+    },
+    {
+      "title": "Visualización de Datos",
+      "provider": "Frontend Masters",
+      "date": "Jun 2020"
+    }
+  ],
   "skills": {
     "programmingLanguages": "Lenguajes de Programación",
     "frameworks": "Frameworks y Librerías",
@@ -42,5 +153,13 @@
     "english": "Inglés",
     "native": "Nativo",
     "advanced": "Dominio Profesional Completo"
+  },
+  "bookLoader": {
+    "title": "CV",
+    "subtitle": "Curriculum Vitae"
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
   }
 }

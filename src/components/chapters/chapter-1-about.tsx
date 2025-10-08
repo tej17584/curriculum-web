@@ -49,7 +49,7 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
               className='flex items-center gap-2'
             >
               <Github className='h-4 w-4' />
-              GitHub
+              {dict.social.github}
             </a>
           </Button>
           <Button
@@ -65,7 +65,7 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
               className='flex items-center gap-2'
             >
               <Linkedin className='h-4 w-4' />
-              LinkedIn
+              {dict.social.linkedin}
             </a>
           </Button>
         </div>
