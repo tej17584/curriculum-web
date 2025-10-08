@@ -57,7 +57,7 @@
         "company": "Uwii & PopAuction",
         "companyUrl": "https://www.popauctioon.com/",
         "period": "Oct 2022 — Present",
-        "description": "Worked as a freelance developer on web and mobile projects, primarily leading the development of PopAuction, a real-time auction platform for luxury items. Designed and built the full architecture using Next.js, Supabase, Stripe, AWS IVS, AWS Cognito, and AWS IAM, integrating live streaming, advanced authentication, and automated payments. The system was engineered for security, scalability, and adaptability, combining technology, design, and user experience in a high-performance, globally oriented environment.",
+        "description": "Worked as a freelance developer on web and mobile projects, contributing to the architectural design and leading the implementation of AWS services for PopAuction, a real-time auction platform for luxury items. Oversaw the integration of AWS IVS, Cognito, and IAM, as well as authentication, security, and streaming workflows. The platform was built with Next.js, Supabase, and Stripe, designed for scalability, reliability, and a seamless user experience in a global environment.",
         "description2": "Also collaborated on Uwii, a platform focused on housing design and management, where I contributed to the development of a mobile app with React Native for project visualization and tracking, improving communication between users and potential buyers.",
         "tags": [
           "JavaScript",
@@ -84,22 +84,22 @@
       },
 
       {
-        "title": "Desarrollador de Software",
+        "title": "Software Developer",
         "company": "Pacifiko.com",
         "companyUrl": "https://www.pacifiko.com",
         "period": "Oct 2019 — Jun 2020",
-        "description": "Formé parte del equipo de desarrollo de Pacifiko Guatemala, una plataforma de comercio electrónico en crecimiento. Contribuí a la implementación de funcionalidades en áreas de inventario, finanzas, marketing digital y experiencia de usuario, trabajando tanto en front-end como back-end.",
-        "description2": "Esta experiencia me permitió aplicar buenas prácticas de desarrollo full-stack y adquirir una visión integral del ciclo de vida del producto digital, en un entorno dinámico que combinaba tecnología y estrategia empresarial.",
-        "tags": ["E-Commerce", "Full-Stack", "Inventario", "Finanzas"]
+        "description": "I was part of the development team at Pacifiko Guatemala, a growing e-commerce platform. I contributed to implementing features in inventory, finance, digital marketing, and user experience, working on both front-end and back-end.",
+        "description2": "This experience allowed me to apply full-stack development best practices and gain a comprehensive view of the digital product lifecycle, in a dynamic environment that combined technology and business strategy.",
+        "tags": ["E-Commerce", "Full-Stack", "Inventory", "Finance"]
       },
       {
         "title": "Teaching Assistant",
         "company": "Universidad del Valle de Guatemala",
         "companyUrl": "https://www.uvg.edu.gt",
-        "period": "Ene 2019 — Dic 2020",
-        "description": "Fui profesor auxiliar en cursos de física, estadística, matemáticas, algoritmos y programación, acompañando a estudiantes en su proceso de aprendizaje y en la comprensión de fundamentos lógicos y analíticos.",
-        "description2": "Durante este periodo, fortalecí mi capacidad para comunicar conceptos técnicos, fomentar la curiosidad y adaptar el contenido a distintos niveles, reforzando mi interés por la enseñanza y la formación en disciplinas STEM.",
-        "tags": ["Enseñanza", "Programación", "Matemáticas", "Física", "UVG"]
+        "period": "Jan 2019 — Dec 2020",
+        "description": "Served as a teaching assistant in courses including physics, statistics, mathematics, algorithms, and programming, supporting students in their learning process and understanding of logical and analytical fundamentals.",
+        "description2": "During this period, I strengthened my ability to communicate technical concepts, foster curiosity, and adapt content to different levels, reinforcing my interest in teaching and training in STEM disciplines.",
+        "tags": ["Teaching", "Programming", "Mathematics", "Physics", "UVG"]
       }
     ]
   },
