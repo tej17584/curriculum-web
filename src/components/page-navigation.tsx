@@ -51,7 +51,7 @@ export function PageNavigation({
   };
 
   return (
-    <div className='border-border bg-card/95 fixed bottom-[90px] left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full border-2 px-3 py-2 shadow-xl backdrop-blur-md sm:bottom-28 sm:gap-3 sm:px-6 sm:py-3'>
+    <div className='border-border bg-card/95 fixed bottom-20 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full border-2 px-3 py-2 shadow-xl backdrop-blur-md sm:bottom-28 sm:gap-3 sm:px-6 sm:py-3'>
       <Button
         variant='ghost'
         size='icon'
