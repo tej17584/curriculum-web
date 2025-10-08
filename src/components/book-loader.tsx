@@ -58,7 +58,7 @@ export function BookLoader({ onComplete, dict }: BookLoaderProps) {
       </div>
 
       <div className='absolute bottom-16 left-1/2 -translate-x-1/2'>
-        <p className='text-foreground animate-pulse font-serif text-base sm:text-lg'>
+        <p className='text-foreground animate-pulse font-serif text-xl sm:text-2xl md:text-3xl'>
           {dict.bookLoader.loading}
         </p>
       </div>

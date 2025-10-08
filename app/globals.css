@@ -149,11 +149,14 @@
     scrollbar-width: none; /* Firefox */
   }
 
-  /* Added CSS-based book loader animation styles */
+  /* Enhanced CSS-based book loader animation with improved 3D realism */
   .book-container {
-    perspective: 1500px;
-    width: 300px;
-    height: 400px;
+    perspective: 2000px;
+    width: 320px;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .book {
@@ -161,16 +164,17 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    animation: book-float 3s ease-in-out infinite;
+    animation: book-float 4s ease-in-out infinite;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
   }
 
   @keyframes book-float {
     0%,
     100% {
-      transform: translateY(0) rotateY(-15deg);
+      transform: translateY(0) rotateY(-20deg) rotateX(5deg);
     }
     50% {
-      transform: translateY(-10px) rotateY(-15deg);
+      transform: translateY(-15px) rotateY(-20deg) rotateX(5deg);
     }
   }
 
@@ -178,17 +182,22 @@
     position: absolute;
     left: 50%;
     top: 0;
-    width: 40px;
+    width: 50px;
     height: 100%;
     background: linear-gradient(
       to right,
-      oklch(0.35 0.08 35),
-      oklch(0.42 0.1 38),
-      oklch(0.35 0.08 35)
+      oklch(0.32 0.08 35),
+      oklch(0.42 0.12 38),
+      oklch(0.48 0.14 40),
+      oklch(0.42 0.12 38),
+      oklch(0.32 0.08 35)
     );
-    transform: translateX(-50%) translateZ(10px);
-    border-radius: 4px 0 0 4px;
-    box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.3);
+    transform: translateX(-50%) translateZ(15px);
+    border-radius: 6px 0 0 6px;
+    box-shadow:
+      inset -3px 0 12px rgba(0, 0, 0, 0.4),
+      inset 3px 0 12px rgba(0, 0, 0, 0.2),
+      0 0 30px rgba(0, 0, 0, 0.3);
   }
 
   .book-cover {
@@ -197,33 +206,57 @@
     height: 100%;
     background: linear-gradient(
       135deg,
-      oklch(0.48 0.12 35),
+      oklch(0.52 0.14 35),
+      oklch(0.46 0.12 37),
       oklch(0.42 0.1 38)
     );
     transform-style: preserve-3d;
     transform-origin: center;
-    border-radius: 4px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    box-shadow:
+      0 15px 50px rgba(0, 0, 0, 0.4),
+      inset 0 0 30px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .book-cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.1),
+      transparent 50%
+    );
+    border-radius: 6px;
+    pointer-events: none;
   }
 
   .book-cover-left {
     left: 0;
-    animation: cover-open-left 2s ease-out forwards;
-    animation-delay: 0.5s;
+    animation: cover-open-left 2.5s cubic-bezier(0.645, 0.045, 0.355, 1)
+      forwards;
+    animation-delay: 0.3s;
+    transform-origin: right center;
   }
 
   .book-cover-right {
     right: 0;
-    animation: cover-open-right 2s ease-out forwards;
-    animation-delay: 0.5s;
+    animation: cover-open-right 2.5s cubic-bezier(0.645, 0.045, 0.355, 1)
+      forwards;
+    animation-delay: 0.3s;
+    transform-origin: left center;
   }
 
   @keyframes cover-open-left {
     0% {
       transform: rotateY(0deg);
     }
+    60% {
+      transform: rotateY(-165deg);
+    }
     100% {
-      transform: rotateY(-160deg);
+      transform: rotateY(-170deg);
     }
   }
 
@@ -231,18 +264,37 @@
     0% {
       transform: rotateY(0deg);
     }
+    60% {
+      transform: rotateY(165deg);
+    }
     100% {
-      transform: rotateY(160deg);
+      transform: rotateY(170deg);
     }
   }
 
   .book-cover-inner {
     width: 100%;
     height: 100%;
-    background: oklch(0.96 0.015 65);
+    background: linear-gradient(
+      to bottom,
+      oklch(0.97 0.015 65),
+      oklch(0.95 0.02 63)
+    );
+    border-radius: 6px;
+    transform: translateZ(-5px);
+    box-shadow:
+      inset 0 0 30px rgba(0, 0, 0, 0.08),
+      inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .book-cover-inner::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 2px solid oklch(0.85 0.03 50);
     border-radius: 4px;
-    transform: translateZ(-4px);
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+    opacity: 0.3;
   }
 
   .book-title {
@@ -251,41 +303,72 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
+    z-index: 1;
   }
 
   .book-pages {
     position: absolute;
     left: 50%;
-    top: 5%;
+    top: 50%;
     width: 45%;
-    height: 90%;
-    transform: translateX(-50%);
+    height: 88%;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
   }
 
   .book-page {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: oklch(0.98 0.01 60);
+    background: linear-gradient(
+      to right,
+      oklch(0.99 0.005 60),
+      oklch(0.97 0.01 62)
+    );
     border: 1px solid oklch(0.88 0.02 55);
-    border-radius: 2px;
+    border-radius: 3px;
     transform-origin: left center;
-    animation: page-flip 0.8s ease-out forwards;
+    transform-style: preserve-3d;
+    animation: page-flip 1.2s ease-in-out forwards;
     opacity: 0;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow:
+      3px 3px 12px rgba(0, 0, 0, 0.15),
+      inset -1px 0 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .book-page::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.05));
+    border-radius: 0 3px 3px 0;
   }
 
   @keyframes page-flip {
     0% {
-      transform: rotateY(0deg);
+      transform: rotateY(0deg) translateZ(0px);
       opacity: 1;
+      box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+    }
+    30% {
+      opacity: 1;
+      box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.25);
     }
     50% {
-      opacity: 1;
+      transform: rotateY(-90deg) translateZ(10px);
+      opacity: 0.9;
+      box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    70% {
+      opacity: 0.7;
     }
     100% {
-      transform: rotateY(-180deg);
+      transform: rotateY(-180deg) translateZ(0px);
       opacity: 0;
+      box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
     }
   }
 

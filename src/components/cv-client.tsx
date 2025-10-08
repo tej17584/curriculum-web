@@ -28,6 +28,9 @@ export default function CVClientWrapper({
   const totalPages = 5;
 
   useEffect(() => {
+    // Scroll al inicio de la página cuando cambie el currentPage
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     if (containerRef.current) {
       containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
