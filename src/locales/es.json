@@ -150,13 +150,22 @@
       }
     ]
   },
-  "education": {
-    "degree": "Licenciatura en Ciencias de la Computación",
-    "university": "Universidad del Valle de Guatemala",
-    "universityUrl": "https://www.uvg.edu.gt",
-    "period": "2017 — 2022",
-    "description": "Completé un título completo en Ciencias de la Computación con enfoque en ingeniería de software, algoritmos, estructuras de datos y tecnologías web modernas. Me gradué con honores y participé en varios proyectos académicos e iniciativas de investigación."
-  },
+  "education": [
+    {
+      "degree": "Ingeniería en Ciencias de la Computación y Tecnologías de la Información",
+      "university": "Universidad del Valle de Guatemala",
+      "universityUrl": "https://www.uvg.edu.gt/carreras/computacion-y-tecnologias-de-la-informacion/",
+      "period": "2017 — May 2022",
+      "description": "Licenciatura completa con enfoque en ingeniería de software, seguridad, gestión de datos y desarrollo web. Participé en asociaciones académicas como el Software Engineering Student Association, el Cybersecurity Lab y el Data Analytics Project Team. También colaboré en proyectos de investigación en Ciencia Computacional y Diseño de Videojuegos."
+    },
+    {
+      "degree": "Máster en Dirección y Gestión de Empresas y Proyectos",
+      "university": "EUDE Business School",
+      "universityUrl": "https://www.eude.es/",
+      "period": "Dic 2024 — Nov 2025",
+      "description": "Máster online con metodología basada en casos prácticos, enfocado en la toma de decisiones estratégicas, liderazgo y dirección integral de proyectos. Incluye módulos de finanzas, marketing, gestión del tiempo, recursos humanos y análisis de riesgos, culminando con un Proyecto Final de Máster (PFM)."
+    }
+  ],
   "certifications": [
     {
       "title": "AWS Certified Cloud Practitioner",

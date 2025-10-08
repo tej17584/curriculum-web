@@ -151,13 +151,22 @@
       }
     ]
   },
-  "education": {
-    "degree": "Bachelor of Science in Computer Science",
-    "university": "Universidad del Valle de Guatemala",
-    "universityUrl": "https://www.uvg.edu.gt",
-    "period": "2017 — 2022",
-    "description": "Completed a comprehensive Computer Science degree with focus on software engineering, algorithms, data structures, and modern web technologies. Graduated with honors and participated in various academic projects and research initiatives."
-  },
+  "education": [
+    {
+      "degree": "Bachelor’s Degree in Computer Science and Information Technologies",
+      "university": "Universidad del Valle de Guatemala",
+      "universityUrl": "https://www.uvg.edu.gt/carreras/computacion-y-tecnologias-de-la-informacion/",
+      "period": "2017 — May 2022",
+      "description": "Comprehensive program focused on software engineering, data management, web technologies, and cybersecurity. Active member of the Software Engineering Student Association, Cybersecurity Lab, and Data Analytics Project Team. Also participated in research projects in computational science and game design."
+    },
+    {
+      "degree": "Master’s Degree in Business Management and Project Management",
+      "university": "EUDE Business School",
+      "universityUrl": "https://www.eude.es/",
+      "period": "Dec 2024 — Nov 2025",
+      "description": "Online, case-based Master’s program focused on strategic decision-making, leadership, and end-to-end project management. Covers key areas such as finance, marketing, HR, risk analysis, and time management, culminating in a Final Master’s Project (PFM)."
+    }
+  ],
   "certifications": [
     {
       "title": "AWS Certified Cloud Practitioner",
