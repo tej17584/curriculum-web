@@ -62,7 +62,7 @@ export function PageNavigation({
         <ChevronLeft className='h-4 w-4 sm:h-4 sm:w-4' />
       </Button>
 
-      <span className='text-foreground font-serif text-sm whitespace-nowrap sm:text-base'>
+      <span className='font-serif text-sm text-foreground whitespace-nowrap sm:text-base'>
         {pageText} {currentPage} {ofText} {totalPages}
       </span>
 
