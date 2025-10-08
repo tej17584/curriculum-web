@@ -1,30 +1,85 @@
-# Curriculum generation
+# Portfolio Website
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+_A modern, bilingual portfolio website with unique book-themed design_
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/alejandro-tejada-s-projects/v0-curriculum-generation)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/hsulVnuaWf1)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 
-## Overview
+## 📖 About This Project
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+An elegant portfolio website featuring a unique book-inspired interface with smooth page transitions and full bilingual support (Spanish/English). The design emphasizes readability and user experience while also showing the love I have for books and technology. Hope in the future I can add some references to Asimov, Cixin Liu, and other sci-fi authors that have inspired me over the years.
 
-## Deployment
+## ✨ Key Features
 
-Your project is live at:
+- **📚 Book-Inspired Design**: Unique interface with page-turning animations
+- **🌍 Bilingual Support**: Full Spanish and English translations with automatic language detection
+- **🎨 Theme System**: Beautiful dark and light modes with smooth transitions
+- **📱 Fully Responsive**: Optimized experience across all devices
+- **⚡ Performance**: Built with Next.js 15 App Router for optimal loading speeds
+- **♿ Accessible**: WCAG compliant with semantic HTML and ARIA labels
+- **🔒 Security**: Comprehensive security headers, CSP, XSS protection, and input sanitization
 
-**[https://vercel.com/alejandro-tejada-s-projects/v0-curriculum-generation](https://vercel.com/alejandro-tejada-s-projects/v0-curriculum-generation)**
+## 🛠️ Technologies
 
-## Build your app
+**Frontend**
 
-Continue building your app on:
+- Next.js 15 (React 19)
+- TypeScript
+- Tailwind CSS v4
 
-**[https://v0.app/chat/projects/hsulVnuaWf1](https://v0.app/chat/projects/hsulVnuaWf1)**
+**Architecture**
 
-## How It Works
+- Server-side rendering (SSR)
+- Internationalization (i18n)
+- Component-driven design
+- Type-safe development
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## 🚀 Running Locally
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the project.
+
+## � Project Structure
+
+```
+├── app/                    # Next.js app directory
+│   ├── [lang]/            # Internationalized routes
+│   └── globals.css        # Global styles
+├── src/
+│   ├── components/        # React components
+│   ├── locales/          # Translation files (ES/EN)
+│   └── lib/              # Utilities and helpers
+└── public/               # Static assets
+```
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🔒 Security
+
+This project implements comprehensive security measures. For details, see [SECURITY.md](SECURITY.md).
+
+Key security features:
+
+- HTTP security headers (CSP, HSTS, X-Frame-Options, etc.)
+- XSS protection and input sanitization
+- Rate limiting utilities
+- Secure middleware chain
+- Regular dependency audits
+
+---
+
+**Built with Next.js, TypeScript, and Tailwind CSS**
