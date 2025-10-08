@@ -18,6 +18,7 @@ An elegant portfolio website featuring a unique book-inspired interface with smo
 - **📱 Fully Responsive**: Optimized experience across all devices
 - **⚡ Performance**: Built with Next.js 15 App Router for optimal loading speeds
 - **♿ Accessible**: WCAG compliant with semantic HTML and ARIA labels
+- **🔒 Security**: Comprehensive security headers, CSP, XSS protection, and input sanitization
 
 ## 🛠️ Technologies
 
@@ -66,6 +67,18 @@ Open [http://localhost:3000](http://localhost:3000) to view the project.
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+## 🔒 Security
+
+This project implements comprehensive security measures. For details, see [SECURITY.md](SECURITY.md).
+
+Key security features:
+
+- HTTP security headers (CSP, HSTS, X-Frame-Options, etc.)
+- XSS protection and input sanitization
+- Rate limiting utilities
+- Secure middleware chain
+- Regular dependency audits
 
 ---
 
