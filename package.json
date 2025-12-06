@@ -3,15 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "test": "jest --passWithNoTests",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "check-all": "pnpm type-check && pnpm lint && pnpm format",
+    "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "format": "prettier --write .",
-    "start": "next start"
+    "test:update-snapshots": "jest --updateSnapshot"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.6.2",
