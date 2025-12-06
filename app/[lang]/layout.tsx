@@ -62,7 +62,7 @@ export default async function LocaleLayout({
   const dict = await getDictionary(lang);
 
   return (
-    <div>
+    <div lang={lang}>
       {children}
       <Footer dict={dict} />
     </div>
