@@ -29,10 +29,8 @@ const config = [
   prettier,
   {
     rules: {
-      // Next.js rules
-      '@next/next/no-img-element': 'off', // Project uses unoptimized images
-      // React rules
-      'react/react-in-jsx-scope': 'off', // Next.js no requiere importar React
+      '@next/next/no-img-element': 'off',
+      'react/react-in-jsx-scope': 'off',
     },
   },
   {
