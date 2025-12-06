@@ -62,8 +62,7 @@ export default async function LocaleLayout({
   const dict = await getDictionary(lang);
 
   return (
-    /* eslint-disable-next-line @next/next/no-head-element */
-    <div lang={lang}>
+    <div>
       {children}
       <Footer dict={dict} />
     </div>
