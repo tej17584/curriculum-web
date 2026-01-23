@@ -107,7 +107,7 @@
       {
         "title": "PopAuction",
         "SVGIcon": true,
-        "url": "https://popauction.com",
+        "url": "https://popauctioon.com",
         "description": "Plataforma de subastas en tiempo real para artículos de lujo, diseñada y desarrollada desde cero con Next.js, Supabase, Stripe y AWS IVS. Incluye autenticación avanzada con AWS Cognito, gestión de roles con AWS IAM y transmisión de video en vivo. El sistema fue construido para ser seguro, escalable y preparado para el crecimiento global.",
         "image": "/projects/popauction-dashboard.webp",
         "imageAlt": "Plataforma de subastas PopAuction en tiempo real",
