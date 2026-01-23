@@ -108,7 +108,7 @@
       {
         "title": "PopAuction",
         "SVGIcon": true,
-        "url": "https://popauction.com",
+        "url": "https://popauctioon.com",
         "description": "A real-time auction platform for luxury items, architected and developed from the ground up using Next.js, Supabase, Stripe, and AWS IVS. It includes advanced authentication with AWS Cognito, role management with AWS IAM, and live video streaming. The system was built to be secure, scalable, and ready for global growth.",
         "image": "/projects/popauction-dashboard.webp",
         "imageAlt": "PopAuction real-time auction platform",
