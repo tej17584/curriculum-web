@@ -15,7 +15,7 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
           {dict.chapters.skills}
         </h2>
         <div className='space-y-8'>
-          <Card className='border-primary/20 bg-card border-2 p-6 shadow-md transition-all hover:scale-[1.02] hover:shadow-xl'>
+          <Card className='border-primary/15 bg-card border p-6 shadow-sm transition-all hover:shadow-md dark:shadow-md dark:shadow-black/20'>
             <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
               <Code2 className='text-primary h-6 w-6' />
               {dict.skills.programmingLanguages}
@@ -24,7 +24,7 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
               {dict.skills.programmingList.map((skill, index) => (
                 <Badge
                   key={index}
-                  className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'
+                  className='border-primary/20 bg-primary/8 text-primary hover:bg-primary/15 border px-4 py-2 text-base font-medium transition-all'
                 >
                   {skill}
                 </Badge>
@@ -32,7 +32,7 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
             </div>
           </Card>
 
-          <Card className='border-primary/20 bg-card border-2 p-6 shadow-md transition-all hover:scale-[1.02] hover:shadow-xl'>
+          <Card className='border-primary/15 bg-card border p-6 shadow-sm transition-all hover:shadow-md dark:shadow-md dark:shadow-black/20'>
             <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
               <BookOpen className='text-primary h-6 w-6' />
               {dict.skills.frameworks}
@@ -41,7 +41,7 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
               {dict.skills.frameworksList.map((framework, index) => (
                 <Badge
                   key={index}
-                  className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'
+                  className='border-primary/20 bg-primary/8 text-primary hover:bg-primary/15 border px-4 py-2 text-base font-medium transition-all'
                 >
                   {framework}
                 </Badge>
@@ -49,7 +49,7 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
             </div>
           </Card>
 
-          <Card className='border-primary/20 bg-card border-2 p-6 shadow-md transition-all hover:scale-[1.02] hover:shadow-xl'>
+          <Card className='border-primary/15 bg-card border p-6 shadow-sm transition-all hover:shadow-md dark:shadow-md dark:shadow-black/20'>
             <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
               <Wrench className='text-primary h-6 w-6' />
               {dict.skills.tools}
@@ -58,7 +58,7 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
               {dict.skills.toolsList.map((tool, index) => (
                 <Badge
                   key={index}
-                  className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'
+                  className='border-primary/20 bg-primary/8 text-primary hover:bg-primary/15 border px-4 py-2 text-base font-medium transition-all'
                 >
                   {tool}
                 </Badge>
@@ -66,28 +66,29 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
             </div>
           </Card>
 
-          <Card className='border-primary/20 bg-card border-2 p-6 shadow-md transition-all hover:scale-[1.02] hover:shadow-xl'>
+          <Card className='border-primary/15 bg-card border p-6 shadow-sm transition-all hover:shadow-md dark:shadow-md dark:shadow-black/20'>
             <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
               <Globe className='text-primary h-6 w-6' />
               {dict.skills.spokenLanguages}
             </h3>
             <div className='flex flex-wrap gap-3'>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
+              <Badge className='border-primary/20 bg-primary/8 text-primary hover:bg-primary/15 border px-4 py-2 text-base font-medium transition-all'>
                 {dict.languages.spanish} — {dict.languages.native}
               </Badge>
-              <Badge className='border-primary/30 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border-2 px-4 py-2 text-base font-semibold transition-all hover:scale-110'>
+              <Badge className='border-primary/20 bg-primary/8 text-primary hover:bg-primary/15 border px-4 py-2 text-base font-medium transition-all'>
                 {dict.languages.english} — {dict.languages.advanced}
               </Badge>
             </div>
           </Card>
         </div>
 
-        <div className='mt-12 flex justify-center'>
-          <div className='relative w-full max-w-md'>
+        <div className='mt-16 flex justify-center'>
+          <div className='relative w-full max-w-sm lg:max-w-[640px]'>
+            <div className='absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent dark:from-primary/10' />
             <img
               src='/Chapter4.png'
               alt='Open books and study materials'
-              className='illustration w-full grayscale transition-all hover:opacity-90 dark:[filter:invert(1)_brightness(1.3)_contrast(1.2)]'
+              className='relative w-full opacity-90 grayscale transition-all hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
             />
           </div>
         </div>
@@ -102,8 +103,8 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
           {dict.certifications.map((cert, index) => (
             <Card
               key={index}
-              className={`bg-card border-l-4 p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg ${
-                index === 0 ? 'border-l-primary' : 'border-l-muted'
+              className={`bg-card border-l-4 p-6 shadow-sm transition-all hover:shadow-md dark:shadow-md dark:shadow-black/20 ${
+                index === 0 ? 'border-l-primary/70' : 'border-l-muted/50'
               }`}
             >
               <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>

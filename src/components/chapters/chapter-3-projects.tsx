@@ -11,15 +11,15 @@ interface Chapter3ProjectsProps {
 
 export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
   return (
-    <section className='mb-8'>
-      <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
+    <section className='mb-12'>
+      <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-wide'>
         {dict.chapters.projects}
       </h2>
       <div className='grid gap-6 md:grid-cols-2'>
         {dict.projects.items.map((project, index) => (
           <Card
             key={index}
-            className='bg-card overflow-hidden shadow-sm transition-all hover:scale-[1.03] hover:shadow-lg'
+            className='bg-card overflow-hidden shadow-sm transition-all hover:shadow-lg dark:shadow-md dark:shadow-black/20'
           >
             <div className='bg-muted aspect-video w-full overflow-hidden'>
               {project.SVGIcon ? (

@@ -10,16 +10,16 @@ interface Chapter2ExperienceProps {
 
 export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
   return (
-    <section className='mb-8'>
-      <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
+    <section className='mb-12'>
+      <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-wide'>
         {dict.chapters.experience}
       </h2>
-      <div className='space-y-8'>
+      <div className='space-y-10'>
         {dict.experience.jobs.map((job, index) => (
           <Card
             key={index}
-            className={`bg-card border-l-4 p-8 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg ${
-              index === 0 ? 'border-l-primary' : 'border-l-muted'
+            className={`bg-card border-l-4 p-8 shadow-sm transition-all hover:shadow-lg dark:shadow-md dark:shadow-black/20 ${
+              index === 0 ? 'border-l-primary/70' : 'border-l-muted/50'
             }`}
           >
             <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
@@ -62,12 +62,13 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
         ))}
       </div>
 
-      <div className='mt-12 flex justify-center'>
-        <div className='relative w-full max-w-md'>
+      <div className='mt-16 flex justify-center'>
+        <div className='relative w-full max-w-md lg:max-w-[720px]'>
+          <div className='from-primary/5 dark:from-primary/10 absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] via-transparent to-transparent' />
           <img
             src='/Chapter2.png'
             alt='Professional workspace with books and documents'
-            className='w-full grayscale transition-all hover:opacity-90'
+            className='relative w-full opacity-90 grayscale transition-all hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
           />
         </div>
       </div>

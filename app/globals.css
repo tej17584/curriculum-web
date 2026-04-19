@@ -45,11 +45,13 @@
   --background: oklch(
     0.14 0.01 40
   ); /* #1d1915 - Dark brown with sandy texture */
-  --foreground: oklch(0.91 0.02 65); /* #f2e7d5 - Warm ivory, legible */
+  --foreground: oklch(
+    0.86 0.02 65
+  ); /* Warm ivory, softened for editorial feel */
   --card: oklch(0.17 0.01 42); /* #25211d - Light contrast without being gray */
-  --card-foreground: oklch(0.91 0.02 65);
+  --card-foreground: oklch(0.86 0.02 65);
   --popover: oklch(0.17 0.01 42);
-  --popover-foreground: oklch(0.91 0.02 65);
+  --popover-foreground: oklch(0.86 0.02 65);
   --primary: oklch(
     0.68 0.09 50
   ); /* #d9a066 - Matte gold, elegant without shine */
@@ -77,11 +79,11 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --sidebar: oklch(0.14 0.01 40);
-  --sidebar-foreground: oklch(0.91 0.02 65);
+  --sidebar-foreground: oklch(0.86 0.02 65);
   --sidebar-primary: oklch(0.68 0.09 50);
   --sidebar-primary-foreground: oklch(0.14 0.01 40);
   --sidebar-accent: oklch(0.27 0.02 45);
-  --sidebar-accent-foreground: oklch(0.91 0.02 65);
+  --sidebar-accent-foreground: oklch(0.86 0.02 65);
   --sidebar-border: oklch(0.27 0.02 45);
   --sidebar-ring: oklch(0.68 0.09 50);
 }

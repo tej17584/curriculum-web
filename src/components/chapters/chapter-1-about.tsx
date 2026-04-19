@@ -71,7 +71,7 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
       </header>
 
       <section className='mb-16'>
-        <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'>
+        <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-wide'>
           {dict.chapters.about}
         </h2>
         <div className='text-foreground space-y-4 font-serif text-lg leading-relaxed lg:space-y-6 lg:text-xl'>
@@ -82,12 +82,13 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
           <p>{dict.about.text3}</p>
         </div>
 
-        <div className='mt-12 flex justify-center'>
-          <div className='relative w-full max-w-md'>
+        <div className='mt-16 flex justify-center'>
+          <div className='relative w-full max-w-md lg:max-w-[740px]'>
+            <div className='absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent dark:from-primary/10' />
             <img
               src='/Chapter1.png'
               alt='Stack of books illustration'
-              className='w-full grayscale transition-all hover:opacity-90'
+              className='relative w-full opacity-90 grayscale transition-all hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
             />
           </div>
         </div>
