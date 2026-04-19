@@ -50,9 +50,9 @@ export function Chapter5Education({ dict }: Chapter5EducationProps) {
       <div className='mt-12 flex justify-center'>
         <div className='relative w-full max-w-md'>
           <img
-            src='/graduation-library-illustration.jpg'
+            src='/Chapter5.png'
             alt='Graduation cap with books in library setting'
-            className='w-full grayscale transition-all hover:opacity-90'
+            className='illustration w-full grayscale transition-all hover:opacity-90 dark:[filter:invert(1)_brightness(1.3)_contrast(1.2)]'
           />
         </div>
       </div>

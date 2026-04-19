@@ -85,9 +85,9 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
         <div className='mt-12 flex justify-center'>
           <div className='relative w-full max-w-md'>
             <img
-              src='/study-books-illustration.jpg'
+              src='/Chapter4.png'
               alt='Open books and study materials'
-              className='w-full grayscale transition-all hover:opacity-90'
+              className='illustration w-full grayscale transition-all hover:opacity-90 dark:[filter:invert(1)_brightness(1.3)_contrast(1.2)]'
             />
           </div>
         </div>

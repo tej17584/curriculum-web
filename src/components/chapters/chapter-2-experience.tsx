@@ -65,7 +65,7 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
       <div className='mt-12 flex justify-center'>
         <div className='relative w-full max-w-md'>
           <img
-            src='/career-desk-illustration.jpg'
+            src='/Chapter2.png'
             alt='Professional workspace with books and documents'
             className='w-full grayscale transition-all hover:opacity-90'
           />

@@ -85,7 +85,7 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
         <div className='mt-12 flex justify-center'>
           <div className='relative w-full max-w-md'>
             <img
-              src='/book-stack-illustration.jpg'
+              src='/Chapter1.png'
               alt='Stack of books illustration'
               className='w-full grayscale transition-all hover:opacity-90'
             />
