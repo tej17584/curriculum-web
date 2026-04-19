@@ -1,5 +1,13 @@
+'use client';
+
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import {
+  containerVariants,
+  itemVariants,
+  illustrationVariants,
+} from '@/lib/motion-variants';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
 
@@ -9,8 +17,15 @@ interface Chapter1AboutProps {
 
 export function Chapter1About({ dict }: Chapter1AboutProps) {
   return (
-    <>
-      <header className='border-primary/20 mb-8 border-b-2 pb-8'>
+    <motion.div
+      variants={containerVariants}
+      initial='hidden'
+      animate='visible'
+    >
+      <motion.header
+        variants={itemVariants}
+        className='border-primary/20 mb-8 border-b-2 pb-8'
+      >
         <h1 className='text-foreground mb-3 font-serif text-5xl font-bold tracking-tight lg:text-6xl'>
           {dict.profile.name}
         </h1>
@@ -68,9 +83,12 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
             </Link>
           </Button>
         </div>
-      </header>
+      </motion.header>
 
-      <section className='mb-16'>
+      <motion.section
+        variants={itemVariants}
+        className='mb-16'
+      >
         <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-wide'>
           {dict.chapters.about}
         </h2>
@@ -82,7 +100,12 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
           <p>{dict.about.text3}</p>
         </div>
 
-        <div className='mt-16 flex justify-center'>
+        <motion.div
+          variants={illustrationVariants}
+          initial='hidden'
+          animate='visible'
+          className='mt-16 flex justify-center'
+        >
           <div className='relative w-full max-w-md lg:max-w-[740px]'>
             <div className='absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent dark:from-primary/10' />
             <img
@@ -91,8 +114,8 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
               className='relative w-full opacity-90 grayscale transition-all hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
             />
           </div>
-        </div>
-      </section>
-    </>
+        </motion.div>
+      </motion.section>
+    </motion.div>
   );
 }
