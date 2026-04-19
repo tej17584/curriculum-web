@@ -1,8 +1,10 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { BookLoader } from '@/components/book-loader';
 import { PageNavigation } from '@/components/page-navigation';
+import { pageVariants } from '@/lib/motion-variants';
 import type { Lang } from '@/types';
 import type { Dictionary } from '@/hooks/getDictionary';
 
@@ -28,7 +30,6 @@ export default function CVClientWrapper({
   const totalPages = 5;
 
   useEffect(() => {
-    // Scroll to the top of the page when currentPage changes
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     if (containerRef.current) {
@@ -41,66 +42,60 @@ export default function CVClientWrapper({
     setCurrentPage(newPage);
   };
 
-  const getPageClassName = (pageNumber: number) => {
-    const isActive = currentPage === pageNumber;
-
-    if (!isActive) {
-      // Páginas no activas: completamente ocultas
-      return 'hidden';
-    }
-
-    // Página actual: animación de entrada según dirección
-    if (isForward) {
-      return 'block animate-slide-in-right';
-    } else {
-      return 'block animate-slide-in-left';
-    }
-  };
-  if (showLoader) {
-    return (
-      <BookLoader
-        onComplete={() => setShowLoader(false)}
-        dict={dict}
-      />
-    );
-  }
+  const pages = React.Children.toArray(children);
 
   return (
-    <div className='bg-background from-background via-background to-muted/20 overflow-x-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]'>
-      <div
-        ref={containerRef}
-        className='hide-scrollbar relative mx-auto max-w-4xl overflow-x-hidden overflow-y-auto px-4 py-8 pb-[140px] sm:px-6 sm:py-12 sm:pb-[180px] lg:px-8 lg:pb-32'
-      >
-        {/* Render children with simple slide animations */}
-        {Array.isArray(children) ? (
-          <div className='relative w-full'>
-            {(children as React.ReactElement[]).map((child, index) => {
-              const pageNumber = index + 1;
-              const pageClasses = getPageClassName(pageNumber);
-
-              return (
-                <div
-                  key={index}
-                  className={`w-full ${pageClasses}`}
-                >
-                  {child}
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          children
+    <>
+      <AnimatePresence>
+        {showLoader && (
+          <motion.div
+            key='loader'
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.5, ease: 'easeIn' } }}
+            className='fixed inset-0 z-50'
+          >
+            <BookLoader
+              onComplete={() => setShowLoader(false)}
+              dict={dict}
+            />
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
 
-      <PageNavigation
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-        lang={lang}
-        pageText={pageText}
-        ofText={ofText}
-      />
-    </div>
+      {!showLoader && (
+        <div className='bg-background from-background via-background to-muted/20 overflow-x-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]'>
+          <div
+            ref={containerRef}
+            className='hide-scrollbar relative mx-auto max-w-4xl overflow-x-hidden overflow-y-auto px-4 py-8 pb-[140px] sm:px-6 sm:py-12 sm:pb-[180px] lg:px-8 lg:pb-32'
+          >
+            <AnimatePresence
+              mode='wait'
+              custom={isForward}
+            >
+              <motion.div
+                key={currentPage}
+                custom={isForward}
+                variants={pageVariants}
+                initial='enter'
+                animate='center'
+                exit='exit'
+                className='w-full'
+              >
+                {pages[currentPage - 1]}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <PageNavigation
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+            lang={lang}
+            pageText={pageText}
+            ofText={ofText}
+          />
+        </div>
+      )}
+    </>
   );
 }

@@ -42,7 +42,7 @@ export function TechBadge({ name, variant = 'outline' }: TechBadgeProps) {
   return (
     <Badge
       variant={variant}
-      className='group border-primary/40 from-primary/5 to-primary/10 text-foreground hover:border-primary hover:from-primary hover:to-primary/80 hover:text-primary-foreground relative overflow-hidden border-2 bg-gradient-to-br px-4 py-2 text-base font-semibold shadow-sm transition-all hover:scale-110 hover:shadow-lg'
+      className='group border-primary/30 from-primary/5 to-primary/10 text-foreground hover:border-primary/50 hover:from-primary/10 hover:to-primary/15 relative overflow-hidden border bg-gradient-to-br px-4 py-2 text-base font-medium shadow-sm transition-all hover:shadow-md'
     >
       <span className='mr-2 text-lg transition-transform group-hover:scale-125'>
         {icon}
