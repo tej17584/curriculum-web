@@ -32,7 +32,7 @@ export function BookLoader({ onComplete, dict }: BookLoaderProps) {
         style={{ perspective: '1200px' }}
       >
         {/* Drop shadow on surface */}
-        <div className='absolute -bottom-5 left-1/2 -z-10 h-6 w-[80%] -translate-x-1/2 rounded-[50%] bg-black/12 blur-xl dark:bg-black/35 sm:-bottom-7 sm:h-8' />
+        <div className='absolute -bottom-5 left-1/2 -z-10 h-6 w-[80%] -translate-x-1/2 rounded-[50%] bg-black/12 blur-xl sm:-bottom-7 sm:h-8 dark:bg-black/35' />
 
         {/* Book body */}
         <motion.div
@@ -43,7 +43,7 @@ export function BookLoader({ onComplete, dict }: BookLoaderProps) {
           style={{ transformStyle: 'preserve-3d' }}
         >
           {/* Page edges - right side */}
-          <div className='absolute right-[-5px] top-[4px] z-[1] sm:right-[-7px] sm:top-[5px] md:right-[-8px] md:top-[6px]'>
+          <div className='absolute top-[4px] right-[-5px] z-[1] sm:top-[5px] sm:right-[-7px] md:top-[6px] md:right-[-8px]'>
             {[...Array(6)].map((_, i) => (
               <div
                 key={i}
@@ -61,7 +61,7 @@ export function BookLoader({ onComplete, dict }: BookLoaderProps) {
           </div>
 
           {/* Page edges - bottom */}
-          <div className='absolute bottom-[-5px] left-[10px] right-[10px] z-[1] sm:bottom-[-7px] sm:left-[12px] sm:right-[12px] md:bottom-[-8px]'>
+          <div className='absolute right-[10px] bottom-[-5px] left-[10px] z-[1] sm:right-[12px] sm:bottom-[-7px] sm:left-[12px] md:bottom-[-8px]'>
             {[...Array(6)].map((_, i) => (
               <div
                 key={i}
@@ -80,7 +80,7 @@ export function BookLoader({ onComplete, dict }: BookLoaderProps) {
 
           {/* Spine - left side */}
           <div
-            className='absolute left-0 top-0 z-[3] h-[380px] w-[16px] rounded-l-sm sm:h-[480px] sm:w-[20px] md:h-[560px] md:w-[24px]'
+            className='absolute top-0 left-0 z-[3] h-[380px] w-[16px] rounded-l-sm sm:h-[480px] sm:w-[20px] md:h-[560px] md:w-[24px]'
             style={{
               background:
                 'linear-gradient(90deg, #7a5f3d 0%, #a07d52 35%, #8b6d47 65%, #7a5f3d 100%)',
@@ -206,7 +206,7 @@ export function BookLoader({ onComplete, dict }: BookLoaderProps) {
 
           {/* Back cover (slightly visible behind, gives depth) */}
           <div
-            className='absolute left-0 top-[3px] z-0 h-[380px] w-full rounded-sm sm:top-[4px] sm:h-[480px] md:top-[5px] md:h-[560px]'
+            className='absolute top-[3px] left-0 z-0 h-[380px] w-full rounded-sm sm:top-[4px] sm:h-[480px] md:top-[5px] md:h-[560px]'
             style={{
               background:
                 'linear-gradient(145deg, #4e3420 0%, #3e2a18 50%, #4e3420 100%)',

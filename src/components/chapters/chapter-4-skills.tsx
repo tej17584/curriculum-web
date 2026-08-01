@@ -115,7 +115,7 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
           className='mt-16 flex justify-center'
         >
           <div className='relative w-full max-w-sm lg:max-w-[640px]'>
-            <div className='absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent dark:from-primary/10' />
+            <div className='from-primary/5 dark:from-primary/10 absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] via-transparent to-transparent' />
             <img
               src='/Chapter4.png'
               alt='Open books and study materials'

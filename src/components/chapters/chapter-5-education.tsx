@@ -76,7 +76,7 @@ export function Chapter5Education({ dict }: Chapter5EducationProps) {
         className='mt-16 flex justify-center'
       >
         <div className='relative w-full max-w-sm lg:max-w-[640px]'>
-          <div className='absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent dark:from-primary/10' />
+          <div className='from-primary/5 dark:from-primary/10 absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] via-transparent to-transparent' />
           <img
             src='/Chapter5.png'
             alt='Graduation cap with books in library setting'
