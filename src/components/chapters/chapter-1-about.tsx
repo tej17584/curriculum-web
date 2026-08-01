@@ -1,6 +1,7 @@
 'use client';
 
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import {
@@ -62,7 +63,7 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
               rel='noopener noreferrer'
               className='flex items-center gap-2'
             >
-              <Github className='h-4 w-4' />
+              <FaGithub className='h-4 w-4' />
               {dict.social.github}
             </Link>
           </Button>
@@ -78,7 +79,7 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
               rel='noopener noreferrer'
               className='flex items-center gap-2'
             >
-              <Linkedin className='h-4 w-4' />
+              <FaLinkedin className='h-4 w-4' />
               {dict.social.linkedin}
             </Link>
           </Button>
@@ -107,7 +108,7 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
           className='mt-16 flex justify-center'
         >
           <div className='relative w-full max-w-md lg:max-w-[740px]'>
-            <div className='absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent dark:from-primary/10' />
+            <div className='from-primary/5 dark:from-primary/10 absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] via-transparent to-transparent' />
             <img
               src='/Chapter1.png'
               alt='Stack of books illustration'

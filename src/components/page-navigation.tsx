@@ -28,9 +28,7 @@ export function PageNavigation({
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('theme') as
-        | 'light'
-        | 'dark'
-        | null;
+        'light' | 'dark' | null;
       const prefersDark = window.matchMedia(
         '(prefers-color-scheme: dark)'
       ).matches;
