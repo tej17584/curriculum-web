@@ -1,11 +1,10 @@
 'use client';
 
 import { ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { TiltCard } from '@/components/amicro/tilt-card';
 import { Card } from '@/components/ui/card';
 import { TechBadge } from '@/components/tech-badge';
-import { containerVariants, itemVariants } from '@/lib/motion-variants';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
 import { PopAuctionIcon } from '@/components/icons/icons';
@@ -17,50 +16,39 @@ interface Chapter3ProjectsProps {
 export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
   return (
     <section className='mb-12'>
-      <motion.h2
-        variants={itemVariants}
-        initial='hidden'
-        animate='visible'
-        className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-wide'
-      >
+      <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-tight'>
         {dict.chapters.projects}
-      </motion.h2>
-      <motion.div
-        variants={containerVariants}
-        initial='hidden'
-        animate='visible'
-        className='grid gap-6 md:grid-cols-2'
-      >
+      </h2>
+      <div className='grid gap-x-10 gap-y-12 md:grid-cols-2'>
         {dict.projects.items.map((project, index) => (
-          <motion.div
-            key={index}
-            variants={itemVariants}
-          >
+          <div key={index}>
             <TiltCard
               className='h-full'
               cardClassName='h-full'
             >
-              <Card className='motion-surface bg-card h-full overflow-hidden shadow-sm hover:shadow-lg dark:shadow-md dark:shadow-black/20'>
-                <div className='bg-muted aspect-video w-full overflow-hidden'>
+              <Card className='h-full overflow-hidden rounded-none border-x-0 border-t-2 border-b-0 bg-transparent shadow-none'>
+                <div className='bg-muted border-border relative aspect-video w-full overflow-hidden border-b'>
                   {project.SVGIcon ? (
                     <div className='from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br p-8'>
                       <PopAuctionIcon className='h-12 w-auto' />
                     </div>
                   ) : (
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.imageAlt}
-                      className='motion-transform h-full w-full object-contain hover:scale-105'
+                      fill
+                      sizes='(min-width: 768px) 50vw, 100vw'
+                      className='object-contain'
                     />
                   )}
                 </div>
-                <div className='p-6'>
+                <div className='pt-6'>
                   <h3 className='text-foreground mb-2 font-serif text-2xl font-semibold'>
                     <Link
                       href={project.url}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='motion-colors hover:text-primary inline-flex items-center gap-2'
+                      className='motion-colors hover:text-primary focus-visible:outline-ring inline-flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-offset-4'
                     >
                       {project.title}
                       <ExternalLink className='h-4 w-4' />
@@ -80,9 +68,9 @@ export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
                 </div>
               </Card>
             </TiltCard>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

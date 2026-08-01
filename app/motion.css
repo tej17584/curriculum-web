@@ -1,52 +1,21 @@
-:root {
-  --duration-stagger: 40ms;
-  --duration-micro: 80ms;
-  --duration-quick: 150ms;
-  --duration-fast: 250ms;
-  --duration-medium: 350ms;
-  --duration-slow: 400ms;
-  --duration-very-slow: 500ms;
-  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out: ease-in-out;
-  --ease-out: ease-out;
-  --ease-linear: linear;
-  --distance-micro: 4px;
-  --distance-small: 6px;
-  --distance-base: 8px;
-  --distance-medium: 12px;
-  --distance-large: 30px;
-  --scale-large: 0.96;
-  --scale-medium: 0.97;
-  --scale-small: 0.98;
-  --scale-tiny: 0.99;
-  --blur-small: 2px;
-  --blur-medium: 3px;
-  --blur-large: 8px;
-
-  --icon-swap-dur: var(--duration-fast);
-  --icon-swap-blur: var(--blur-small);
-  --icon-swap-start-scale: 0.25;
-  --icon-swap-ease: var(--ease-in-out);
-}
-
 .motion-surface {
   transition-property:
     color, background-color, border-color, box-shadow, transform, opacity,
     filter;
-  transition-duration: var(--duration-fast);
-  transition-timing-function: var(--ease-smooth-out);
+  transition-duration: var(--dur-base);
+  transition-timing-function: var(--ease-editorial);
 }
 
 .motion-colors {
   transition-property: color, background-color, border-color;
-  transition-duration: var(--duration-fast);
-  transition-timing-function: var(--ease-smooth-out);
+  transition-duration: var(--dur-base);
+  transition-timing-function: var(--ease-editorial);
 }
 
 .motion-transform {
   transition-property: transform;
-  transition-duration: var(--duration-fast);
-  transition-timing-function: var(--ease-smooth-out);
+  transition-duration: var(--dur-base);
+  transition-timing-function: var(--ease-editorial);
 }
 
 .t-icon-swap {
@@ -57,9 +26,9 @@
 .t-icon-swap .t-icon {
   grid-area: 1 / 1;
   transition:
-    opacity var(--icon-swap-dur) var(--icon-swap-ease),
-    filter var(--icon-swap-dur) var(--icon-swap-ease),
-    transform var(--icon-swap-dur) var(--icon-swap-ease);
+    opacity var(--dur-base) var(--ease-standard),
+    filter var(--dur-base) var(--ease-standard),
+    transform var(--dur-base) var(--ease-standard);
   will-change: opacity, filter, transform;
 }
 
@@ -73,8 +42,8 @@
 .t-icon-swap[data-state='a'] .t-icon[data-icon='b'],
 .t-icon-swap[data-state='b'] .t-icon[data-icon='a'] {
   opacity: 0;
-  filter: blur(var(--icon-swap-blur));
-  transform: scale(var(--icon-swap-start-scale));
+  filter: blur(var(--motion-blur-small));
+  transform: scale(var(--motion-scale-tiny));
 }
 
 @media (prefers-reduced-motion: reduce) {

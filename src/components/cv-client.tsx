@@ -1,10 +1,15 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { AnimatePresence, MotionConfig, motion } from 'framer-motion';
+import {
+  AnimatePresence,
+  MotionConfig,
+  motion,
+  useReducedMotion,
+} from 'framer-motion';
 import { BookLoader } from '@/components/book-loader';
 import { PageNavigation } from '@/components/page-navigation';
-import { pageVariants } from '@/lib/motion-variants';
+import { pageMotionTokens } from '@/lib/motion-tokens';
 import type { Lang } from '@/types';
 import type { Dictionary } from '@/hooks/getDictionary';
 
@@ -15,6 +20,31 @@ interface CVClientWrapperProps {
   ofText: string;
   dict: Dictionary;
 }
+
+const pageVariants = {
+  enter: (forward: boolean) => ({
+    x: forward ? pageMotionTokens.offset : -pageMotionTokens.offset,
+    opacity: 0,
+    filter: `blur(${pageMotionTokens.blur})`,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    filter: 'blur(0px)',
+    transition: {
+      duration: pageMotionTokens.duration,
+      ease: pageMotionTokens.ease,
+    },
+  },
+  exit: (forward: boolean) => ({
+    x: forward ? -pageMotionTokens.offset : pageMotionTokens.offset,
+    opacity: 0,
+    transition: {
+      duration: pageMotionTokens.duration,
+      ease: pageMotionTokens.ease,
+    },
+  }),
+};
 
 export default function CVClientWrapper({
   children,
@@ -27,15 +57,17 @@ export default function CVClientWrapper({
   const [currentPage, setCurrentPage] = useState(1);
   const [isForward, setIsForward] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
   const totalPages = 5;
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const behavior = reduceMotion ? 'auto' : 'smooth';
+    window.scrollTo({ top: 0, behavior });
 
     if (containerRef.current) {
-      containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      containerRef.current.scrollTo({ top: 0, behavior });
     }
-  }, [currentPage]);
+  }, [currentPage, reduceMotion]);
 
   const handlePageChange = (newPage: number) => {
     setIsForward(newPage > currentPage);
@@ -53,7 +85,10 @@ export default function CVClientWrapper({
             initial={{ opacity: 1 }}
             exit={{
               opacity: 0,
-              transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] },
+              transition: {
+                duration: pageMotionTokens.duration,
+                ease: pageMotionTokens.ease,
+              },
             }}
             className='fixed inset-0 z-50'
           >
@@ -66,10 +101,10 @@ export default function CVClientWrapper({
       </AnimatePresence>
 
       {!showLoader && (
-        <div className='bg-background from-background via-background to-muted/20 overflow-x-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]'>
+        <div className='bg-background overflow-x-hidden'>
           <div
             ref={containerRef}
-            className='hide-scrollbar relative mx-auto max-w-4xl overflow-x-hidden overflow-y-auto px-4 py-8 pb-[140px] sm:px-6 sm:py-12 sm:pb-[180px] lg:px-8 lg:pb-32'
+            className='hide-scrollbar relative mx-auto max-w-5xl overflow-x-hidden overflow-y-auto px-5 py-10 pb-[140px] sm:px-8 sm:py-14 sm:pb-[180px] lg:px-12 lg:pb-32'
           >
             <AnimatePresence
               mode='wait'

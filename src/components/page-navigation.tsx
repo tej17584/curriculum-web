@@ -55,7 +55,10 @@ export function PageNavigation({
   };
 
   return (
-    <div className='border-border bg-card/95 fixed bottom-20 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full border-2 px-3 py-2 shadow-xl backdrop-blur-md sm:bottom-28 sm:gap-3 sm:px-6 sm:py-3'>
+    <nav
+      aria-label='Chapter navigation'
+      className='border-border bg-background fixed bottom-20 left-1/2 z-40 flex -translate-x-1/2 items-center gap-1 border px-2 py-2 shadow-lg sm:bottom-28 sm:gap-2 sm:px-4'
+    >
       <Button
         variant='ghost'
         size='icon'
@@ -66,7 +69,7 @@ export function PageNavigation({
         <ChevronLeft className='h-4 w-4 sm:h-4 sm:w-4' />
       </Button>
 
-      <span className='text-foreground font-serif text-sm whitespace-nowrap sm:text-base'>
+      <span className='text-foreground min-w-22 text-center font-mono text-[0.65rem] tracking-[0.1em] whitespace-nowrap uppercase sm:min-w-28 sm:text-xs'>
         {pageText} {currentPage} {ofText} {totalPages}
       </span>
 
@@ -80,13 +83,13 @@ export function PageNavigation({
         <ChevronRight className='h-4 w-4 sm:h-4 sm:w-4' />
       </Button>
 
-      <div className='bg-border h-5 w-px sm:h-6' />
+      <div className='bg-border mx-1 h-5 w-px sm:h-6' />
 
       <Button
         variant='ghost'
         size='icon'
         onClick={toggleTheme}
-        className='motion-surface h-9 w-9 hover:scale-110 sm:h-9 sm:w-9'
+        className='motion-surface hover:bg-muted h-9 w-9 sm:h-9 sm:w-9'
         aria-label='Toggle theme'
       >
         <span
@@ -109,11 +112,11 @@ export function PageNavigation({
         variant='ghost'
         size='icon'
         onClick={toggleLanguage}
-        className='motion-surface h-9 w-9 hover:scale-110 sm:h-9 sm:w-9'
+        className='motion-surface hover:bg-muted h-9 w-9 sm:h-9 sm:w-9'
         aria-label='Toggle language'
       >
         <Languages className='text-primary h-4 w-4 sm:h-4 sm:w-4' />
       </Button>
-    </div>
+    </nav>
   );
 }

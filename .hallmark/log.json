@@ -1,0 +1,13 @@
+[
+  {
+    "date": "2026-08-01",
+    "macrostructure": "Long Document",
+    "theme": "custom archival",
+    "tone": "curious",
+    "decisions": [
+      "Reframed the resume as a sequential editorial document with rules instead of side stripes and repeated cards.",
+      "Kept the existing illustrations as figures and reduced motion to navigation, loader, and direct interactive affordances.",
+      "Centralized visual and motion values in semantic CSS tokens."
+    ]
+  }
+]

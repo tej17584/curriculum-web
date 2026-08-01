@@ -126,7 +126,7 @@
         "SVGIcon": false,
         "url": "https://www.xoom.com",
         "description": "Rediseño global de Xoom.com, la plataforma de remesas de PayPal. Contribuí a la modernización del header, footer y estructura principal del sitio utilizando React, Next.js y Tailwind. La actualización mejoró la accesibilidad, el rendimiento y la coherencia visual para millones de usuarios en todo el mundo.",
-        "image": "xpp-logo.svg",
+        "image": "/xpp-logo.svg",
         "imageAlt": "Rediseño del sitio web Xoom.com",
         "tags": ["React", "Next.js", "Tailwind", "Typescript", "Accesibilidad"]
       },
