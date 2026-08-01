@@ -61,8 +61,8 @@ export function Footer({ dict }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='bg-background/95 border-border fixed right-0 bottom-0 left-0 z-30 border-t backdrop-blur-md'>
-      <div className='mx-auto max-w-7xl px-4 py-4 sm:px-6 sm:py-6 lg:px-8'>
+    <footer className='bg-background border-border fixed right-0 bottom-0 left-0 z-30 border-t'>
+      <div className='mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 lg:px-8'>
         {/* Mobile layout - stacked vertically */}
         <div className='flex flex-col gap-3 md:hidden'>
           {/* Social Links */}
@@ -71,7 +71,7 @@ export function Footer({ dict }: FooterProps) {
               <Link
                 key={item.name}
                 href={item.href}
-                className='text-muted-foreground hover:text-foreground transition-colors'
+                className='motion-colors text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4'
               >
                 <span className='sr-only'>{item.name}</span>
                 <item.icon
@@ -82,14 +82,14 @@ export function Footer({ dict }: FooterProps) {
             ))}
           </div>
           {/* Copyright */}
-          <p className='text-muted-foreground text-center text-xs'>
+          <p className='text-muted-foreground text-center font-mono text-[0.65rem] tracking-wide uppercase'>
             &copy; {currentYear} {dict.footer.copyright}
           </p>
         </div>
 
         {/* Desktop layout - horizontal */}
         <div className='hidden md:flex md:items-center md:justify-between'>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-muted-foreground font-mono text-[0.65rem] tracking-wide uppercase'>
             &copy; {currentYear} {dict.footer.copyright}
           </p>
           <div className='flex justify-center gap-x-6'>
@@ -98,7 +98,7 @@ export function Footer({ dict }: FooterProps) {
                 key={item.name}
                 href={item.href}
                 target='_blank'
-                className='text-muted-foreground hover:text-foreground transition-colors'
+                className='motion-colors text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4'
               >
                 <span className='sr-only'>{item.name}</span>
                 <item.icon

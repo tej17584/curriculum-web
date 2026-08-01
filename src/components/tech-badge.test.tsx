@@ -2,47 +2,31 @@ import { render, screen } from '@testing-library/react';
 import { TechBadge } from './tech-badge';
 
 describe('TechBadge', () => {
-  it('renders badge with technology name', () => {
+  it('renders the technology name as a text chip', () => {
     render(<TechBadge name='React' />);
+
     expect(screen.getByText('React')).toBeInTheDocument();
   });
 
-  it('renders correct icon for known technology', () => {
-    render(<TechBadge name='React' />);
-    expect(screen.getByText('⚛️')).toBeInTheDocument();
-  });
-
-  it('renders default icon for unknown technology', () => {
+  it('renders unknown technologies without a fallback icon', () => {
     render(<TechBadge name='UnknownTech' />);
-    expect(screen.getByText('•')).toBeInTheDocument();
+
     expect(screen.getByText('UnknownTech')).toBeInTheDocument();
+    expect(screen.queryByText('•')).not.toBeInTheDocument();
   });
 
-  it('applies default variant when not specified', () => {
+  it('uses the quiet outlined treatment by default', () => {
     const { container } = render(<TechBadge name='TypeScript' />);
-    const badge = container.querySelector('.border-primary\\/40');
-    expect(badge).toBeInTheDocument();
+    const badge = container.querySelector('[data-slot="badge"]');
+
+    expect(badge).toHaveClass('border-border', 'rounded-none', 'font-mono');
   });
 
-  it('renders all technology icons correctly', () => {
-    const technologies = [
-      { name: 'Next.js', icon: '⚡' },
-      { name: 'TypeScript', icon: '🔷' },
-      { name: 'Python', icon: '🐍' },
-      { name: 'Docker', icon: '🐳' },
-    ];
-
-    technologies.forEach(({ name, icon }) => {
-      const { unmount } = render(<TechBadge name={name} />);
-      expect(screen.getByText(name)).toBeInTheDocument();
-      expect(screen.getByText(icon)).toBeInTheDocument();
-      unmount();
-    });
-  });
-
-  it('applies hover styles through className', () => {
+  it('uses a colour-only hover affordance', () => {
     const { container } = render(<TechBadge name='JavaScript' />);
-    const badge = container.querySelector('.hover\\:scale-110');
-    expect(badge).toBeInTheDocument();
+    const badge = container.querySelector('[data-slot="badge"]');
+
+    expect(badge).toHaveClass('hover:border-primary/60');
+    expect(badge).not.toHaveClass('hover:scale-110');
   });
 });

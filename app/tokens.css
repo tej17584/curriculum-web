@@ -1,0 +1,96 @@
+/* Hallmark · macrostructure: Long Document · theme: custom archival · tone: curious · anchor hue: terracotta */
+/* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4 */
+:root {
+  --color-paper: oklch(0.958 0.014 68);
+  --color-paper-raised: oklch(0.985 0.009 72);
+  --color-paper-muted: oklch(0.912 0.021 67);
+  --color-ink: oklch(0.255 0.028 48);
+  --color-ink-muted: oklch(0.475 0.027 50);
+  --color-rule: oklch(0.79 0.032 58);
+  --color-accent: oklch(0.5 0.115 38);
+  --color-accent-ink: oklch(0.985 0.009 72);
+  --color-danger: oklch(0.55 0.2 26);
+  --color-focus: oklch(0.57 0.12 40);
+  --radius-control: 0.18rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --dur-micro: 100ms;
+  --dur-stagger: 40ms;
+  --dur-fast: 180ms;
+  --dur-base: 280ms;
+  --dur-slow: 500ms;
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-standard: ease-in-out;
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-linear: linear;
+  --motion-distance-micro: 4px;
+  --motion-distance-small: 6px;
+  --motion-distance-base: 8px;
+  --motion-distance-medium: 12px;
+  --motion-distance-large: 30px;
+  --motion-scale-large: 0.96;
+  --motion-scale-medium: 0.97;
+  --motion-scale-small: 0.98;
+  --motion-scale-tiny: 0.99;
+  --motion-blur-small: 2px;
+  --motion-blur-medium: 3px;
+  --motion-blur-large: 8px;
+  --book-cover: linear-gradient(
+    150deg,
+    oklch(0.36 0.06 52),
+    oklch(0.27 0.045 48)
+  );
+  --book-cover-back: linear-gradient(
+    145deg,
+    oklch(0.29 0.04 48),
+    oklch(0.22 0.03 44)
+  );
+  --book-spine: linear-gradient(
+    90deg,
+    oklch(0.37 0.055 52),
+    oklch(0.45 0.07 54),
+    oklch(0.35 0.05 50)
+  );
+  --book-edge: oklch(0.88 0.024 73);
+  --book-gilding: oklch(0.74 0.09 70);
+  --book-gilding-muted: oklch(0.63 0.07 67);
+  --book-shadow: oklch(0.16 0.015 45 / 0.3);
+}
+
+.dark {
+  --color-paper: oklch(0.155 0.012 46);
+  --color-paper-raised: oklch(0.19 0.014 48);
+  --color-paper-muted: oklch(0.27 0.018 49);
+  --color-ink: oklch(0.88 0.024 72);
+  --color-ink-muted: oklch(0.75 0.03 67);
+  --color-rule: oklch(0.32 0.025 51);
+  --color-accent: oklch(0.72 0.085 62);
+  --color-accent-ink: oklch(0.17 0.012 46);
+  --color-danger: oklch(0.64 0.17 28);
+  --color-focus: oklch(0.74 0.09 62);
+  --book-cover: linear-gradient(
+    150deg,
+    oklch(0.31 0.045 50),
+    oklch(0.23 0.03 47)
+  );
+  --book-cover-back: linear-gradient(
+    145deg,
+    oklch(0.22 0.028 46),
+    oklch(0.17 0.02 44)
+  );
+  --book-spine: linear-gradient(
+    90deg,
+    oklch(0.33 0.045 51),
+    oklch(0.42 0.06 55),
+    oklch(0.31 0.04 49)
+  );
+  --book-edge: oklch(0.68 0.03 67);
+  --book-gilding: oklch(0.77 0.08 70);
+  --book-gilding-muted: oklch(0.64 0.06 67);
+  --book-shadow: oklch(0.05 0.005 40 / 0.6);
+}

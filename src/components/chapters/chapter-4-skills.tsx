@@ -1,14 +1,9 @@
 'use client';
 
 import { Code2, BookOpen, Wrench, Globe, Award } from 'lucide-react';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import {
-  containerVariants,
-  itemVariants,
-  illustrationVariants,
-} from '@/lib/motion-variants';
 import type { Dictionary } from '@/hooks/getDictionary';
 
 interface Chapter4SkillsProps {
@@ -19,22 +14,12 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
   return (
     <>
       <section className='mb-16'>
-        <motion.h2
-          variants={itemVariants}
-          initial='hidden'
-          animate='visible'
-          className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-wide'
-        >
+        <h2 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-tight'>
           {dict.chapters.skills}
-        </motion.h2>
-        <motion.div
-          variants={containerVariants}
-          initial='hidden'
-          animate='visible'
-          className='space-y-8'
-        >
-          <motion.div variants={itemVariants}>
-            <Card className='border-primary/15 bg-card border p-6 shadow-sm transition-all hover:shadow-md dark:shadow-md dark:shadow-black/20'>
+        </h2>
+        <div className='divide-border space-y-0 divide-y'>
+          <div>
+            <Card className='rounded-none border-0 bg-transparent px-0 py-7 shadow-none'>
               <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
                 <Code2 className='text-primary h-6 w-6' />
                 {dict.skills.programmingLanguages}
@@ -43,17 +28,17 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
                 {dict.skills.programmingList.map((skill, index) => (
                   <Badge
                     key={index}
-                    className='border-primary/20 bg-primary/8 text-primary hover:bg-primary/15 border px-4 py-2 text-base font-medium transition-all'
+                    className='motion-colors border-border text-primary hover:border-primary/60 rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs'
                   >
                     {skill}
                   </Badge>
                 ))}
               </div>
             </Card>
-          </motion.div>
+          </div>
 
-          <motion.div variants={itemVariants}>
-            <Card className='border-primary/15 bg-card border p-6 shadow-sm transition-all hover:shadow-md dark:shadow-md dark:shadow-black/20'>
+          <div>
+            <Card className='rounded-none border-0 bg-transparent px-0 py-7 shadow-none'>
               <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
                 <BookOpen className='text-primary h-6 w-6' />
                 {dict.skills.frameworks}
@@ -62,17 +47,17 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
                 {dict.skills.frameworksList.map((framework, index) => (
                   <Badge
                     key={index}
-                    className='border-primary/20 bg-primary/8 text-primary hover:bg-primary/15 border px-4 py-2 text-base font-medium transition-all'
+                    className='motion-colors border-border text-primary hover:border-primary/60 rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs'
                   >
                     {framework}
                   </Badge>
                 ))}
               </div>
             </Card>
-          </motion.div>
+          </div>
 
-          <motion.div variants={itemVariants}>
-            <Card className='border-primary/15 bg-card border p-6 shadow-sm transition-all hover:shadow-md dark:shadow-md dark:shadow-black/20'>
+          <div>
+            <Card className='rounded-none border-0 bg-transparent px-0 py-7 shadow-none'>
               <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
                 <Wrench className='text-primary h-6 w-6' />
                 {dict.skills.tools}
@@ -81,73 +66,55 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
                 {dict.skills.toolsList.map((tool, index) => (
                   <Badge
                     key={index}
-                    className='border-primary/20 bg-primary/8 text-primary hover:bg-primary/15 border px-4 py-2 text-base font-medium transition-all'
+                    className='motion-colors border-border text-primary hover:border-primary/60 rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs'
                   >
                     {tool}
                   </Badge>
                 ))}
               </div>
             </Card>
-          </motion.div>
+          </div>
 
-          <motion.div variants={itemVariants}>
-            <Card className='border-primary/15 bg-card border p-6 shadow-sm transition-all hover:shadow-md dark:shadow-md dark:shadow-black/20'>
+          <div>
+            <Card className='rounded-none border-0 bg-transparent px-0 py-7 shadow-none'>
               <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
                 <Globe className='text-primary h-6 w-6' />
                 {dict.skills.spokenLanguages}
               </h3>
               <div className='flex flex-wrap gap-3'>
-                <Badge className='border-primary/20 bg-primary/8 text-primary hover:bg-primary/15 border px-4 py-2 text-base font-medium transition-all'>
+                <Badge className='motion-colors border-border text-primary hover:border-primary/60 rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs'>
                   {dict.languages.spanish} — {dict.languages.native}
                 </Badge>
-                <Badge className='border-primary/20 bg-primary/8 text-primary hover:bg-primary/15 border px-4 py-2 text-base font-medium transition-all'>
+                <Badge className='motion-colors border-border text-primary hover:border-primary/60 rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs'>
                   {dict.languages.english} — {dict.languages.advanced}
                 </Badge>
               </div>
             </Card>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        <motion.div
-          variants={illustrationVariants}
-          initial='hidden'
-          animate='visible'
-          className='mt-16 flex justify-center'
-        >
-          <div className='relative w-full max-w-sm lg:max-w-[640px]'>
-            <div className='from-primary/5 dark:from-primary/10 absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] via-transparent to-transparent' />
-            <img
+        <div className='mt-16 flex justify-center'>
+          <figure className='border-border w-full max-w-sm border-y py-6 lg:max-w-[640px]'>
+            <Image
               src='/Chapter4.png'
               alt='Open books and study materials'
-              className='relative w-full opacity-90 grayscale transition-all hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
+              width={1024}
+              height={1024}
+              className='w-full opacity-90 grayscale dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
             />
-          </div>
-        </motion.div>
+          </figure>
+        </div>
       </section>
 
-      <motion.section
-        variants={containerVariants}
-        initial='hidden'
-        animate='visible'
-      >
-        <motion.h3
-          variants={itemVariants}
-          className='text-foreground mb-6 flex items-center gap-2 font-serif text-2xl font-semibold'
-        >
+      <section>
+        <h3 className='text-foreground mb-6 flex items-center gap-2 font-serif text-2xl font-semibold'>
           <Award className='text-primary h-6 w-6' />
           {dict.skills.certifications}
-        </motion.h3>
+        </h3>
         <div className='space-y-4'>
           {dict.certifications.map((cert, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-            >
-              <Card
-                className={`bg-card border-l-4 p-6 shadow-sm transition-all hover:shadow-md dark:shadow-md dark:shadow-black/20 ${
-                  index === 0 ? 'border-l-primary/70' : 'border-l-muted/50'
-                }`}
-              >
+            <div key={index}>
+              <Card className='border-border rounded-none border-x-0 border-t-2 border-b-0 bg-transparent p-0 pt-6 shadow-none'>
                 <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
                   <div>
                     <h4 className='text-foreground font-serif text-xl font-semibold'>
@@ -157,15 +124,15 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
                       {cert.provider}
                     </p>
                   </div>
-                  <span className='text-muted-foreground font-serif text-base italic'>
+                  <span className='text-muted-foreground font-mono text-xs tracking-[0.12em] uppercase'>
                     {cert.date}
                   </span>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
     </>
   );
 }

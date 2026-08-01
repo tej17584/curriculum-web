@@ -1,14 +1,9 @@
 'use client';
 
-import { Mail } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { Code2, Globe, Mail } from 'lucide-react';
+import Image from 'next/image';
+import { MagneticButton } from '@/components/amicro/magnetic-button';
 import { Button } from '@/components/ui/button';
-import {
-  containerVariants,
-  itemVariants,
-  illustrationVariants,
-} from '@/lib/motion-variants';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
 
@@ -18,79 +13,75 @@ interface Chapter1AboutProps {
 
 export function Chapter1About({ dict }: Chapter1AboutProps) {
   return (
-    <motion.div
-      variants={containerVariants}
-      initial='hidden'
-      animate='visible'
-    >
-      <motion.header
-        variants={itemVariants}
-        className='border-primary/20 mb-8 border-b-2 pb-8'
-      >
+    <div>
+      <header className='border-border mb-10 border-b pb-10'>
         <h1 className='text-foreground mb-3 font-serif text-5xl font-bold tracking-tight lg:text-6xl'>
           {dict.profile.name}
         </h1>
-        <p className='text-primary mb-4 font-serif text-xl italic lg:text-2xl'>
+        <p className='text-primary mb-5 font-mono text-xs font-medium tracking-[0.16em] uppercase lg:text-sm'>
           {dict.profile.title}
         </p>
         <p className='text-muted-foreground mb-6 max-w-2xl font-serif text-lg leading-relaxed'>
           {dict.profile.bio}
         </p>
         <div className='flex flex-wrap gap-3'>
-          <Button
-            variant='outline'
-            size='sm'
-            asChild
-            className='border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent transition-all hover:shadow-md'
-          >
-            <Link
-              href='mailto:alejandro.tejada.ui@gmail.com'
-              className='flex items-center gap-2'
+          <MagneticButton>
+            <Button
+              variant='outline'
+              size='sm'
+              asChild
+              className='motion-surface border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-none border bg-transparent'
             >
-              <Mail className='h-4 w-4' />
-              {dict.common.email}
-            </Link>
-          </Button>
-          <Button
-            variant='outline'
-            size='sm'
-            asChild
-            className='border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent transition-all hover:shadow-md'
-          >
-            <Link
-              href='https://github.com/tej17584'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='flex items-center gap-2'
+              <Link
+                href='mailto:alejandro.tejada.ui@gmail.com'
+                className='flex items-center gap-2'
+              >
+                <Mail className='h-4 w-4' />
+                {dict.common.email}
+              </Link>
+            </Button>
+          </MagneticButton>
+          <MagneticButton>
+            <Button
+              variant='outline'
+              size='sm'
+              asChild
+              className='motion-surface border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-none border bg-transparent'
             >
-              <FaGithub className='h-4 w-4' />
-              {dict.social.github}
-            </Link>
-          </Button>
-          <Button
-            variant='outline'
-            size='sm'
-            asChild
-            className='border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent transition-all hover:shadow-md'
-          >
-            <Link
-              href='https://linkedin.com/in/alejandrotejada17584'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='flex items-center gap-2'
+              <Link
+                href='https://github.com/tej17584'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center gap-2'
+              >
+                <Code2 className='h-4 w-4' />
+                {dict.social.github}
+              </Link>
+            </Button>
+          </MagneticButton>
+          <MagneticButton>
+            <Button
+              variant='outline'
+              size='sm'
+              asChild
+              className='motion-surface border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-none border bg-transparent'
             >
-              <FaLinkedin className='h-4 w-4' />
-              {dict.social.linkedin}
-            </Link>
-          </Button>
+              <Link
+                href='https://linkedin.com/in/alejandrotejada17584'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center gap-2'
+              >
+                <Globe className='h-4 w-4' />
+                {dict.social.linkedin}
+              </Link>
+            </Button>
+          </MagneticButton>
         </div>
-      </motion.header>
+      </header>
 
-      <motion.section
-        variants={itemVariants}
-        className='mb-16'
-      >
-        <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-wide'>
+      <section className='mb-16'>
+        <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-tight'>
           {dict.chapters.about}
         </h2>
         <div className='text-foreground space-y-4 font-serif text-lg leading-relaxed lg:space-y-6 lg:text-xl'>
@@ -101,22 +92,18 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
           <p>{dict.about.text3}</p>
         </div>
 
-        <motion.div
-          variants={illustrationVariants}
-          initial='hidden'
-          animate='visible'
-          className='mt-16 flex justify-center'
-        >
-          <div className='relative w-full max-w-md lg:max-w-[740px]'>
-            <div className='from-primary/5 dark:from-primary/10 absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] via-transparent to-transparent' />
-            <img
+        <div className='mt-16 flex justify-center'>
+          <figure className='border-border w-full max-w-md border-y py-6 lg:max-w-[740px]'>
+            <Image
               src='/Chapter1.png'
               alt='Stack of books illustration'
-              className='relative w-full opacity-90 grayscale transition-all hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
+              width={1024}
+              height={1024}
+              className='w-full opacity-90 grayscale dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
             />
-          </div>
-        </motion.div>
-      </motion.section>
-    </motion.div>
+          </figure>
+        </div>
+      </section>
+    </div>
   );
 }

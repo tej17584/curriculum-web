@@ -1,14 +1,9 @@
 'use client';
 
 import { ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import {
-  containerVariants,
-  itemVariants,
-  illustrationVariants,
-} from '@/lib/motion-variants';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
 
@@ -19,30 +14,13 @@ interface Chapter2ExperienceProps {
 export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
   return (
     <section className='mb-12'>
-      <motion.h2
-        variants={itemVariants}
-        initial='hidden'
-        animate='visible'
-        className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-wide'
-      >
+      <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-tight'>
         {dict.chapters.experience}
-      </motion.h2>
-      <motion.div
-        variants={containerVariants}
-        initial='hidden'
-        animate='visible'
-        className='space-y-10'
-      >
+      </h2>
+      <div className='space-y-10'>
         {dict.experience.jobs.map((job, index) => (
-          <motion.div
-            key={index}
-            variants={itemVariants}
-          >
-            <Card
-              className={`bg-card border-l-4 p-8 shadow-sm transition-all hover:shadow-lg dark:shadow-md dark:shadow-black/20 ${
-                index === 0 ? 'border-l-primary/70' : 'border-l-muted/50'
-              }`}
-            >
+          <div key={index}>
+            <Card className='border-border rounded-none border-x-0 border-t-2 border-b-0 bg-transparent p-0 pt-7 shadow-none'>
               <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
                 <div>
                   <h3 className='text-foreground font-serif text-2xl font-semibold'>
@@ -51,13 +29,13 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
                   <Link
                     href={job.companyUrl}
                     target='_blank'
-                    className='text-primary inline-flex items-center gap-1 font-serif text-lg hover:underline'
+                    className='text-primary focus-visible:outline-ring inline-flex items-center gap-1 font-serif text-lg hover:underline focus-visible:outline-2 focus-visible:outline-offset-4'
                   >
                     {job.company}
                     <ExternalLink className='h-4 w-4' />
                   </Link>
                 </div>
-                <span className='text-muted-foreground font-serif text-base italic'>
+                <span className='text-muted-foreground font-mono text-xs tracking-[0.12em] uppercase'>
                   {job.period}
                   {index === 0 && ` — ${dict.common.present}`}
                 </span>
@@ -73,32 +51,28 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
                   <Badge
                     key={tagIndex}
                     variant='secondary'
-                    className='bg-primary/10 text-primary px-3 py-1 text-sm'
+                    className='border-primary/30 text-primary rounded-none border bg-transparent px-3 py-1 font-mono text-xs'
                   >
                     {tag}
                   </Badge>
                 ))}
               </div>
             </Card>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
 
-      <motion.div
-        variants={illustrationVariants}
-        initial='hidden'
-        animate='visible'
-        className='mt-16 flex justify-center'
-      >
-        <div className='relative w-full max-w-md lg:max-w-[720px]'>
-          <div className='from-primary/5 dark:from-primary/10 absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] via-transparent to-transparent' />
-          <img
+      <div className='mt-16 flex justify-center'>
+        <figure className='border-border w-full max-w-md border-y py-6 lg:max-w-[720px]'>
+          <Image
             src='/Chapter2.png'
             alt='Professional workspace with books and documents'
-            className='relative w-full opacity-90 grayscale transition-all hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
+            width={1024}
+            height={1024}
+            className='w-full opacity-90 grayscale dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
           />
-        </div>
-      </motion.div>
+        </figure>
+      </div>
     </section>
   );
 }

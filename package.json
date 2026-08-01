@@ -49,6 +49,7 @@
     "@radix-ui/react-tooltip": "1.2.16",
     "@react-three/drei": "10.7.7",
     "@react-three/fiber": "9.7.0",
+    "@subhanhq/amicro": "^1.0.1",
     "@vercel/analytics": "latest",
     "autoprefixer": "^10.5.4",
     "class-variance-authority": "^0.7.1",

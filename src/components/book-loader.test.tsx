@@ -46,7 +46,7 @@ describe('BookLoader', () => {
     expect(screen.getByText('Opening your story...')).toBeInTheDocument();
   });
 
-  it('calls onComplete after 3 seconds', () => {
+  it('calls onComplete after the loader interval', () => {
     const mockOnComplete = jest.fn();
     render(
       <BookLoader
@@ -57,7 +57,7 @@ describe('BookLoader', () => {
 
     expect(mockOnComplete).not.toHaveBeenCalled();
 
-    jest.advanceTimersByTime(3000);
+    jest.advanceTimersByTime(1900);
 
     expect(mockOnComplete).toHaveBeenCalledTimes(1);
   });
@@ -72,51 +72,12 @@ describe('BookLoader', () => {
     );
 
     unmount();
-    jest.advanceTimersByTime(3000);
+    jest.advanceTimersByTime(1900);
 
     expect(mockOnComplete).not.toHaveBeenCalled();
   });
 
-  it('renders 8 animated pages', () => {
-    const mockOnComplete = jest.fn();
-    const { container } = render(
-      <BookLoader
-        onComplete={mockOnComplete}
-        dict={mockDict}
-      />
-    );
-
-    const pages = container.querySelectorAll('.book-page');
-    expect(pages).toHaveLength(8);
-  });
-
-  it('renders book spine', () => {
-    const mockOnComplete = jest.fn();
-    const { container } = render(
-      <BookLoader
-        onComplete={mockOnComplete}
-        dict={mockDict}
-      />
-    );
-
-    const spine = container.querySelector('.book-spine');
-    expect(spine).toBeInTheDocument();
-  });
-
-  it('renders book covers', () => {
-    const mockOnComplete = jest.fn();
-    const { container } = render(
-      <BookLoader
-        onComplete={mockOnComplete}
-        dict={mockDict}
-      />
-    );
-
-    const covers = container.querySelectorAll('.book-cover');
-    expect(covers.length).toBeGreaterThan(0);
-  });
-
-  it('applies fixed positioning and z-index for overlay', () => {
+  it('applies fixed full-viewport positioning', () => {
     const mockOnComplete = jest.fn();
     const { container } = render(
       <BookLoader
@@ -126,7 +87,7 @@ describe('BookLoader', () => {
     );
 
     const overlay = container.firstChild as HTMLElement;
-    expect(overlay).toHaveClass('fixed', 'inset-0', 'z-50');
+    expect(overlay).toHaveClass('fixed', 'inset-0');
   });
 
   it('uses dictionary values for all text content', () => {
