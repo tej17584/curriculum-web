@@ -1,25 +1,25 @@
 import type { Variants } from 'framer-motion';
 
-const editorialEase = [0.25, 0.46, 0.45, 0.94] as const;
+const smoothOut = [0.22, 1, 0.36, 1] as const;
 
 // Stagger container for card lists
 export const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.05,
+      staggerChildren: 0.04,
     },
   },
 };
 
 // Individual card/item fade + lift
 export const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 12, filter: 'blur(3px)' },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: editorialEase },
+    filter: 'blur(0px)',
+    transition: { duration: 0.5, ease: smoothOut },
   },
 };
 
@@ -32,7 +32,7 @@ export const illustrationVariants: Variants = {
     transition: {
       duration: 0.8,
       delay: 0.4,
-      ease: editorialEase,
+      ease: smoothOut,
     },
   },
 };
@@ -40,17 +40,19 @@ export const illustrationVariants: Variants = {
 // Page transition variants (direction-aware)
 export const pageVariants: Variants = {
   enter: (forward: boolean) => ({
-    x: forward ? '5%' : '-5%',
+    x: forward ? 8 : -8,
     opacity: 0,
+    filter: 'blur(3px)',
   }),
   center: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.45, ease: editorialEase },
+    filter: 'blur(0px)',
+    transition: { duration: 0.25, ease: smoothOut },
   },
   exit: (forward: boolean) => ({
-    x: forward ? '-5%' : '5%',
+    x: forward ? -8 : 8,
     opacity: 0,
-    transition: { duration: 0.3, ease: [0.55, 0.055, 0.675, 0.19] },
+    transition: { duration: 0.25, ease: smoothOut },
   }),
 };

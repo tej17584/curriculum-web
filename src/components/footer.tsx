@@ -71,7 +71,7 @@ export function Footer({ dict }: FooterProps) {
               <Link
                 key={item.name}
                 href={item.href}
-                className='text-muted-foreground hover:text-foreground transition-colors'
+                className='motion-colors text-muted-foreground hover:text-foreground'
               >
                 <span className='sr-only'>{item.name}</span>
                 <item.icon
@@ -98,7 +98,7 @@ export function Footer({ dict }: FooterProps) {
                 key={item.name}
                 href={item.href}
                 target='_blank'
-                className='text-muted-foreground hover:text-foreground transition-colors'
+                className='motion-colors text-muted-foreground hover:text-foreground'
               >
                 <span className='sr-only'>{item.name}</span>
                 <item.icon

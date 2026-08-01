@@ -39,7 +39,7 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
             variants={itemVariants}
           >
             <Card
-              className={`bg-card border-l-4 p-8 shadow-sm transition-all hover:shadow-lg dark:shadow-md dark:shadow-black/20 ${
+              className={`motion-surface bg-card border-l-4 p-8 shadow-sm hover:shadow-lg dark:shadow-md dark:shadow-black/20 ${
                 index === 0 ? 'border-l-primary/70' : 'border-l-muted/50'
               }`}
             >
@@ -95,7 +95,7 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
           <img
             src='/Chapter2.png'
             alt='Professional workspace with books and documents'
-            className='relative w-full opacity-90 grayscale transition-all hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
+            className='motion-surface relative w-full opacity-90 grayscale hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
           />
         </div>
       </motion.div>

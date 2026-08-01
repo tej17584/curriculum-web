@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, MotionConfig, motion } from 'framer-motion';
 import { BookLoader } from '@/components/book-loader';
 import { PageNavigation } from '@/components/page-navigation';
 import { pageVariants } from '@/lib/motion-variants';
@@ -45,13 +45,16 @@ export default function CVClientWrapper({
   const pages = React.Children.toArray(children);
 
   return (
-    <>
+    <MotionConfig reducedMotion='user'>
       <AnimatePresence>
         {showLoader && (
           <motion.div
             key='loader'
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.5, ease: 'easeIn' } }}
+            exit={{
+              opacity: 0,
+              transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] },
+            }}
             className='fixed inset-0 z-50'
           >
             <BookLoader
@@ -96,6 +99,6 @@ export default function CVClientWrapper({
           />
         </div>
       )}
-    </>
+    </MotionConfig>
   );
 }

@@ -86,21 +86,30 @@ export function PageNavigation({
         variant='ghost'
         size='icon'
         onClick={toggleTheme}
-        className='h-9 w-9 transition-all hover:scale-110 sm:h-9 sm:w-9'
+        className='motion-surface h-9 w-9 hover:scale-110 sm:h-9 sm:w-9'
         aria-label='Toggle theme'
       >
-        {theme === 'light' ? (
-          <Moon className='text-primary h-4 w-4 sm:h-4 sm:w-4' />
-        ) : (
-          <Sun className='text-primary h-4 w-4 sm:h-4 sm:w-4' />
-        )}
+        <span
+          className='t-icon-swap'
+          data-state={theme === 'light' ? 'a' : 'b'}
+          aria-hidden='true'
+        >
+          <Moon
+            className='t-icon text-primary h-4 w-4 sm:h-4 sm:w-4'
+            data-icon='a'
+          />
+          <Sun
+            className='t-icon text-primary h-4 w-4 sm:h-4 sm:w-4'
+            data-icon='b'
+          />
+        </span>
       </Button>
 
       <Button
         variant='ghost'
         size='icon'
         onClick={toggleLanguage}
-        className='h-9 w-9 transition-all hover:scale-110 sm:h-9 sm:w-9'
+        className='motion-surface h-9 w-9 hover:scale-110 sm:h-9 sm:w-9'
         aria-label='Toggle language'
       >
         <Languages className='text-primary h-4 w-4 sm:h-4 sm:w-4' />

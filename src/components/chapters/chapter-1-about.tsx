@@ -3,6 +3,7 @@
 import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { MagneticButton } from '@/components/amicro/magnetic-button';
 import { Button } from '@/components/ui/button';
 import {
   containerVariants,
@@ -37,52 +38,58 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
           {dict.profile.bio}
         </p>
         <div className='flex flex-wrap gap-3'>
-          <Button
-            variant='outline'
-            size='sm'
-            asChild
-            className='border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent transition-all hover:shadow-md'
-          >
-            <Link
-              href='mailto:alejandro.tejada.ui@gmail.com'
-              className='flex items-center gap-2'
+          <MagneticButton>
+            <Button
+              variant='outline'
+              size='sm'
+              asChild
+              className='motion-surface border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent hover:shadow-md'
             >
-              <Mail className='h-4 w-4' />
-              {dict.common.email}
-            </Link>
-          </Button>
-          <Button
-            variant='outline'
-            size='sm'
-            asChild
-            className='border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent transition-all hover:shadow-md'
-          >
-            <Link
-              href='https://github.com/tej17584'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='flex items-center gap-2'
+              <Link
+                href='mailto:alejandro.tejada.ui@gmail.com'
+                className='flex items-center gap-2'
+              >
+                <Mail className='h-4 w-4' />
+                {dict.common.email}
+              </Link>
+            </Button>
+          </MagneticButton>
+          <MagneticButton>
+            <Button
+              variant='outline'
+              size='sm'
+              asChild
+              className='motion-surface border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent hover:shadow-md'
             >
-              <FaGithub className='h-4 w-4' />
-              {dict.social.github}
-            </Link>
-          </Button>
-          <Button
-            variant='outline'
-            size='sm'
-            asChild
-            className='border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent transition-all hover:shadow-md'
-          >
-            <Link
-              href='https://linkedin.com/in/alejandrotejada17584'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='flex items-center gap-2'
+              <Link
+                href='https://github.com/tej17584'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center gap-2'
+              >
+                <FaGithub className='h-4 w-4' />
+                {dict.social.github}
+              </Link>
+            </Button>
+          </MagneticButton>
+          <MagneticButton>
+            <Button
+              variant='outline'
+              size='sm'
+              asChild
+              className='motion-surface border-primary/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent hover:shadow-md'
             >
-              <FaLinkedin className='h-4 w-4' />
-              {dict.social.linkedin}
-            </Link>
-          </Button>
+              <Link
+                href='https://linkedin.com/in/alejandrotejada17584'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center gap-2'
+              >
+                <FaLinkedin className='h-4 w-4' />
+                {dict.social.linkedin}
+              </Link>
+            </Button>
+          </MagneticButton>
         </div>
       </motion.header>
 
@@ -112,7 +119,7 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
             <img
               src='/Chapter1.png'
               alt='Stack of books illustration'
-              className='relative w-full opacity-90 grayscale transition-all hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
+              className='motion-surface relative w-full opacity-90 grayscale hover:opacity-80 dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
             />
           </div>
         </motion.div>
