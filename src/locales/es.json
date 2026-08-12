@@ -164,6 +164,13 @@
       "universityUrl": "https://www.eude.es/",
       "period": "Dic 2024 — Nov 2025",
       "description": "Máster online con metodología basada en casos prácticos, enfocado en la toma de decisiones estratégicas, liderazgo y dirección integral de proyectos. Incluye módulos de finanzas, marketing, gestión del tiempo, recursos humanos y análisis de riesgos, culminando con un Proyecto Final de Máster (PFM)."
+    },
+    {
+      "degree": "Bachiller Industrial y Perito en Electrónica, Especialidad en Microprocesadores",
+      "university": "Instituto Tecnológico de Computación (ITC)",
+      "universityUrl": "",
+      "period": "2014 — 2016",
+      "description": "Formación diversificada con enfoque técnico en electrónica, fundamentos de computación y resolución práctica de problemas."
     }
   ],
   "certifications": [
