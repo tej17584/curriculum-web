@@ -10,6 +10,7 @@ import {
 import { BookLoader } from '@/components/book-loader';
 import { PageNavigation } from '@/components/page-navigation';
 import { pageMotionTokens } from '@/lib/motion-tokens';
+import { getImageProps } from 'next/image';
 import type { Lang } from '@/types';
 import type { Dictionary } from '@/hooks/getDictionary';
 
@@ -46,6 +47,30 @@ const pageVariants = {
   }),
 };
 
+const chapterImages = [
+  ['/Chapter1.png'],
+  ['/Chapter2.png'],
+  ['/xpp-logo.svg', '/gloss-and-glow.jpeg', '/aws-practitioner.webp'],
+  ['/Chapter4.png'],
+  ['/Chapter5.png'],
+] as const;
+
+function preloadChapterImages(page: number) {
+  for (const src of chapterImages[page - 1] ?? []) {
+    const { props } = getImageProps({
+      src,
+      alt: '',
+      width: 1024,
+      height: 1024,
+      sizes: '(max-width: 768px) 100vw, 740px',
+    });
+    const image = new window.Image();
+    image.srcset = props.srcSet ?? '';
+    image.sizes = props.sizes ?? '';
+    image.src = props.src;
+  }
+}
+
 export default function CVClientWrapper({
   children,
   lang,
@@ -68,6 +93,12 @@ export default function CVClientWrapper({
       containerRef.current.scrollTo({ top: 0, behavior });
     }
   }, [currentPage, reduceMotion]);
+
+  useEffect(() => {
+    if (!showLoader) {
+      preloadChapterImages(currentPage + 1);
+    }
+  }, [currentPage, showLoader]);
 
   const handlePageChange = (newPage: number) => {
     setIsForward(newPage > currentPage);
