@@ -25,15 +25,21 @@ export function Chapter5Education({ dict }: Chapter5EducationProps) {
                   <h3 className='text-foreground font-serif text-2xl font-semibold'>
                     {edu.degree}
                   </h3>
-                  <Link
-                    href={edu.universityUrl}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-primary focus-visible:outline-ring inline-flex items-center gap-1 font-serif text-lg hover:underline focus-visible:outline-2 focus-visible:outline-offset-4'
-                  >
-                    {edu.university}
-                    <ExternalLink className='h-4 w-4' />
-                  </Link>
+                  {edu.universityUrl ? (
+                    <Link
+                      href={edu.universityUrl}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-primary focus-visible:outline-ring inline-flex items-center gap-1 font-serif text-lg hover:underline focus-visible:outline-2 focus-visible:outline-offset-4'
+                    >
+                      {edu.university}
+                      <ExternalLink className='h-4 w-4' />
+                    </Link>
+                  ) : (
+                    <p className='text-primary font-serif text-lg'>
+                      {edu.university}
+                    </p>
+                  )}
                 </div>
                 <span className='text-muted-foreground font-mono text-xs tracking-[0.12em] uppercase'>
                   {edu.period}

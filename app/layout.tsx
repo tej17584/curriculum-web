@@ -7,11 +7,20 @@ import { Analytics } from '@vercel/analytics/next';
 import { i18n, type Locale } from '@/i18n.config';
 import './globals.css';
 import { Suspense } from 'react';
+import { getImageProps } from 'next/image';
 
 const neuton = Neuton({
   subsets: ['latin'],
   weight: ['300', '400', '700', '800'],
   variable: '--font-neuton',
+});
+
+const { props: firstChapterImage } = getImageProps({
+  src: '/Chapter1.png',
+  alt: '',
+  width: 1024,
+  height: 1024,
+  sizes: '(max-width: 768px) 100vw, 740px',
 });
 
 // Root layout - basic HTML structure only, no metadata
@@ -28,6 +37,13 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link
+          rel='preload'
+          as='image'
+          imageSrcSet={firstChapterImage.srcSet}
+          imageSizes={firstChapterImage.sizes}
+          fetchPriority='high'
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
