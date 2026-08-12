@@ -106,7 +106,7 @@
   "projects": {
     "items": [
       {
-        "title": "PopAuction",
+        "title": "PopAuctioon",
         "SVGIcon": true,
         "url": "https://popauctioon.com",
         "description": "A real-time auction platform for luxury items, architected and developed from the ground up using Next.js, Supabase, Stripe, and AWS IVS. It includes advanced authentication with AWS Cognito, role management with AWS IAM, and live video streaming. The system was built to be secure, scalable, and ready for global growth.",
@@ -132,9 +132,9 @@
         "tags": ["React", "Next.js", "Tailwind", "Typescript", "Accessibility"]
       },
       {
-        "title": "Gloss and Glow (In Development)",
+        "title": "Gloss and Glow",
         "SVGIcon": false,
-        "url": "",
+        "url": "https://www.glossandglowgt.online/en",
         "description": "A modern beauty and makeup website featuring a dynamic catalog, integrated payment system, and an elegant, responsive design. Built with a focus on performance, accessibility, and user experience.",
         "image": "/gloss-and-glow.jpeg",
         "imageAlt": "Gloss and Glow website",
