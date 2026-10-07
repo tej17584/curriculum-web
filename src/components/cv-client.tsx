@@ -50,7 +50,13 @@ const pageVariants = {
 const chapterImages = [
   ['/Chapter1.png'],
   ['/Chapter2.png'],
-  ['/xpp-logo.svg', '/gloss-and-glow.jpeg', '/aws-practitioner.webp'],
+  [
+    '/projects/aurelia-joyeria.webp',
+    '/projects/the-mens-formula.webp',
+    '/projects/popauction-dashboard.webp',
+    '/xpp-logo.svg',
+    '/gloss-and-glow.jpeg',
+  ],
   ['/Chapter4.png'],
   ['/Chapter5.png'],
 ] as const;

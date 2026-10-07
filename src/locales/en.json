@@ -1,8 +1,8 @@
 {
   "seo": {
-    "defaultTitle": "Alejandro Tejada - Senior Software Engineer",
+    "defaultTitle": "Alejandro Tejada - Full Stack Developer",
     "siteName": "Alejandro Tejada Portfolio",
-    "defaultDescription": "Senior Software Engineer specializing in front-end architecture with React, Next.js and TypeScript. Experience in UI component development and accessible web applications.",
+    "defaultDescription": "Full-stack engineer with React, Next.js, TypeScript, and Supabase. Fintech experience (PayPal/Xoom) and LATAM e-commerce: catalogs, WhatsApp-led sales, and admin backoffice.",
     "keywords": "Senior Software Engineer, Frontend, React, Next.js, TypeScript, UI Components, Web Accessibility, Web Development"
   },
   "common": {
@@ -27,38 +27,19 @@
     "education": "Chapter V: Education"
   },
   "about": {
-    "text1": "I am currently a Senior Software Engineer at PayPal (Xoom) with over six years of experience in the tech industry, developing scalable, user-focused applications with high impact. I combine a strong background in Computer Science with hands-on experience in React.js, Next.js, TypeScript, AWS, and agile methodologies like SCRUM. My work is always oriented towards performance, design, and creating meaningful (and, why not, fun) digital experiences.",
-    "text2": "Since my early university years, I have collaborated on projects across various sectors — such as fintech and e-commerce (Pacifiko, Guatemala) — with international teams, applying principles of clean code, accessibility, and usability.",
+    "text1": "Full-stack engineer with over six years of experience building scalable, user-focused web products. I combine a Computer Science background with React, Next.js, TypeScript, Supabase, AWS, and agile delivery. I was a Senior Software Engineer at PayPal (Xoom) through August 31, 2026; since then I focus on owned products and end-to-end freelance work.",
+    "text2": "In LATAM e-commerce and retail — from marketplaces like Pacifiko to B2B catalogs with volume pricing, WhatsApp, and admin dashboards (Gloss and Glow, Aurelia Joyería, The Men's Formula) — I have shipped flows where the business runs inventory and sales without relying solely on a traditional checkout, working with international teams and strong clean-code, accessibility, and usability standards.",
     "text3": "Beyond engineering, I am passionate about science fiction literature, writing short stories, puzzles, and spending time with family. I believe technology is a contemporary form of art, capable of generating catharsis and transformation in people."
   },
   "experience": {
     "jobs": [
       {
-        "title": "Senior Software Engineer",
-        "company": "Xoom, A PayPal Service",
-        "companyUrl": "https://www.xoom.com",
-        "period": "Oct 2022",
-        "description": "I’m a Senior Software Engineer on the Web Team at Xoom, a global PayPal service specializing in digital remittances. I’m part of the team responsible for the web applications ecosystem, built with React, Next.js, Tailwind, JavaScript, Node.js, and AWS, ensuring that every update improves scalability, performance, and user experience.",
-        "description2": "I have led modernization initiatives and visual consistency within the stack, owning several internal applications focused on managing shared styles and components. Recently, I participated in the comprehensive update of the header, footer, and main body of Xoom.com, driving a more cohesive, accessible, and modern interface for a global audience.",
-        "tags": [
-          "JavaScript",
-          "React.js",
-          "PayPal",
-          "Next.js",
-          "Tailwind.css",
-          "Node.js",
-          "Devops",
-          "AWS",
-          "UI/UX"
-        ]
-      },
-      {
         "title": "Freelance Full Stack Engineer",
-        "company": "Uwii & PopAuction",
-        "companyUrl": "https://www.popauctioon.com/",
+        "company": "PopAuctioon, Aurelia Joyería, The Men's Formula & Uwii",
+        "companyUrl": "https://the-mens-formula.vercel.app",
         "period": "Oct 2022 — Present",
-        "description": "Worked as a freelance developer on web and mobile projects, contributing to the architectural design and leading the implementation of AWS services for PopAuction, a real-time auction platform for luxury items. Oversaw the integration of AWS IVS, Cognito, and IAM, as well as authentication, security, and streaming workflows. The platform was built with Next.js, Supabase, and Stripe, designed for scalability, reliability, and a seamless user experience in a global environment.",
-        "description2": "Also collaborated on Uwii, a platform focused on housing design and management, where I contributed to the development of a mobile app with React Native for project visualization and tracking, improving communication between users and potential buyers.",
+        "description": "Build end-to-end web and mobile products: architecture, implementation, and operations. Led AWS integration (IVS, Cognito, IAM) for PopAuctioon, a real-time luxury auction platform on Next.js, Supabase, and Stripe, with authentication, security, and live streaming built for global scale.",
+        "description2": "Shipped lead-gen catalogs in Guatemala: Aurelia Joyería GT (B2C jewelry via WhatsApp) and The Men's Formula (barbershop wholesale with tiered pricing and an admin dashboard with RLS and internal costs hidden from the public). Excel → SQL + WebP image pipeline on Supabase Storage. Also contributed to Uwii with React Native.",
         "tags": [
           "JavaScript",
           "React.js",
@@ -70,6 +51,25 @@
           "AWS IVS",
           "AWS Cognito",
           "AWS IAM",
+          "UI/UX"
+        ]
+      },
+      {
+        "title": "Senior Software Engineer",
+        "company": "Xoom, A PayPal Service",
+        "companyUrl": "https://www.xoom.com",
+        "period": "Oct 2022 — Aug 31, 2026",
+        "description": "Senior Software Engineer on Xoom’s web team, PayPal’s global digital remittances service. Contributed to the web applications ecosystem built with React, Next.js, Tailwind, JavaScript, Node.js, and AWS, improving scalability, performance, and user experience.",
+        "description2": "Led modernization and visual consistency initiatives, owning internal apps for shared styles and components. Helped deliver the comprehensive update of Xoom.com’s header, footer, and main layout for a more cohesive, accessible experience for a global audience.",
+        "tags": [
+          "JavaScript",
+          "React.js",
+          "PayPal",
+          "Next.js",
+          "Tailwind.css",
+          "Node.js",
+          "Devops",
+          "AWS",
           "UI/UX"
         ]
       },
@@ -106,12 +106,48 @@
   "projects": {
     "items": [
       {
+        "title": "Aurelia Joyería GT",
+        "SVGIcon": false,
+        "url": "https://aurelia-joyeria.store",
+        "description": "Online jewelry store for Guatemala: searchable catalog with filters and SEO (sitemap, Open Graph, JSON-LD), outlet, and product pages with WhatsApp CTAs (AUR-###### reference)—no payment gateway. Admin backoffice with Supabase Auth, product and image CRUD, taxonomy, contact inbox, and home content. Postgres with RLS, CSP and rate limiting, Sharp WebP uploads, graceful public query degradation, and Sentry in production.",
+        "image": "/projects/aurelia-joyeria.webp",
+        "imageAlt": "Aurelia Joyería GT online store",
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Supabase",
+          "Tailwind CSS",
+          "Sentry",
+          "SEO",
+          "WhatsApp"
+        ]
+      },
+      {
+        "title": "The Men's Formula",
+        "SVGIcon": false,
+        "url": "https://the-mens-formula.vercel.app",
+        "description": "B2B catalog for barbershops in Guatemala: public storefront with filters, product pages with unit and volume pricing (3+, 6+, case), and WhatsApp or contact-form inquiries—no cart or payment gateway. Admin dashboard with auth, allowlist, 2-hour session, product/brand/category CRUD, message inbox, and WhatsApp settings. Supabase (Postgres, Auth, Storage) with RLS and column grants to hide internal costs; Zod-validated Server Actions; Sharp/WebP uploads; Playwright and Vitest; Sentry and Vercel Analytics.",
+        "image": "/projects/the-mens-formula.webp",
+        "imageAlt": "The Men's Formula B2B barber catalog for Guatemala",
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Supabase",
+          "Tailwind CSS",
+          "Playwright",
+          "B2B",
+          "WhatsApp"
+        ]
+      },
+      {
         "title": "PopAuctioon",
         "SVGIcon": true,
         "url": "https://popauctioon.com",
         "description": "A real-time auction platform for luxury items, architected and developed from the ground up using Next.js, Supabase, Stripe, and AWS IVS. It includes advanced authentication with AWS Cognito, role management with AWS IAM, and live video streaming. The system was built to be secure, scalable, and ready for global growth.",
         "image": "/projects/popauction-dashboard.webp",
-        "imageAlt": "PopAuction real-time auction platform",
+        "imageAlt": "PopAuctioon real-time auction platform",
         "tags": [
           "Next.js",
           "Supabase",
@@ -139,15 +175,6 @@
         "image": "/gloss-and-glow.jpeg",
         "imageAlt": "Gloss and Glow website",
         "tags": ["Next.js", "Tailwind", "Stripe", "UX/UI", "Supabase"]
-      },
-      {
-        "title": "AWS Certified Cloud Practitioner",
-        "SVGIcon": false,
-        "url": "https://aws.amazon.com/certification/certified-cloud-practitioner/",
-        "description": "AWS certification validating foundational knowledge of cloud computing, architecture, security, and deployment models. Complements hands-on experience working with AWS IVS, Cognito, and IAM in real-world applications.",
-        "image": "/aws-practitioner.webp",
-        "imageAlt": "AWS Cloud Practitioner Certification",
-        "tags": ["AWS", "Cloud", "Security", "Architecture", "Typescript"]
       }
     ]
   },
@@ -164,7 +191,7 @@
       "university": "EUDE Business School",
       "universityUrl": "https://www.eude.es/",
       "period": "Dec 2024 — Nov 2025",
-      "description": "Online, case-based Master’s program focused on strategic decision-making, leadership, and end-to-end project management. Covers key areas such as finance, marketing, HR, risk analysis, and time management, culminating in a Final Master’s Project (PFM)."
+      "description": "Completed online Master’s program (Nov 2025), case-based and focused on strategic decision-making, leadership, and end-to-end project management. Covered finance, marketing, HR, risk analysis, and time management, with an approved Final Master’s Project (PFM)."
     },
     {
       "degree": "Industrial High School Diploma and Electronics Technician, Specialization in Microprocessors",
@@ -245,6 +272,9 @@
     "toolsList": [
       "Git",
       "GitHub",
+      "Supabase",
+      "Sentry",
+      "Playwright",
       "Mendix",
       "Visualizer",
       "Unity",
