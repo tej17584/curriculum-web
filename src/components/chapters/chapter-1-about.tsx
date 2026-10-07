@@ -84,9 +84,9 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
         <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-tight'>
           {dict.chapters.about}
         </h2>
-        <div className='text-foreground space-y-4 font-serif text-lg leading-relaxed lg:space-y-6 lg:text-xl'>
-          <p className='first-letter:text-primary whitespace-pre-line first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:leading-none first-letter:font-bold'>
-            {dict.about.text1}
+        <div className='text-foreground flex flex-col gap-4 font-serif text-lg leading-relaxed lg:gap-6 lg:text-xl'>
+          <p className='first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:leading-none first-letter:font-bold'>
+            {dict.about.text1.trim()}
           </p>
           <p>{dict.about.text2}</p>
           <p>{dict.about.text3}</p>

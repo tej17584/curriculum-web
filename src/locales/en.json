@@ -9,7 +9,10 @@
     "page": "Page",
     "of": "of",
     "present": "Present",
-    "email": "Email"
+    "email": "Email",
+    "themeLight": "Use light theme",
+    "themeDark": "Use dark theme",
+    "switchLanguage": "Switch language to"
   },
   "footer": {
     "copyright": "Alejandro Tejada"
@@ -36,7 +39,7 @@
       {
         "title": "Freelance Full Stack Engineer",
         "company": "PopAuctioon, Aurelia Joyería, The Men's Formula & Uwii",
-        "companyUrl": "https://the-mens-formula.vercel.app",
+        "companyUrl": "https://themensformula.store",
         "period": "Oct 2022 — Present",
         "description": "Build end-to-end web and mobile products: architecture, implementation, and operations. Led AWS integration (IVS, Cognito, IAM) for PopAuctioon, a real-time luxury auction platform on Next.js, Supabase, and Stripe, with authentication, security, and live streaming built for global scale.",
         "description2": "Shipped lead-gen catalogs in Guatemala: Aurelia Joyería GT (B2C jewelry via WhatsApp) and The Men's Formula (barbershop wholesale with tiered pricing and an admin dashboard with RLS and internal costs hidden from the public). Excel → SQL + WebP image pipeline on Supabase Storage. Also contributed to Uwii with React Native.",
@@ -126,7 +129,7 @@
       {
         "title": "The Men's Formula",
         "SVGIcon": false,
-        "url": "https://the-mens-formula.vercel.app",
+        "url": "https://themensformula.store",
         "description": "B2B catalog for barbershops in Guatemala: public storefront with filters, product pages with unit and volume pricing (3+, 6+, case), and WhatsApp or contact-form inquiries—no cart or payment gateway. Admin dashboard with auth, allowlist, 2-hour session, product/brand/category CRUD, message inbox, and WhatsApp settings. Supabase (Postgres, Auth, Storage) with RLS and column grants to hide internal costs; Zod-validated Server Actions; Sharp/WebP uploads; Playwright and Vitest; Sentry and Vercel Analytics.",
         "image": "/projects/the-mens-formula.webp",
         "imageAlt": "The Men's Formula B2B barber catalog for Guatemala",

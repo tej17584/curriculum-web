@@ -8,6 +8,15 @@ import { TechBadge } from '@/components/tech-badge';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
 import { PopAuctionIcon } from '@/components/icons/icons';
+import { cn } from '@/lib/utils';
+
+function projectImageClass(image: string, svgIcon: boolean) {
+  if (svgIcon) return '';
+  if (image.endsWith('.svg')) {
+    return 'object-contain p-8 dark:brightness-110';
+  }
+  return 'object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]';
+}
 
 interface Chapter3ProjectsProps {
   dict: Dictionary;
@@ -27,7 +36,7 @@ export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
               cardClassName='h-full'
             >
               <Card className='h-full overflow-hidden rounded-none border-x-0 border-t-2 border-b-0 bg-transparent shadow-none'>
-                <div className='bg-muted border-border relative aspect-video w-full overflow-hidden border-b'>
+                <div className='group bg-muted border-border relative aspect-video w-full overflow-hidden border-b'>
                   {project.SVGIcon ? (
                     <div className='from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br p-8'>
                       <PopAuctionIcon className='h-12 w-auto' />
@@ -38,7 +47,9 @@ export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
                       alt={project.imageAlt}
                       fill
                       sizes='(min-width: 768px) 50vw, 100vw'
-                      className='object-contain'
+                      className={cn(
+                        projectImageClass(project.image, project.SVGIcon)
+                      )}
                     />
                   )}
                 </div>

@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import { readCvSession, saveCvSession } from '@/lib/cv-session';
 import {
   AnimatePresence,
   MotionConfig,
@@ -87,9 +88,27 @@ export default function CVClientWrapper({
   const [showLoader, setShowLoader] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [isForward, setIsForward] = useState(true);
+  const skipPageEnterAnimation = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
   const totalPages = 5;
+
+  useLayoutEffect(() => {
+    const session = readCvSession();
+    if (session.introSeen) {
+      setShowLoader(false);
+      skipPageEnterAnimation.current = true;
+    }
+    if (session.page !== 1) {
+      setCurrentPage(session.page);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!showLoader) {
+      saveCvSession({ page: currentPage });
+    }
+  }, [currentPage, showLoader]);
 
   useEffect(() => {
     const behavior = reduceMotion ? 'auto' : 'smooth';
@@ -130,7 +149,10 @@ export default function CVClientWrapper({
             className='fixed inset-0 z-50'
           >
             <BookLoader
-              onComplete={() => setShowLoader(false)}
+              onComplete={() => {
+                saveCvSession({ introSeen: true });
+                setShowLoader(false);
+              }}
               dict={dict}
             />
           </motion.div>
@@ -151,12 +173,29 @@ export default function CVClientWrapper({
                 key={currentPage}
                 custom={isForward}
                 variants={pageVariants}
-                initial='enter'
+                initial={
+                  skipPageEnterAnimation.current || reduceMotion
+                    ? false
+                    : 'enter'
+                }
                 animate='center'
                 exit='exit'
+                onAnimationComplete={() => {
+                  skipPageEnterAnimation.current = false;
+                }}
                 className='w-full'
               >
-                {pages[currentPage - 1]}
+                <motion.div
+                  key={lang}
+                  initial={{ opacity: 0.94 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    duration: pageMotionTokens.duration,
+                    ease: pageMotionTokens.ease,
+                  }}
+                >
+                  {pages[currentPage - 1]}
+                </motion.div>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -168,6 +207,9 @@ export default function CVClientWrapper({
             lang={lang}
             pageText={pageText}
             ofText={ofText}
+            themeLightLabel={dict.common.themeLight}
+            themeDarkLabel={dict.common.themeDark}
+            switchLanguageLabel={dict.common.switchLanguage}
           />
         </div>
       )}

@@ -59,6 +59,9 @@ describe('PageNavigation', () => {
     lang: 'en' as const,
     pageText: 'Page',
     ofText: 'of',
+    themeLightLabel: 'Use light theme',
+    themeDarkLabel: 'Use dark theme',
+    switchLanguageLabel: 'Switch language to',
   };
 
   it('renders page navigation with current page info', () => {
@@ -106,7 +109,7 @@ describe('PageNavigation', () => {
     render(<PageNavigation {...defaultProps} />);
 
     // Find theme toggle button (Moon icon initially)
-    const themeButton = screen.getByLabelText('Toggle theme');
+    const themeButton = screen.getByLabelText('Use dark theme');
 
     // Click to toggle theme
     fireEvent.click(themeButton);
@@ -119,7 +122,7 @@ describe('PageNavigation', () => {
   it('toggles language when language button is clicked', () => {
     render(<PageNavigation {...defaultProps} />);
 
-    const langButton = screen.getByLabelText('Toggle language');
+    const langButton = screen.getByLabelText('Switch language to ES');
     fireEvent.click(langButton);
 
     expect(mockPush).toHaveBeenCalledWith('/es');
@@ -134,7 +137,7 @@ describe('PageNavigation', () => {
       />
     );
 
-    const langButton = screen.getByLabelText('Toggle language');
+    const langButton = screen.getByLabelText('Switch language to EN');
     fireEvent.click(langButton);
 
     expect(mockPush).toHaveBeenCalledWith('/en');

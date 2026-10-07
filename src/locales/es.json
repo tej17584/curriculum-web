@@ -9,7 +9,10 @@
     "page": "Página",
     "of": "de",
     "present": "Presente",
-    "email": "Correo"
+    "email": "Correo",
+    "themeLight": "Usar tema claro",
+    "themeDark": "Usar tema oscuro",
+    "switchLanguage": "Cambiar idioma a"
   },
   "footer": {
     "copyright": "Alejandro Tejada"
@@ -27,7 +30,7 @@
     "education": "Capítulo V: Educación"
   },
   "about": {
-    "text1": "Ingeniero full stack con más de seis años de experiencia construyendo aplicaciones web escalables, centradas en el usuario y con impacto real. Combino formación en Ciencias de la Computación con React, Next.js, TypeScript, Supabase, AWS y metodologías ágiles. Fui Senior Software Engineer en PayPal (Xoom) hasta el 31 de agosto de 2026; desde entonces me enfoco en productos propios y proyectos freelance end-to-end.\n",
+    "text1": "Ingeniero full stack con más de seis años de experiencia construyendo aplicaciones web escalables, centradas en el usuario y con impacto real. Combino formación en Ciencias de la Computación con React, Next.js, TypeScript, Supabase, AWS y metodologías ágiles. Fui Senior Software Engineer en PayPal (Xoom) hasta el 31 de agosto de 2026; desde entonces me enfoco en productos propios y proyectos freelance end-to-end.",
     "text2": "En e-commerce y retail en LATAM —desde marketplaces como Pacifiko hasta catálogos B2B con mayoreo, WhatsApp y paneles admin (Gloss and Glow, Aurelia Joyería, The Men's Formula)— he trabajado flujos donde el negocio opera inventario y convierte sin depender solo de un checkout tradicional, siempre con equipos internacionales y principios de código limpio, accesibilidad y usabilidad.",
     "text3": "Más allá de la ingeniería, me apasionan la literatura de ciencia ficción, la escritura de relatos cortos, los rompecabezas y el tiempo en familia. Creo que la tecnología es una forma contemporánea de arte, capaz incluso de generar catarsis y transformación en las personas."
   },
@@ -36,7 +39,7 @@
       {
         "title": "Desarrollador Full Stack Freelance",
         "company": "PopAuctioon, Aurelia Joyería, The Men's Formula & Uwii",
-        "companyUrl": "https://the-mens-formula.vercel.app",
+        "companyUrl": "https://themensformula.store",
         "period": "Oct 2022 — Presente",
         "description": "Desarrollo productos web y móviles de punta a punta: arquitectura, implementación y operación. Lideré la integración de AWS (IVS, Cognito, IAM) para PopAuctioon, plataforma de subastas en tiempo real de artículos de lujo con Next.js, Supabase y Stripe. Diseñé flujos de autenticación, seguridad y streaming en vivo orientados a escala global.",
         "description2": "Construí catálogos lead-gen en Guatemala: Aurelia Joyería GT (joyería B2C por WhatsApp) y The Men's Formula (mayoreo para barberías, precios por volumen, dashboard con RLS y costos internos ocultos al público). Pipeline Excel → SQL + imágenes WebP en Supabase Storage. También colaboré en Uwii con React Native.",
@@ -125,7 +128,7 @@
       {
         "title": "The Men's Formula",
         "SVGIcon": false,
-        "url": "https://the-mens-formula.vercel.app",
+        "url": "https://themensformula.store",
         "description": "Catálogo B2B para barberías en Guatemala: storefront con filtros, fichas con precios por unidad y por volumen (3+, 6+, caja) y consulta por WhatsApp o formulario, sin carrito ni pasarela. Dashboard con auth, allowlist, sesión de 2 h, CRUD de productos/marcas/categorías, inbox de mensajes y configuración comercial. Supabase (Postgres, Auth, Storage) con RLS y grants de columna para ocultar costos al público; Server Actions con Zod; Sharp/WebP; tests con Playwright y Vitest; Sentry y Vercel Analytics.",
         "image": "/projects/the-mens-formula.webp",
         "imageAlt": "Catálogo B2B The Men's Formula para barberías en Guatemala",

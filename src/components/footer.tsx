@@ -61,7 +61,7 @@ export function Footer({ dict }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='bg-background border-border fixed right-0 bottom-0 left-0 z-30 border-t'>
+    <footer className='bg-background/92 border-border fixed right-0 bottom-0 left-0 z-30 border-t backdrop-blur-md'>
       <div className='mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 lg:px-8'>
         {/* Mobile layout - stacked vertically */}
         <div className='flex flex-col gap-3 md:hidden'>
