@@ -33,11 +33,11 @@
     "education": "Chapter V: Education"
   },
   "illustrations": {
-    "chapter1": "Editorial illustration of stacked books",
-    "chapter2": "Professional workspace illustration",
-    "chapter3": "Project grid illustration",
-    "chapter4": "Open books and study materials illustration",
-    "chapter5": "Graduation and library illustration"
+    "chapter1": "Engraving of a laptop, a coffee mug, and an open notebook with a pen",
+    "chapter2": "Engraving of a software-engineering workflow around a laptop",
+    "chapter3": "Engraving of a product dashboard surrounded by cloud, security, and deploy icons",
+    "chapter4": "Engraving of development tools: code, cloud, data, and security",
+    "chapter5": "Study-desk engraving with books, chess pieces, and a laptop"
   },
   "about": {
     "text1": "Full-stack engineer with over six years of experience building scalable, user-focused web products. I combine a Computer Science background with React, Next.js, TypeScript, Supabase, AWS, and agile delivery. I was a Senior Software Engineer at PayPal (Xoom) through August 31, 2026; since then I focus on owned products and end-to-end freelance work.",

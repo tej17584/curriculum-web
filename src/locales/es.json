@@ -33,11 +33,11 @@
     "education": "Capítulo V: Educación"
   },
   "illustrations": {
-    "chapter1": "Ilustración editorial de libros apilados",
-    "chapter2": "Ilustración de espacio de trabajo profesional",
-    "chapter3": "Ilustración de proyectos en cuadrícula",
-    "chapter4": "Ilustración de libros abiertos y estudio",
-    "chapter5": "Ilustración de graduación y biblioteca"
+    "chapter1": "Grabado de un portátil, una taza de café y un cuaderno abierto con pluma",
+    "chapter2": "Grabado del flujo de ingeniería de software alrededor de un portátil",
+    "chapter3": "Grabado de un panel de producto rodeado de nube, seguridad y despliegue",
+    "chapter4": "Grabado de herramientas de desarrollo: código, nube, datos y seguridad",
+    "chapter5": "Escritorio de estudio grabado con libros, piezas de ajedrez y un portátil"
   },
   "about": {
     "text1": "Ingeniero full stack con más de seis años de experiencia construyendo aplicaciones web escalables, centradas en el usuario y con impacto real. Combino formación en Ciencias de la Computación con React, Next.js, TypeScript, Supabase, AWS y metodologías ágiles. Fui Senior Software Engineer en PayPal (Xoom) hasta el 31 de agosto de 2026; desde entonces me enfoco en productos propios y proyectos freelance end-to-end.",

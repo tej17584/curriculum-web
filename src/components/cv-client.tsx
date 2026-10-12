@@ -56,11 +56,11 @@ function projectPreloadImages(dict: Dictionary): string[] {
 
 function chapterImagePaths(dict: Dictionary, page: number): string[] {
   const byPage: string[][] = [
-    ['/illustrations/chapter-1.svg'],
-    ['/illustrations/chapter-2.svg'],
-    projectPreloadImages(dict),
-    ['/illustrations/chapter-4.svg'],
-    ['/illustrations/chapter-5.svg'],
+    ['/Chapter1.png'],
+    ['/Chapter2.png'],
+    ['/Chapter3.png', ...projectPreloadImages(dict)],
+    ['/Chapter4.png'],
+    ['/Chapter5.png'],
   ];
   return byPage[page - 1] ?? [];
 }

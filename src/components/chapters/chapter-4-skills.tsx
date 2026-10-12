@@ -1,7 +1,7 @@
 import { Code2, BookOpen, Wrench, Globe, Award } from 'lucide-react';
-import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import { ChapterIllustration } from '@/components/chapter-illustration';
 import type { Dictionary } from '@/hooks/getDictionary';
 
 interface Chapter4SkillsProps {
@@ -91,17 +91,11 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
           </div>
         </div>
 
-        <div className='mt-16 flex justify-center'>
-          <figure className='border-border w-full max-w-sm border-y py-6 lg:max-w-[640px]'>
-            <Image
-              src='/illustrations/chapter-4.svg'
-              alt={dict.illustrations.chapter4}
-              width={400}
-              height={280}
-              className='w-full opacity-90 grayscale dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
-            />
-          </figure>
-        </div>
+        <ChapterIllustration
+          src='/Chapter4.png'
+          alt={dict.illustrations.chapter4}
+          figureClassName='max-w-sm lg:max-w-[640px]'
+        />
       </section>
 
       <section>

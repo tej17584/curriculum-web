@@ -6,8 +6,8 @@ import {
   contactPhoneDisplay,
   contactPhoneTel,
 } from '@/lib/site';
-import Image from 'next/image';
 import { MagneticButton } from '@/components/amicro/magnetic-button';
+import { ChapterIllustration } from '@/components/chapter-illustration';
 import { Button } from '@/components/ui/button';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
@@ -114,17 +114,10 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
           <p>{dict.about.text3}</p>
         </div>
 
-        <div className='mt-16 flex justify-center'>
-          <figure className='border-border w-full max-w-md border-y py-6 lg:max-w-[740px]'>
-            <Image
-              src='/illustrations/chapter-1.svg'
-              alt={dict.illustrations.chapter1}
-              width={400}
-              height={280}
-              className='w-full opacity-90 grayscale dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
-            />
-          </figure>
-        </div>
+        <ChapterIllustration
+          src='/Chapter1.png'
+          alt={dict.illustrations.chapter1}
+        />
       </section>
     </div>
   );

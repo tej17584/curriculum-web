@@ -1,7 +1,7 @@
 import { ExternalLink } from 'lucide-react';
-import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import { ChapterIllustration } from '@/components/chapter-illustration';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
 
@@ -16,7 +16,7 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
         {dict.chapters.experience}
       </h1>
       <div className='flex flex-col gap-10'>
-        {dict.experience.jobs.map((job, index) => (
+        {dict.experience.jobs.map(job => (
           <div key={`${job.title}-${job.company}`}>
             <Card className='border-border rounded-none border-x-0 border-t-2 border-b-0 bg-transparent p-0 pt-7 shadow-none'>
               <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
@@ -36,7 +36,6 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
                 </div>
                 <span className='text-muted-foreground font-mono text-xs tracking-[0.12em] uppercase'>
                   {job.period}
-                  {index === 0 && ` — ${dict.common.present}`}
                 </span>
               </div>
               <p className='text-muted-foreground font-serif text-lg leading-relaxed'>
@@ -61,17 +60,11 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
         ))}
       </div>
 
-      <div className='mt-16 flex justify-center'>
-        <figure className='border-border w-full max-w-md border-y py-6 lg:max-w-[720px]'>
-          <Image
-            src='/illustrations/chapter-2.svg'
-            alt={dict.illustrations.chapter2}
-            width={400}
-            height={280}
-            className='w-full opacity-90 grayscale dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
-          />
-        </figure>
-      </div>
+      <ChapterIllustration
+        src='/Chapter2.png'
+        alt={dict.illustrations.chapter2}
+        figureClassName='lg:max-w-[720px]'
+      />
     </section>
   );
 }

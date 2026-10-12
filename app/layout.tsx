@@ -17,10 +17,10 @@ const neuton = Neuton({
 });
 
 const { props: firstChapterImage } = getImageProps({
-  src: '/illustrations/chapter-1.svg',
+  src: '/Chapter1.png',
   alt: '',
-  width: 400,
-  height: 280,
+  width: 1024,
+  height: 1024,
   sizes: '(max-width: 768px) 100vw, 740px',
 });
 
