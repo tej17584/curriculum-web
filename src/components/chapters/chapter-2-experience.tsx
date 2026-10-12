@@ -1,7 +1,7 @@
 import { ExternalLink } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { ChapterIllustration } from '@/components/chapter-illustration';
+import { TechBadge } from '@/components/tech-badge';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
 
@@ -46,13 +46,11 @@ export function Chapter2Experience({ dict }: Chapter2ExperienceProps) {
               </p>
               <div className='flex flex-wrap gap-2'>
                 {job.tags.map(tag => (
-                  <Badge
+                  <TechBadge
                     key={tag}
-                    variant='secondary'
-                    className='border-primary/30 text-primary rounded-none border bg-transparent px-3 py-1 font-mono text-xs'
-                  >
-                    {tag}
-                  </Badge>
+                    name={tag}
+                    className='border-primary/30 text-primary px-3 py-1'
+                  />
                 ))}
               </div>
             </Card>

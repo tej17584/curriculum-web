@@ -8,7 +8,6 @@ import { TechBadge } from '@/components/tech-badge';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
 import { PopAuctionIcon } from '@/components/icons/icons';
-import { ChapterIllustration } from '@/components/chapter-illustration';
 import { cn } from '@/lib/utils';
 
 function projectImageClass(image: string) {
@@ -84,11 +83,6 @@ export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
           </div>
         ))}
       </div>
-      <ChapterIllustration
-        src='/Chapter3.png'
-        alt={dict.illustrations.chapter3}
-        figureClassName='max-w-sm lg:max-w-[640px]'
-      />
     </section>
   );
 }

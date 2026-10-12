@@ -58,8 +58,8 @@ function chapterImagePaths(dict: Dictionary, page: number): string[] {
   const byPage: string[][] = [
     ['/Chapter1.png'],
     ['/Chapter2.png'],
-    ['/Chapter3.png', ...projectPreloadImages(dict)],
-    ['/Chapter4.png'],
+    projectPreloadImages(dict),
+    [],
     ['/Chapter5.png'],
   ];
   return byPage[page - 1] ?? [];

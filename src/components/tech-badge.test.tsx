@@ -8,11 +8,17 @@ describe('TechBadge', () => {
     expect(screen.getByText('React')).toBeInTheDocument();
   });
 
-  it('renders unknown technologies without a fallback icon', () => {
-    render(<TechBadge name='UnknownTech' />);
+  it('renders a brand mark next to a known technology', () => {
+    const { container } = render(<TechBadge name='TypeScript' />);
+
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
+
+  it('renders unknown technologies with a generic icon', () => {
+    const { container } = render(<TechBadge name='UnknownTech' />);
 
     expect(screen.getByText('UnknownTech')).toBeInTheDocument();
-    expect(screen.queryByText('•')).not.toBeInTheDocument();
+    expect(container.querySelector('svg')).toBeInTheDocument();
   });
 
   it('uses the quiet outlined treatment by default', () => {

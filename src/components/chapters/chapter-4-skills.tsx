@@ -1,7 +1,8 @@
 import { Code2, BookOpen, Wrench, Globe, Award } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import { ChapterIllustration } from '@/components/chapter-illustration';
+import { TechBadge } from '@/components/tech-badge';
+import { TechIcon, certTechName } from '@/components/tech-icon';
 import type { Dictionary } from '@/hooks/getDictionary';
 
 interface Chapter4SkillsProps {
@@ -24,12 +25,11 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
               </h3>
               <div className='flex flex-wrap gap-3'>
                 {dict.skills.programmingList.map(skill => (
-                  <Badge
+                  <TechBadge
                     key={skill}
-                    className='motion-colors border-border text-primary hover:border-primary/60 rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs'
-                  >
-                    {skill}
-                  </Badge>
+                    name={skill}
+                    className='text-primary'
+                  />
                 ))}
               </div>
             </Card>
@@ -43,12 +43,11 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
               </h3>
               <div className='flex flex-wrap gap-3'>
                 {dict.skills.frameworksList.map(framework => (
-                  <Badge
+                  <TechBadge
                     key={framework}
-                    className='motion-colors border-border text-primary hover:border-primary/60 rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs'
-                  >
-                    {framework}
-                  </Badge>
+                    name={framework}
+                    className='text-primary'
+                  />
                 ))}
               </div>
             </Card>
@@ -62,12 +61,11 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
               </h3>
               <div className='flex flex-wrap gap-3'>
                 {dict.skills.toolsList.map(tool => (
-                  <Badge
+                  <TechBadge
                     key={tool}
-                    className='motion-colors border-border text-primary hover:border-primary/60 rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs'
-                  >
-                    {tool}
-                  </Badge>
+                    name={tool}
+                    className='text-primary'
+                  />
                 ))}
               </div>
             </Card>
@@ -90,12 +88,6 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
             </Card>
           </div>
         </div>
-
-        <ChapterIllustration
-          src='/Chapter4.png'
-          alt={dict.illustrations.chapter4}
-          figureClassName='max-w-sm lg:max-w-[640px]'
-        />
       </section>
 
       <section>
@@ -104,25 +96,40 @@ export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
           {dict.skills.certifications}
         </h2>
         <div className='flex flex-col gap-4'>
-          {dict.certifications.map(cert => (
-            <div key={`${cert.title}-${cert.date}`}>
-              <Card className='border-border rounded-none border-x-0 border-t-2 border-b-0 bg-transparent p-0 pt-6 shadow-none'>
-                <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
-                  <div>
-                    <h3 className='text-foreground font-serif text-xl font-semibold'>
-                      {cert.title}
-                    </h3>
-                    <p className='text-muted-foreground font-serif text-base'>
-                      {cert.provider}
-                    </p>
+          {dict.certifications.map(cert => {
+            const iconName = certTechName(cert.title, cert.provider);
+            return (
+              <div key={`${cert.title}-${cert.date}`}>
+                <Card className='border-border rounded-none border-x-0 border-t-2 border-b-0 bg-transparent p-0 pt-6 shadow-none'>
+                  <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
+                    <div className='flex items-start gap-3'>
+                      <span className='border-border mt-0.5 flex size-8 shrink-0 items-center justify-center border'>
+                        <TechIcon
+                          name={iconName}
+                          className={
+                            iconName === 'aws-practitioner'
+                              ? 'size-7'
+                              : 'size-4'
+                          }
+                        />
+                      </span>
+                      <div>
+                        <h3 className='text-foreground font-serif text-xl font-semibold'>
+                          {cert.title}
+                        </h3>
+                        <p className='text-muted-foreground font-serif text-base'>
+                          {cert.provider}
+                        </p>
+                      </div>
+                    </div>
+                    <span className='text-muted-foreground font-mono text-xs tracking-[0.12em] uppercase'>
+                      {cert.date}
+                    </span>
                   </div>
-                  <span className='text-muted-foreground font-mono text-xs tracking-[0.12em] uppercase'>
-                    {cert.date}
-                  </span>
-                </div>
-              </Card>
-            </div>
-          ))}
+                </Card>
+              </div>
+            );
+          })}
         </div>
       </section>
     </>
