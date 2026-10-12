@@ -85,11 +85,10 @@ describe('Footer', () => {
     expect(icons.length).toBeGreaterThan(0);
   });
 
-  it('applies fixed positioning without translucent chrome', () => {
+  it('applies fixed positioning with translucent chrome', () => {
     const { container } = render(<Footer dict={mockDict} />);
     const footer = container.querySelector('footer');
-    expect(footer).toHaveClass('fixed', 'border-t');
-    expect(footer).not.toHaveClass('backdrop-blur-md');
+    expect(footer).toHaveClass('fixed', 'border-t', 'backdrop-blur-md');
   });
 
   it('has mobile and desktop layouts', () => {

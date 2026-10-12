@@ -8,6 +8,7 @@ import { i18n, type Locale } from '@/i18n.config';
 import './globals.css';
 import { Suspense } from 'react';
 import { getImageProps } from 'next/image';
+import { Providers } from '@/components/providers';
 
 const neuton = Neuton({
   subsets: ['latin'],
@@ -16,10 +17,10 @@ const neuton = Neuton({
 });
 
 const { props: firstChapterImage } = getImageProps({
-  src: '/Chapter1.png',
+  src: '/illustrations/chapter-1.svg',
   alt: '',
-  width: 1024,
-  height: 1024,
+  width: 400,
+  height: 280,
   sizes: '(max-width: 768px) 100vw, 740px',
 });
 
@@ -44,24 +45,13 @@ export default async function RootLayout({
           imageSizes={firstChapterImage.sizes}
           fetchPriority='high'
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark')
-                } else {
-                  document.documentElement.classList.remove('dark')
-                }
-              } catch (_) {}
-            `,
-          }}
-        />
       </head>
       <body
         className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${neuton.variable}`}
       >
-        <Suspense fallback={null}>{children}</Suspense>
+        <Providers>
+          <Suspense fallback={null}>{children}</Suspense>
+        </Providers>
         <Analytics />
       </body>
     </html>

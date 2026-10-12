@@ -2,6 +2,7 @@
 
 import { ChevronLeft, ChevronRight, Languages, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import type { Lang } from '@/types';
@@ -14,6 +15,8 @@ type PageNavigationProps = {
   lang: Lang;
   pageText: string;
   ofText: string;
+  prevPageLabel: string;
+  nextPageLabel: string;
   themeLightLabel: string;
   themeDarkLabel: string;
   switchLanguageLabel: string;
@@ -26,33 +29,25 @@ export function PageNavigation({
   lang,
   pageText,
   ofText,
+  prevPageLabel,
+  nextPageLabel,
   themeLightLabel,
   themeDarkLabel,
   switchLanguageLabel,
 }: PageNavigationProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') as
-        'light' | 'dark' | null;
-      const prefersDark = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches;
-      return savedTheme || (prefersDark ? 'dark' : 'light');
-    }
-    return 'light';
-  });
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-  }, [theme]);
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && resolvedTheme === 'dark';
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    setTheme(isDark ? 'light' : 'dark');
   };
 
   const toggleLanguage = () => {
@@ -75,6 +70,7 @@ export function PageNavigation({
         onClick={() => onPageChange(Math.max(1, currentPage - 1))}
         disabled={currentPage === 1}
         className='size-9'
+        aria-label={prevPageLabel}
       >
         <ChevronLeft className='size-4' />
       </Button>
@@ -89,6 +85,7 @@ export function PageNavigation({
         onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
         disabled={currentPage === totalPages}
         className='size-9'
+        aria-label={nextPageLabel}
       >
         <ChevronRight className='size-4' />
       </Button>
@@ -99,12 +96,13 @@ export function PageNavigation({
         variant='ghost'
         size='icon'
         onClick={toggleTheme}
-        className='motion-surface hover:bg-muted h-9 w-9 sm:h-9 sm:w-9'
-        aria-label={theme === 'light' ? themeDarkLabel : themeLightLabel}
+        className='motion-surface hover:bg-muted size-9'
+        aria-label={isDark ? themeLightLabel : themeDarkLabel}
+        disabled={!mounted}
       >
         <span
           className='t-icon-swap'
-          data-state={theme === 'light' ? 'a' : 'b'}
+          data-state={!isDark ? 'a' : 'b'}
           aria-hidden='true'
         >
           <Moon

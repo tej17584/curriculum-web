@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
+  experimental: {
+    // TypeScript 7 no longer exposes the compiler API Next uses in workers; use the CLI instead.
+    useTypeScriptCli: true,
   },
   // Security headers
   async headers() {

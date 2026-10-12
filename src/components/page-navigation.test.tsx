@@ -8,6 +8,16 @@ jest.mock('next/navigation', () => ({
   usePathname: jest.fn(),
 }));
 
+const mockSetTheme = jest.fn();
+let mockResolvedTheme: string | undefined = 'light';
+
+jest.mock('next-themes', () => ({
+  useTheme: () => ({
+    resolvedTheme: mockResolvedTheme,
+    setTheme: mockSetTheme,
+  }),
+}));
+
 // Mock localStorage
 const localStorageMock = (() => {
   let store: Record<string, string> = {};
@@ -48,6 +58,7 @@ describe('PageNavigation', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     localStorageMock.clear();
+    mockResolvedTheme = 'light';
     (useRouter as jest.Mock).mockReturnValue({ push: mockPush });
     (usePathname as jest.Mock).mockReturnValue('/en');
   });
@@ -62,6 +73,8 @@ describe('PageNavigation', () => {
     themeLightLabel: 'Use light theme',
     themeDarkLabel: 'Use dark theme',
     switchLanguageLabel: 'Switch language to',
+    prevPageLabel: 'Previous chapter',
+    nextPageLabel: 'Next chapter',
   };
 
   it('renders page navigation with current page info', () => {
@@ -108,14 +121,16 @@ describe('PageNavigation', () => {
   it('toggles theme when theme button is clicked', async () => {
     render(<PageNavigation {...defaultProps} />);
 
-    // Find theme toggle button (Moon icon initially)
-    const themeButton = screen.getByLabelText('Use dark theme');
+    const themeButton = await waitFor(() => {
+      const button = screen.getByLabelText('Use dark theme');
+      expect(button).not.toBeDisabled();
+      return button;
+    });
 
-    // Click to toggle theme
     fireEvent.click(themeButton);
 
     await waitFor(() => {
-      expect(localStorageMock.getItem('theme')).toBe('dark');
+      expect(mockSetTheme).toHaveBeenCalledWith('dark');
     });
   });
 
@@ -181,11 +196,12 @@ describe('PageNavigation', () => {
     expect(mockOnPageChange).not.toHaveBeenCalled();
   });
 
-  it('initializes theme from localStorage', () => {
-    localStorageMock.setItem('theme', 'dark');
+  it('reflects dark theme from next-themes', async () => {
+    mockResolvedTheme = 'dark';
     render(<PageNavigation {...defaultProps} />);
 
-    // Theme should be initialized from localStorage
-    expect(document.documentElement.classList.contains('dark')).toBe(true);
+    await waitFor(() => {
+      expect(screen.getByLabelText('Use light theme')).toBeInTheDocument();
+    });
   });
 });

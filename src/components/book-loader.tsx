@@ -18,7 +18,13 @@ export function BookLoader({ onComplete, dict }: BookLoaderProps) {
   }, [onComplete]);
 
   return (
-    <div className='bg-background fixed inset-0 flex items-center justify-center overflow-hidden px-6'>
+    <div
+      className='bg-background fixed inset-0 flex items-center justify-center overflow-hidden px-6'
+      role='status'
+      aria-live='polite'
+      aria-busy='true'
+      aria-label={dict.bookLoader.loading}
+    >
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}

@@ -17,7 +17,7 @@ describe('PopAuctionIcon', () => {
   it('applies default className', () => {
     const { container } = render(<PopAuctionIcon />);
     const svg = container.querySelector('svg');
-    expect(svg).toHaveClass('fill-none');
+    expect(svg).toHaveClass('text-primary');
   });
 
   it('applies custom className', () => {

@@ -1,5 +1,5 @@
 export const PopAuctionIcon = ({
-  className = 'fill-none',
+  className = 'text-primary',
   centered = false,
 }: {
   className?: string;

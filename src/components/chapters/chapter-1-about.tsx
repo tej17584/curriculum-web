@@ -1,6 +1,11 @@
 'use client';
 
-import { Code2, Globe, Mail } from 'lucide-react';
+import { Code2, Globe, Mail, Phone } from 'lucide-react';
+import {
+  contactEmail,
+  contactPhoneDisplay,
+  contactPhoneTel,
+} from '@/lib/site';
 import Image from 'next/image';
 import { MagneticButton } from '@/components/amicro/magnetic-button';
 import { Button } from '@/components/ui/button';
@@ -33,11 +38,28 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
               className='motion-surface border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-none border bg-transparent'
             >
               <Link
-                href='mailto:alejandro.tejada.ui@gmail.com'
+                href={`mailto:${contactEmail}`}
                 className='flex items-center gap-2'
               >
                 <Mail className='h-4 w-4' />
                 {dict.common.email}
+              </Link>
+            </Button>
+          </MagneticButton>
+          <MagneticButton>
+            <Button
+              variant='outline'
+              size='sm'
+              asChild
+              className='motion-surface border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-none border bg-transparent'
+            >
+              <Link
+                href={`tel:${contactPhoneTel}`}
+                className='flex items-center gap-2'
+              >
+                <Phone className='h-4 w-4' />
+                <span className='sr-only'>{dict.common.phone}: </span>
+                {contactPhoneDisplay}
               </Link>
             </Button>
           </MagneticButton>
@@ -95,10 +117,10 @@ export function Chapter1About({ dict }: Chapter1AboutProps) {
         <div className='mt-16 flex justify-center'>
           <figure className='border-border w-full max-w-md border-y py-6 lg:max-w-[740px]'>
             <Image
-              src='/Chapter1.png'
-              alt='Stack of books illustration'
-              width={1024}
-              height={1024}
+              src='/illustrations/chapter-1.svg'
+              alt={dict.illustrations.chapter1}
+              width={400}
+              height={280}
               className='w-full opacity-90 grayscale dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
             />
           </figure>

@@ -10,9 +10,12 @@
     "of": "of",
     "present": "Present",
     "email": "Email",
+    "phone": "Phone",
     "themeLight": "Use light theme",
     "themeDark": "Use dark theme",
-    "switchLanguage": "Switch language to"
+    "switchLanguage": "Switch language to",
+    "prevPage": "Previous chapter",
+    "nextPage": "Next chapter"
   },
   "footer": {
     "copyright": "Alejandro Tejada"
@@ -28,6 +31,13 @@
     "projects": "Chapter III: Featured Projects",
     "skills": "Chapter IV: Skills & Technologies",
     "education": "Chapter V: Education"
+  },
+  "illustrations": {
+    "chapter1": "Editorial illustration of stacked books",
+    "chapter2": "Professional workspace illustration",
+    "chapter3": "Project grid illustration",
+    "chapter4": "Open books and study materials illustration",
+    "chapter5": "Graduation and library illustration"
   },
   "about": {
     "text1": "Full-stack engineer with over six years of experience building scalable, user-focused web products. I combine a Computer Science background with React, Next.js, TypeScript, Supabase, AWS, and agile delivery. I was a Senior Software Engineer at PayPal (Xoom) through August 31, 2026; since then I focus on owned products and end-to-end freelance work.",
@@ -50,7 +60,7 @@
           "Next.js",
           "Stripe",
           "Supabase",
-          "Tailwind.css",
+          "Tailwind CSS",
           "AWS IVS",
           "AWS Cognito",
           "AWS IAM",
@@ -69,7 +79,7 @@
           "React.js",
           "PayPal",
           "Next.js",
-          "Tailwind.css",
+          "Tailwind CSS",
           "Node.js",
           "Devops",
           "AWS",
@@ -110,7 +120,7 @@
     "items": [
       {
         "title": "Aurelia Joyería GT",
-        "SVGIcon": false,
+        "brandLogo": null,
         "url": "https://aurelia-joyeria.store",
         "description": "Online jewelry store for Guatemala: searchable catalog with filters and SEO (sitemap, Open Graph, JSON-LD), outlet, and product pages with WhatsApp CTAs (AUR-###### reference)—no payment gateway. Admin backoffice with Supabase Auth, product and image CRUD, taxonomy, contact inbox, and home content. Postgres with RLS, CSP and rate limiting, Sharp WebP uploads, graceful public query degradation, and Sentry in production.",
         "image": "/projects/aurelia-joyeria.webp",
@@ -128,7 +138,7 @@
       },
       {
         "title": "The Men's Formula",
-        "SVGIcon": false,
+        "brandLogo": null,
         "url": "https://themensformula.store",
         "description": "B2B catalog for barbershops in Guatemala: public storefront with filters, product pages with unit and volume pricing (3+, 6+, case), and WhatsApp or contact-form inquiries—no cart or payment gateway. Admin dashboard with auth, allowlist, 2-hour session, product/brand/category CRUD, message inbox, and WhatsApp settings. Supabase (Postgres, Auth, Storage) with RLS and column grants to hide internal costs; Zod-validated Server Actions; Sharp/WebP uploads; Playwright and Vitest; Sentry and Vercel Analytics.",
         "image": "/projects/the-mens-formula.webp",
@@ -146,10 +156,10 @@
       },
       {
         "title": "PopAuctioon",
-        "SVGIcon": true,
+        "brandLogo": "popauction",
         "url": "https://popauctioon.com",
         "description": "A real-time auction platform for luxury items, architected and developed from the ground up using Next.js, Supabase, Stripe, and AWS IVS. It includes advanced authentication with AWS Cognito, role management with AWS IAM, and live video streaming. The system was built to be secure, scalable, and ready for global growth.",
-        "image": "/projects/popauction-dashboard.webp",
+        "image": "",
         "imageAlt": "PopAuctioon real-time auction platform",
         "tags": [
           "Next.js",
@@ -158,24 +168,24 @@
           "AWS IVS",
           "AWS Cognito",
           "AWS IAM",
-          "Typescript"
+          "TypeScript"
         ]
       },
       {
         "title": "Xoom.com Redesign",
-        "SVGIcon": false,
+        "brandLogo": null,
         "url": "https://www.xoom.com",
         "description": "Major redesign of Xoom.com, a PayPal global remittances platform. I contributed to the modernization of the header, footer, and main layout using React, Next.js, and Tailwind. The update improved accessibility, performance, and design consistency across the entire site for millions of users worldwide.",
         "image": "/xpp-logo.svg",
         "imageAlt": "Xoom.com website redesign",
-        "tags": ["React", "Next.js", "Tailwind", "Typescript", "Accessibility"]
+        "tags": ["React", "Next.js", "Tailwind CSS", "TypeScript", "Accessibility"]
       },
       {
         "title": "Gloss and Glow",
-        "SVGIcon": false,
+        "brandLogo": null,
         "url": "https://www.glossandglowgt.online/en",
         "description": "A modern beauty and makeup website featuring a dynamic catalog, integrated payment system, and an elegant, responsive design. Built with a focus on performance, accessibility, and user experience.",
-        "image": "/gloss-and-glow.jpeg",
+        "image": "/gloss-and-glow.webp",
         "imageAlt": "Gloss and Glow website",
         "tags": ["Next.js", "Tailwind", "Stripe", "UX/UI", "Supabase"]
       }

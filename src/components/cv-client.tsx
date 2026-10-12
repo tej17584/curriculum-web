@@ -48,22 +48,25 @@ const pageVariants = {
   }),
 };
 
-const chapterImages = [
-  ['/Chapter1.png'],
-  ['/Chapter2.png'],
-  [
-    '/projects/aurelia-joyeria.webp',
-    '/projects/the-mens-formula.webp',
-    '/projects/popauction-dashboard.webp',
-    '/xpp-logo.svg',
-    '/gloss-and-glow.jpeg',
-  ],
-  ['/Chapter4.png'],
-  ['/Chapter5.png'],
-] as const;
+function projectPreloadImages(dict: Dictionary): string[] {
+  return dict.projects.items
+    .filter(item => item.brandLogo !== 'popauction' && item.image.length > 0)
+    .map(item => item.image);
+}
 
-function preloadChapterImages(page: number) {
-  for (const src of chapterImages[page - 1] ?? []) {
+function chapterImagePaths(dict: Dictionary, page: number): string[] {
+  const byPage: string[][] = [
+    ['/illustrations/chapter-1.svg'],
+    ['/illustrations/chapter-2.svg'],
+    projectPreloadImages(dict),
+    ['/illustrations/chapter-4.svg'],
+    ['/illustrations/chapter-5.svg'],
+  ];
+  return byPage[page - 1] ?? [];
+}
+
+function preloadChapterImages(dict: Dictionary, page: number) {
+  for (const src of chapterImagePaths(dict, page)) {
     const { props } = getImageProps({
       src,
       alt: '',
@@ -121,9 +124,9 @@ export default function CVClientWrapper({
 
   useEffect(() => {
     if (!showLoader) {
-      preloadChapterImages(currentPage + 1);
+      preloadChapterImages(dict, currentPage + 1);
     }
-  }, [currentPage, showLoader]);
+  }, [currentPage, showLoader, dict]);
 
   const handlePageChange = (newPage: number) => {
     setIsForward(newPage > currentPage);
@@ -207,6 +210,8 @@ export default function CVClientWrapper({
             lang={lang}
             pageText={pageText}
             ofText={ofText}
+            prevPageLabel={dict.common.prevPage}
+            nextPageLabel={dict.common.nextPage}
             themeLightLabel={dict.common.themeLight}
             themeDarkLabel={dict.common.themeDark}
             switchLanguageLabel={dict.common.switchLanguage}

@@ -1,5 +1,3 @@
-'use client';
-
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
@@ -13,12 +11,12 @@ interface Chapter5EducationProps {
 export function Chapter5Education({ dict }: Chapter5EducationProps) {
   return (
     <section className='mb-12'>
-      <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-tight'>
+      <h1 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-tight'>
         {dict.chapters.education}
-      </h2>
-      <div className='mt-8 space-y-6'>
-        {dict.education.map((edu, index) => (
-          <div key={index}>
+      </h1>
+      <div className='mt-8 flex flex-col gap-6'>
+        {dict.education.map(edu => (
+          <div key={`${edu.degree}-${edu.period}`}>
             <Card className='border-border rounded-none border-x-0 border-t-2 border-b-0 bg-transparent p-0 pt-7 shadow-none'>
               <div className='mb-4 flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
                 <div>
@@ -33,7 +31,7 @@ export function Chapter5Education({ dict }: Chapter5EducationProps) {
                       className='text-primary focus-visible:outline-ring inline-flex items-center gap-1 font-serif text-lg hover:underline focus-visible:outline-2 focus-visible:outline-offset-4'
                     >
                       {edu.university}
-                      <ExternalLink className='h-4 w-4' />
+                      <ExternalLink className='size-4' />
                     </Link>
                   ) : (
                     <p className='text-primary font-serif text-lg'>
@@ -56,10 +54,10 @@ export function Chapter5Education({ dict }: Chapter5EducationProps) {
       <div className='mt-16 flex justify-center'>
         <figure className='border-border w-full max-w-sm border-y py-6 lg:max-w-[640px]'>
           <Image
-            src='/Chapter5.png'
-            alt='Graduation cap with books in library setting'
-            width={1024}
-            height={1024}
+            src='/illustrations/chapter-5.svg'
+            alt={dict.illustrations.chapter5}
+            width={400}
+            height={280}
             className='w-full opacity-90 grayscale dark:opacity-85 dark:[filter:invert(1)_sepia(0.4)_hue-rotate(10deg)_brightness(1.1)_contrast(1.1)]'
           />
         </figure>

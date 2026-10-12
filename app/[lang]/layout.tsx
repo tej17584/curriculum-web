@@ -4,6 +4,8 @@ import { i18n } from '@/i18n.config';
 import { getDictionary } from '@/hooks/getDictionary';
 import { type Lang } from '@/types';
 import { Footer } from '@/components/footer';
+import { JsonLdPerson } from '@/components/json-ld-person';
+import { siteUrl } from '@/lib/site';
 
 // Generar metadatos dinámicos por idioma
 export async function generateMetadata({
@@ -15,7 +17,10 @@ export async function generateMetadata({
   const lang = langParam as Lang;
   const dict = await getDictionary(lang);
 
+  const pageUrl = `${siteUrl}/${lang}`;
+
   return {
+    metadataBase: new URL(siteUrl),
     title: {
       default: dict.seo.defaultTitle,
       template: `%s | ${dict.seo.siteName}`,
@@ -27,15 +32,23 @@ export async function generateMetadata({
       languages: {
         es: '/es',
         en: '/en',
+        'x-default': '/es',
       },
     },
     openGraph: {
       title: dict.seo.defaultTitle,
       description: dict.seo.defaultDescription,
-      url: `/${lang}`,
+      url: pageUrl,
       siteName: dict.seo.siteName,
-      locale: lang,
+      locale: lang === 'es' ? 'es_GT' : 'en_US',
       type: 'website',
+      images: [{ url: '/icon.svg', width: 32, height: 32, alt: dict.seo.siteName }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: dict.seo.defaultTitle,
+      description: dict.seo.defaultDescription,
+      images: ['/icon.svg'],
     },
     robots: {
       index: true,
@@ -63,6 +76,7 @@ export default async function LocaleLayout({
 
   return (
     <div lang={lang}>
+      <JsonLdPerson dict={dict} />
       {children}
       <Footer dict={dict} />
     </div>

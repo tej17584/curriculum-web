@@ -13,7 +13,7 @@ This repository is a Next.js (app-router) front-end for a curriculum/CV site gen
   - `src/components/chapters/*` — chapter components that receive `dict` prop for translations.
   - `src/hooks/getDictionary.ts` — loads translation JSON files, memoized with React.cache.
   - `src/locales/es.json` & `en.json` — nested translation files by component.
-  - `middleware.ts` & `src/middlewares/i18n.ts` — i18n middleware for locale detection and redirects.
+  - `proxy.ts` & `src/middlewares/i18n.ts` — i18n + security middleware chain (locale redirects, CSP).
   - `src/components/book-loader.tsx` — startup loading animation and example of client component patterns.
   - `public/` — images and assets used by the site.
 
@@ -22,7 +22,7 @@ This repository is a Next.js (app-router) front-end for a curriculum/CV site gen
   - Path aliasing: imports use `@/` which maps to `src/` (see `tsconfig.json` paths). Use that alias instead of relative deep paths.
   - Translations: edit `src/locales/es.json` or `en.json` — nested by component. Access via `dict` prop passed from server component.
   - Dynamic params: ALWAYS await `params` and `searchParams` before using their properties (Next.js 15 requirement).
-  - Styling: global CSS is in `app/globals.css` and `styles/globals.css`; Tailwind config is implied by `components.json`.
+  - Styling: global CSS is in `app/globals.css` (tokens in `app/tokens.css`); Tailwind config is implied by `components.json`.
 
 - Build / dev / lint commands (use from repo root)
   - dev: npm run dev (or pnpm dev) — runs the Next dev server

@@ -10,8 +10,7 @@ import Link from 'next/link';
 import { PopAuctionIcon } from '@/components/icons/icons';
 import { cn } from '@/lib/utils';
 
-function projectImageClass(image: string, svgIcon: boolean) {
-  if (svgIcon) return '';
+function projectImageClass(image: string) {
   if (image.endsWith('.svg')) {
     return 'object-contain p-8 dark:brightness-110';
   }
@@ -25,21 +24,25 @@ interface Chapter3ProjectsProps {
 export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
   return (
     <section className='mb-12'>
-      <h2 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-tight'>
+      <h1 className='text-foreground mb-8 font-serif text-3xl font-semibold tracking-tight'>
         {dict.chapters.projects}
-      </h2>
+      </h1>
       <div className='grid gap-x-10 gap-y-12 md:grid-cols-2'>
-        {dict.projects.items.map((project, index) => (
-          <div key={index}>
+        {dict.projects.items.map(project => (
+          <div key={project.title}>
             <TiltCard
               className='h-full'
               cardClassName='h-full'
             >
               <Card className='h-full overflow-hidden rounded-none border-x-0 border-t-2 border-b-0 bg-transparent shadow-none'>
                 <div className='group bg-muted border-border relative aspect-video w-full overflow-hidden border-b'>
-                  {project.SVGIcon ? (
-                    <div className='from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br p-8'>
-                      <PopAuctionIcon className='h-12 w-auto' />
+                  {project.brandLogo === 'popauction' ? (
+                    <div
+                      role='img'
+                      aria-label={project.imageAlt}
+                      className='from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br px-6 py-8'
+                    >
+                      <PopAuctionIcon className='text-primary h-12 w-full max-w-[240px]' />
                     </div>
                   ) : (
                     <Image
@@ -47,9 +50,7 @@ export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
                       alt={project.imageAlt}
                       fill
                       sizes='(min-width: 768px) 50vw, 100vw'
-                      className={cn(
-                        projectImageClass(project.image, project.SVGIcon)
-                      )}
+                      className={cn(projectImageClass(project.image))}
                     />
                   )}
                 </div>
@@ -62,16 +63,16 @@ export function Chapter3Projects({ dict }: Chapter3ProjectsProps) {
                       className='motion-colors hover:text-primary focus-visible:outline-ring inline-flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-offset-4'
                     >
                       {project.title}
-                      <ExternalLink className='h-4 w-4' />
+                      <ExternalLink className='size-4' />
                     </Link>
                   </h3>
                   <p className='text-muted-foreground mb-4 font-serif text-base leading-relaxed'>
                     {project.description}
                   </p>
                   <div className='flex flex-wrap gap-2'>
-                    {project.tags.map((tag, tagIndex) => (
+                    {project.tags.map(tag => (
                       <TechBadge
-                        key={tagIndex}
+                        key={tag}
                         name={tag}
                       />
                     ))}

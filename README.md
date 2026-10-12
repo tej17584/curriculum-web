@@ -2,84 +2,49 @@
 
 _A modern, bilingual portfolio website with unique book-themed design_
 
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 
-## 📖 About This Project
+## About This Project
 
-An elegant portfolio website featuring a unique book-inspired interface with smooth page transitions and full bilingual support (Spanish/English). The design emphasizes readability and user experience while also showing the love I have for books and technology. Hope in the future I can add some references to Asimov, Cixin Liu, and other sci-fi authors that have inspired me over the years.
+An elegant portfolio website featuring a book-inspired interface with smooth page transitions and full bilingual support (Spanish/English). Content is driven by locale JSON files under `src/locales/`.
 
-## ✨ Key Features
+## Key Features
 
-- **📚 Book-Inspired Design**: Unique interface with page-turning animations
-- **🌍 Bilingual Support**: Full Spanish and English translations with automatic language detection
-- **🎨 Theme System**: Beautiful dark and light modes with smooth transitions
-- **📱 Fully Responsive**: Optimized experience across all devices
-- **⚡ Performance**: Built with Next.js 15 App Router for optimal loading speeds
-- **♿ Accessible**: WCAG compliant with semantic HTML and ARIA labels
-- **🔒 Security**: Comprehensive security headers, CSP, XSS protection, and input sanitization
+- **Book-inspired UI** with chapter navigation and intro loader
+- **Bilingual routes** (`/es`, `/en`) with session-persisted chapter when switching language
+- **Dark/light theme** via `next-themes`
+- **SEO** — sitemap, robots, Open Graph, JSON-LD Person
+- **Security** — CSP and headers via `proxy.ts` middleware chain
 
-## 🛠️ Technologies
+## Technologies
 
-**Frontend**
+- Next.js 16 (App Router), React 19, TypeScript
+- Tailwind CSS v4, shadcn/ui (button, badge, card)
+- Framer Motion, next-themes, Vercel Analytics
 
-- Next.js 15 (React 19)
-- TypeScript
-- Tailwind CSS v4
-
-**Architecture**
-
-- Server-side rendering (SSR)
-- Internationalization (i18n)
-- Component-driven design
-- Type-safe development
-
-## 🚀 Running Locally
+## Running Locally
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-npm start
+pnpm install
+pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the project.
+Optional: set `NEXT_PUBLIC_SITE_URL` for canonical URLs in metadata (defaults to production Vercel URL).
 
-## � Project Structure
+## Scripts
 
-```
-├── app/                    # Next.js app directory
-│   ├── [lang]/            # Internationalized routes
-│   └── globals.css        # Global styles
-├── src/
-│   ├── components/        # React components
-│   ├── locales/          # Translation files (ES/EN)
-│   └── lib/              # Utilities and helpers
-└── public/               # Static assets
-```
+- `pnpm dev` — development server
+- `pnpm build` — production build
+- `pnpm type-check` — TypeScript
+- `pnpm test` — Jest unit tests
+- `pnpm lint` — ESLint
 
-## 📄 License
+## Project Structure
 
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🔒 Security
-
-This project implements comprehensive security measures. For details, see [SECURITY.md](SECURITY.md).
-
-Key security features:
-
-- HTTP security headers (CSP, HSTS, X-Frame-Options, etc.)
-- XSS protection and input sanitization
-- Rate limiting utilities
-- Secure middleware chain
-- Regular dependency audits
-
----
-
-**Built with Next.js, TypeScript, and Tailwind CSS**
+- `app/[lang]/` — localized page and metadata
+- `src/components/chapters/` — CV chapter sections
+- `src/components/cv-client.tsx` — client shell (loader, pagination, motion)
+- `src/locales/` — Spanish and English copy
+- `proxy.ts` — i18n + security middleware chain
