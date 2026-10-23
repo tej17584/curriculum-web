@@ -19,7 +19,6 @@ describe('Footer', () => {
     const currentYear = new Date().getFullYear();
     render(<Footer dict={mockDict} />);
 
-    // Footer has two copyright texts (mobile and desktop)
     const copyrightTexts = screen.getAllByText(
       new RegExp(`${currentYear} Alejandro Tejada`)
     );
@@ -61,11 +60,10 @@ describe('Footer', () => {
     );
   });
 
-  it('desktop links open in new tab', () => {
-    const { container } = render(<Footer dict={mockDict} />);
-    const desktopLinks = container.querySelectorAll('.hidden.md\\:flex a');
+  it('social links open in new tab', () => {
+    render(<Footer dict={mockDict} />);
 
-    desktopLinks.forEach(link => {
+    screen.getAllByRole('link').forEach(link => {
       expect(link).toHaveAttribute('target', '_blank');
     });
   });
@@ -85,22 +83,11 @@ describe('Footer', () => {
     expect(icons.length).toBeGreaterThan(0);
   });
 
-  it('applies fixed positioning with translucent chrome', () => {
+  it('flows with the page instead of covering content', () => {
     const { container } = render(<Footer dict={mockDict} />);
     const footer = container.querySelector('footer');
-    expect(footer).toHaveClass('fixed', 'border-t', 'backdrop-blur-md');
-  });
-
-  it('has mobile and desktop layouts', () => {
-    const { container } = render(<Footer dict={mockDict} />);
-
-    // Mobile layout
-    const mobileLayout = container.querySelector('.md\\:hidden');
-    expect(mobileLayout).toBeInTheDocument();
-
-    // Desktop layout
-    const desktopLayout = container.querySelector('.hidden.md\\:flex');
-    expect(desktopLayout).toBeInTheDocument();
+    expect(footer).toHaveClass('border-t');
+    expect(footer).not.toHaveClass('fixed');
   });
 
   it('uses dictionary value for copyright', () => {

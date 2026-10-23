@@ -82,6 +82,22 @@ describe('PageNavigation', () => {
     expect(screen.getByText(/Page 2 of 5/)).toBeInTheDocument();
   });
 
+  it('shows the current chapter name', () => {
+    render(
+      <PageNavigation
+        {...defaultProps}
+        chapterNames={[
+          'About',
+          'Experience',
+          'Projects',
+          'Skills',
+          'Education',
+        ]}
+      />
+    );
+    expect(screen.getByText('Experience')).toBeInTheDocument();
+  });
+
   it('calls onPageChange when next button is clicked', () => {
     render(<PageNavigation {...defaultProps} />);
     const nextButton = screen.getAllByRole('button')[1];

@@ -1,13 +1,7 @@
-'use client';
-
-import { Code2, Globe, Mail, Phone } from 'lucide-react';
-import {
-  contactEmail,
-  contactPhoneDisplay,
-  contactPhoneTel,
-} from '@/lib/site';
-import { MagneticButton } from '@/components/amicro/magnetic-button';
+import { Code2, Globe, Mail, MapPin, Phone } from 'lucide-react';
+import { contactEmail, contactPhoneDisplay, contactPhoneTel } from '@/lib/site';
 import { ChapterIllustration } from '@/components/chapter-illustration';
+import { CopyEmailButton } from '@/components/copy-email-button';
 import { Button } from '@/components/ui/button';
 import type { Dictionary } from '@/hooks/getDictionary';
 import Link from 'next/link';
@@ -16,89 +10,99 @@ interface Chapter1AboutProps {
   dict: Dictionary;
 }
 
+const contactButtonClass =
+  'motion-surface border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-none border bg-transparent';
+
 export function Chapter1About({ dict }: Chapter1AboutProps) {
   return (
     <div>
       <header className='border-border mb-10 border-b pb-10'>
-        <h1 className='text-foreground mb-3 font-serif text-5xl font-bold tracking-tight lg:text-6xl'>
+        <h1 className='text-foreground mb-2 font-serif text-5xl font-bold tracking-tight lg:text-6xl'>
           {dict.profile.name}
         </h1>
-        <p className='text-primary mb-5 font-mono text-xs font-medium tracking-[0.16em] uppercase lg:text-sm'>
+        <p className='text-foreground mb-5 font-sans text-base font-medium lg:text-lg'>
           {dict.profile.title}
         </p>
-        <p className='text-muted-foreground mb-6 max-w-2xl font-serif text-lg leading-relaxed'>
-          {dict.profile.bio}
+        <p className='text-foreground mb-3 max-w-2xl font-serif text-lg leading-relaxed lg:text-xl'>
+          {dict.profile.summary}
+        </p>
+        <p className='text-muted-foreground mb-6 flex items-center gap-1.5 font-sans text-sm'>
+          <MapPin
+            aria-hidden='true'
+            className='size-4'
+          />
+          {dict.profile.availability}
         </p>
         <div className='flex flex-wrap gap-3'>
-          <MagneticButton>
+          <span className='inline-flex gap-1'>
             <Button
               variant='outline'
               size='sm'
               asChild
-              className='motion-surface border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-none border bg-transparent'
+              className={contactButtonClass}
             >
               <Link
                 href={`mailto:${contactEmail}`}
                 className='flex items-center gap-2'
               >
                 <Mail className='h-4 w-4' />
-                {dict.common.email}
+                <span className='sr-only'>{dict.common.email}: </span>
+                {contactEmail}
               </Link>
             </Button>
-          </MagneticButton>
-          <MagneticButton>
-            <Button
-              variant='outline'
-              size='sm'
-              asChild
-              className='motion-surface border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-none border bg-transparent'
+            <CopyEmailButton
+              email={contactEmail}
+              copyLabel={dict.common.copyEmail}
+              copiedLabel={dict.common.emailCopied}
+            />
+          </span>
+          <Button
+            variant='outline'
+            size='sm'
+            asChild
+            className={contactButtonClass}
+          >
+            <Link
+              href={`tel:${contactPhoneTel}`}
+              className='flex items-center gap-2'
             >
-              <Link
-                href={`tel:${contactPhoneTel}`}
-                className='flex items-center gap-2'
-              >
-                <Phone className='h-4 w-4' />
-                <span className='sr-only'>{dict.common.phone}: </span>
-                {contactPhoneDisplay}
-              </Link>
-            </Button>
-          </MagneticButton>
-          <MagneticButton>
-            <Button
-              variant='outline'
-              size='sm'
-              asChild
-              className='motion-surface border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-none border bg-transparent'
+              <Phone className='h-4 w-4' />
+              <span className='sr-only'>{dict.common.phone}: </span>
+              {contactPhoneDisplay}
+            </Link>
+          </Button>
+          <Button
+            variant='outline'
+            size='sm'
+            asChild
+            className={contactButtonClass}
+          >
+            <Link
+              href='https://github.com/tej17584'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center gap-2'
             >
-              <Link
-                href='https://github.com/tej17584'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center gap-2'
-              >
-                <Code2 className='h-4 w-4' />
-                {dict.social.github}
-              </Link>
-            </Button>
-          </MagneticButton>
-          <MagneticButton>
-            <Button
-              variant='outline'
-              size='sm'
-              asChild
-              className='motion-surface border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-none border bg-transparent'
+              <Code2 className='h-4 w-4' />
+              {dict.social.github}
+            </Link>
+          </Button>
+          <Button
+            variant='outline'
+            size='sm'
+            asChild
+            className={contactButtonClass}
+          >
+            <Link
+              href='https://linkedin.com/in/alejandrotejada17584'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center gap-2'
             >
-              <Link
-                href='https://linkedin.com/in/alejandrotejada17584'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center gap-2'
-              >
-                <Globe className='h-4 w-4' />
-                {dict.social.linkedin}
-              </Link>
-            </Button>
-          </MagneticButton>
+              <Globe className='h-4 w-4' />
+              {dict.social.linkedin}
+            </Link>
+          </Button>
         </div>
       </header>
 

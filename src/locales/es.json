@@ -15,7 +15,10 @@
     "themeDark": "Usar tema oscuro",
     "switchLanguage": "Cambiar idioma a",
     "prevPage": "Capítulo anterior",
-    "nextPage": "Capítulo siguiente"
+    "nextPage": "Capítulo siguiente",
+    "chapterNavigation": "Navegación por capítulos",
+    "copyEmail": "Copiar correo",
+    "emailCopied": "Correo copiado"
   },
   "footer": {
     "copyright": "Alejandro Tejada"
@@ -23,14 +26,16 @@
   "profile": {
     "name": "Alejandro Tejada",
     "title": "Ingeniero en Computación y desarrollador full stack",
-    "bio": "Explorando la unión entre la tecnología, la creatividad y las historias humanas."
+    "summary": "Más de seis años construyendo productos web con React, Next.js, TypeScript y Supabase. Ex Senior Software Engineer en PayPal (Xoom).",
+    "availability": "Guatemala · Disponible para proyectos freelance"
   },
   "chapters": {
     "about": "Capítulo I: Acerca de",
     "experience": "Capítulo II: Experiencia",
     "projects": "Capítulo III: Proyectos Destacados",
     "skills": "Capítulo IV: Habilidades y Tecnologías",
-    "education": "Capítulo V: Educación"
+    "education": "Capítulo V: Educación",
+    "nav": ["Acerca de", "Experiencia", "Proyectos", "Habilidades", "Educación"]
   },
   "illustrations": {
     "chapter1": "Grabado de un portátil, una taza de café y un cuaderno abierto con pluma",
@@ -48,8 +53,15 @@
     "jobs": [
       {
         "title": "Desarrollador Full Stack Freelance",
-        "company": "PopAuctioon, Aurelia Joyería, The Men's Formula & Uwii",
-        "companyUrl": "https://themensformula.store",
+        "companies": [
+          { "name": "PopAuctioon", "url": "https://popauctioon.com" },
+          { "name": "Aurelia Joyería", "url": "https://aurelia-joyeria.store" },
+          {
+            "name": "The Men's Formula",
+            "url": "https://themensformula.store"
+          },
+          { "name": "Uwii", "url": "" }
+        ],
         "period": "Oct 2022 — Presente",
         "description": "Desarrollo productos web y móviles de punta a punta: arquitectura, implementación y operación. Lideré la integración de AWS (IVS, Cognito, IAM) para PopAuctioon, plataforma de subastas en tiempo real de artículos de lujo con Next.js, Supabase y Stripe. Diseñé flujos de autenticación, seguridad y streaming en vivo orientados a escala global.",
         "description2": "Construí catálogos lead-gen en Guatemala: Aurelia Joyería GT (joyería B2C por WhatsApp) y The Men's Formula (mayoreo para barberías, precios por volumen, dashboard con RLS y costos internos ocultos al público). Pipeline Excel → SQL + imágenes WebP en Supabase Storage. También colaboré en Uwii con React Native.",
@@ -69,10 +81,11 @@
       },
       {
         "title": "Senior Software Engineer",
-        "company": "Xoom, A PayPal Service",
-        "companyUrl": "https://www.xoom.com",
+        "companies": [
+          { "name": "Xoom, A PayPal Service", "url": "https://www.xoom.com" }
+        ],
         "period": "Oct 2022 — 31 Ago 2026",
-        "description": "Fui Ingeniero de Software Senior en el área web de Xoom, servicio global de PayPal especializado en remesas digitales. Formé parte del equipo del ecosistema de aplicaciones web con React, Next.js, Tailwind, JavaScript, Node.js y AWS, impulsando mejoras de escalabilidad, rendimiento y experiencia de usuario.",
+        "description": "En el equipo web de Xoom, el servicio global de remesas digitales de PayPal, trabajé en el ecosistema de aplicaciones web con React, Next.js, Tailwind, JavaScript, Node.js y AWS, impulsando mejoras de escalabilidad, rendimiento y experiencia de usuario.",
         "description2": "Lideré iniciativas de modernización y consistencia visual, siendo owner de aplicaciones internas de estilos y componentes compartidos. Participé en la actualización integral del header, footer y cuerpo principal de Xoom.com para una interfaz más coherente, accesible y moderna ante una audiencia global.",
         "tags": [
           "JavaScript",
@@ -88,8 +101,7 @@
       },
       {
         "title": "Software Engineer",
-        "company": "Cognits",
-        "companyUrl": "https://www.cognits.co",
+        "companies": [{ "name": "Cognits", "url": "https://www.cognits.co" }],
         "period": "Ago 2020 — Ago 2022",
         "description": "Trabajé en el desarrollo de aplicaciones web y móviles para el sector financiero y médico, utilizando herramientas low-code como Mendix y Visualizer, además de entornos personalizados con JavaScript y React. Participé en proyectos de banca digital y seguros, contribuyendo al diseño de interfaces accesibles y flujos eficientes.",
         "description2": "Colaboré con equipos multidisciplinarios para definir funcionalidades, optimizar rendimiento y mejorar la experiencia del usuario. Esta experiencia fortaleció mis habilidades en comunicación técnica, UX/UI y metodologías ágiles, preparándome para liderar entornos complejos y de alta exigencia.",
@@ -97,8 +109,9 @@
       },
       {
         "title": "Software Developer",
-        "company": "Pacifiko.com",
-        "companyUrl": "https://www.pacifiko.com",
+        "companies": [
+          { "name": "Pacifiko.com", "url": "https://www.pacifiko.com" }
+        ],
         "period": "Oct 2019 — Jun 2020",
         "description": "Formé parte del equipo de desarrollo de Pacifiko Guatemala, una plataforma de comercio electrónico en crecimiento. Contribuí a la implementación de funcionalidades en áreas de inventario, finanzas, marketing digital y experiencia de usuario, trabajando tanto en front-end como back-end.",
         "description2": "Esta experiencia me permitió aplicar buenas prácticas de desarrollo full-stack y adquirir una visión integral del ciclo de vida del producto digital, en un entorno dinámico que combinaba tecnología y estrategia empresarial.",
@@ -106,8 +119,12 @@
       },
       {
         "title": "Profesor Auxiliar",
-        "company": "Universidad del Valle de Guatemala",
-        "companyUrl": "https://www.uvg.edu.gt",
+        "companies": [
+          {
+            "name": "Universidad del Valle de Guatemala",
+            "url": "https://www.uvg.edu.gt"
+          }
+        ],
         "period": "Ene 2019 — Dic 2020",
         "description": "Fui profesor auxiliar en cursos de física, estadística, matemáticas, algoritmos y programación, acompañando a estudiantes en su proceso de aprendizaje y en la comprensión de fundamentos lógicos y analíticos.",
         "description2": "Durante este periodo, fortalecí mi capacidad para comunicar conceptos técnicos, fomentar la curiosidad y adaptar el contenido a distintos niveles, reforzando mi interés por la enseñanza y la formación en disciplinas STEM.",
@@ -123,6 +140,7 @@
         "url": "https://aurelia-joyeria.store",
         "description": "Tienda en línea de joyería para Guatemala: catálogo con búsqueda, filtros y SEO (sitemap, Open Graph, JSON-LD), outlet y fichas de producto con CTA por WhatsApp (referencia AUR-######), sin pasarela de pago. Backoffice con Supabase Auth, CRUD de inventario e imágenes, taxonomía, bandeja de contactos y contenido del home. Postgres con RLS, CSP y rate limiting, uploads WebP con Sharp, degradación controlada de queries y Sentry en producción.",
         "image": "/projects/aurelia-joyeria.webp",
+        "imagePosition": "top",
         "imageAlt": "Tienda en línea Aurelia Joyería GT",
         "tags": [
           "Next.js",
@@ -141,6 +159,7 @@
         "url": "https://themensformula.store",
         "description": "Catálogo B2B para barberías en Guatemala: storefront con filtros, fichas con precios por unidad y por volumen (3+, 6+, caja) y consulta por WhatsApp o formulario, sin carrito ni pasarela. Dashboard con auth, allowlist, sesión de 2 h, CRUD de productos/marcas/categorías, inbox de mensajes y configuración comercial. Supabase (Postgres, Auth, Storage) con RLS y grants de columna para ocultar costos al público; Server Actions con Zod; Sharp/WebP; tests con Playwright y Vitest; Sentry y Vercel Analytics.",
         "image": "/projects/the-mens-formula.webp",
+        "imagePosition": "top",
         "imageAlt": "Catálogo B2B The Men's Formula para barberías en Guatemala",
         "tags": [
           "Next.js",
@@ -159,6 +178,7 @@
         "url": "https://popauctioon.com",
         "description": "Plataforma de subastas en tiempo real para artículos de lujo, diseñada y desarrollada desde cero con Next.js, Supabase, Stripe y AWS IVS. Incluye autenticación avanzada con AWS Cognito, gestión de roles con AWS IAM y transmisión de video en vivo. El sistema fue construido para ser seguro, escalable y preparado para el crecimiento global.",
         "image": "",
+        "imagePosition": "center",
         "imageAlt": "Plataforma de subastas PopAuctioon en tiempo real",
         "tags": [
           "Next.js",
@@ -176,8 +196,15 @@
         "url": "https://www.xoom.com",
         "description": "Rediseño global de Xoom.com, la plataforma de remesas de PayPal. Contribuí a la modernización del header, footer y estructura principal del sitio utilizando React, Next.js y Tailwind. La actualización mejoró la accesibilidad, el rendimiento y la coherencia visual para millones de usuarios en todo el mundo.",
         "image": "/xpp-logo.svg",
+        "imagePosition": "center",
         "imageAlt": "Rediseño del sitio web Xoom.com",
-        "tags": ["React", "Next.js", "Tailwind CSS", "TypeScript", "Accesibilidad"]
+        "tags": [
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "TypeScript",
+          "Accesibilidad"
+        ]
       },
       {
         "title": "Gloss and Glow",
@@ -185,6 +212,7 @@
         "url": "https://www.glossandglowgt.online/es",
         "description": "Sitio web moderno de belleza y maquillaje con catálogo dinámico, sistema de pagos integrado y diseño elegante y responsivo. Construido con enfoque en rendimiento, accesibilidad y experiencia de usuario.",
         "image": "/gloss-and-glow.webp",
+        "imagePosition": "center 26%",
         "imageAlt": "Sitio web Gloss and Glow",
         "tags": ["Next.js", "Tailwind", "Stripe", "UX/UI", "Supabase"]
       }
@@ -217,47 +245,56 @@
     {
       "title": "AWS Certified Cloud Practitioner",
       "provider": "Amazon Web Services",
-      "date": "Sep 2025"
+      "date": "Sep 2025",
+      "kind": "certification"
     },
     {
       "title": "AWS Certified Solutions Architect – Associate (en preparación)",
       "provider": "Amazon Web Services",
-      "date": "2026 — En curso"
+      "date": "2026 — En curso",
+      "kind": "certification"
     },
     {
       "title": "Full-Stack Developer Career Path",
       "provider": "Codecademy",
-      "date": "2025"
+      "date": "2025",
+      "kind": "course"
     },
     {
       "title": "Complete Intro to React, v6",
       "provider": "Frontend Masters",
-      "date": "Mar 2023"
+      "date": "Mar 2023",
+      "kind": "course"
     },
     {
       "title": "React Native",
       "provider": "Frontend Masters",
-      "date": "Feb 2023"
+      "date": "Feb 2023",
+      "kind": "course"
     },
     {
       "title": "CSS Grids and Flexbox for Responsive Web Design",
       "provider": "Frontend Masters",
-      "date": "Nov 2022"
+      "date": "Nov 2022",
+      "kind": "course"
     },
     {
       "title": "Visual Elements of User Interface Design",
       "provider": "Coursera",
-      "date": "Sep 2022"
+      "date": "Sep 2022",
+      "kind": "course"
     },
     {
       "title": "User Experience: Research & Prototyping",
       "provider": "Coursera",
-      "date": "Jul 2022"
+      "date": "Jul 2022",
+      "kind": "course"
     },
     {
       "title": "Data Visualization",
       "provider": "Frontend Masters",
-      "date": "May 2022"
+      "date": "May 2022",
+      "kind": "course"
     }
   ],
   "skills": {
@@ -266,6 +303,8 @@
     "tools": "Herramientas y Plataformas",
     "spokenLanguages": "Idiomas",
     "certifications": "Certificaciones",
+    "courses": "Cursos",
+    "otherTools": "También he trabajado con",
     "programmingList": [
       "JavaScript",
       "TypeScript",
@@ -287,13 +326,11 @@
       "Supabase",
       "Sentry",
       "Playwright",
-      "Mendix",
-      "Visualizer",
-      "Unity",
       "Figma",
       "AWS",
       "DevOps"
-    ]
+    ],
+    "otherList": ["Mendix", "Visualizer", "Unity"]
   },
   "languages": {
     "spanish": "Español",
@@ -302,9 +339,9 @@
     "advanced": "Dominio Profesional Completo"
   },
   "bookLoader": {
-    "title": "CV",
+    "title": "Alejandro Tejada",
     "subtitle": "Curriculum Vitae",
-    "loading": "Abriendo tu historia..."
+    "loading": "Abriendo mi historia…"
   },
   "social": {
     "github": "GitHub",

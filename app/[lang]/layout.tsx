@@ -42,13 +42,11 @@ export async function generateMetadata({
       siteName: dict.seo.siteName,
       locale: lang === 'es' ? 'es_GT' : 'en_US',
       type: 'website',
-      images: [{ url: '/icon.svg', width: 32, height: 32, alt: dict.seo.siteName }],
     },
     twitter: {
       card: 'summary_large_image',
       title: dict.seo.defaultTitle,
       description: dict.seo.defaultDescription,
-      images: ['/icon.svg'],
     },
     robots: {
       index: true,

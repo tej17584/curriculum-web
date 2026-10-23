@@ -61,56 +61,27 @@ export function Footer({ dict }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='bg-background/92 border-border fixed right-0 bottom-0 left-0 z-30 border-t backdrop-blur-md'>
-      <div className='mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 lg:px-8'>
-        {/* Mobile layout - stacked vertically */}
-        <div className='flex flex-col gap-3 md:hidden'>
-          {/* Social Links */}
-          <div className='flex justify-center gap-x-4'>
-            {navigation.map(item => (
-              <Link
-                key={item.name}
-                href={item.href}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='motion-colors text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4'
-              >
-                <span className='sr-only'>{item.name}</span>
-                <item.icon
-                  aria-hidden='true'
-                  className='h-5 w-5'
-                />
-              </Link>
-            ))}
-          </div>
-          {/* Copyright */}
-          <p className='text-muted-foreground text-center font-mono text-[0.65rem] tracking-wide uppercase'>
-            &copy; {currentYear} {dict.footer.copyright}
-          </p>
-        </div>
-
-        {/* Desktop layout - horizontal */}
-        <div className='hidden md:flex md:items-center md:justify-between'>
-          <p className='text-muted-foreground font-mono text-[0.65rem] tracking-wide uppercase'>
-            &copy; {currentYear} {dict.footer.copyright}
-          </p>
-          <div className='flex justify-center gap-x-6'>
-            {navigation.map(item => (
-              <Link
-                key={item.name}
-                href={item.href}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='motion-colors text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4'
-              >
-                <span className='sr-only'>{item.name}</span>
-                <item.icon
-                  aria-hidden='true'
-                  className='size-6'
-                />
-              </Link>
-            ))}
-          </div>
+    <footer className='border-border bg-background border-t'>
+      <div className='mx-auto flex max-w-5xl flex-col-reverse items-center gap-4 px-5 pt-6 pb-24 sm:flex-row sm:justify-between sm:px-8 sm:pb-28 lg:px-12'>
+        <p className='text-muted-foreground text-sm'>
+          &copy; {currentYear} {dict.footer.copyright}
+        </p>
+        <div className='flex gap-x-5'>
+          {navigation.map(item => (
+            <Link
+              key={item.name}
+              href={item.href}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='motion-colors text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4'
+            >
+              <span className='sr-only'>{item.name}</span>
+              <item.icon
+                aria-hidden='true'
+                className='size-5'
+              />
+            </Link>
+          ))}
         </div>
       </div>
     </footer>

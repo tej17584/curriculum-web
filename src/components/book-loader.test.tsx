@@ -1,13 +1,13 @@
-import { render, screen } from '@testing-library/react';
-import { BookLoader } from './book-loader';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { BookLoader, INTRO_DURATION_MS } from './book-loader';
 import type { Dictionary } from '@/hooks/getDictionary';
 
 // Mock dictionary data - only include fields used by BookLoader
 const mockDict = {
   bookLoader: {
-    title: 'Curriculum Vitae',
-    subtitle: 'Jose Alejandro Tejada',
-    loading: 'Opening your story...',
+    title: 'Alejandro Tejada',
+    subtitle: 'Curriculum Vitae',
+    loading: 'Opening my story…',
   },
 } as Dictionary;
 
@@ -22,31 +22,29 @@ describe('BookLoader', () => {
   });
 
   it('renders book loader with title and subtitle', () => {
-    const mockOnComplete = jest.fn();
     render(
       <BookLoader
-        onComplete={mockOnComplete}
+        onComplete={jest.fn()}
         dict={mockDict}
       />
     );
 
+    expect(screen.getByText('Alejandro Tejada')).toBeInTheDocument();
     expect(screen.getByText('Curriculum Vitae')).toBeInTheDocument();
-    expect(screen.getByText('Jose Alejandro Tejada')).toBeInTheDocument();
   });
 
   it('renders loading text', () => {
-    const mockOnComplete = jest.fn();
     render(
       <BookLoader
-        onComplete={mockOnComplete}
+        onComplete={jest.fn()}
         dict={mockDict}
       />
     );
 
-    expect(screen.getByText('Opening your story...')).toBeInTheDocument();
+    expect(screen.getByText('Opening my story…')).toBeInTheDocument();
   });
 
-  it('calls onComplete after the loader interval', () => {
+  it('calls onComplete once after the intro duration', () => {
     const mockOnComplete = jest.fn();
     render(
       <BookLoader
@@ -57,7 +55,37 @@ describe('BookLoader', () => {
 
     expect(mockOnComplete).not.toHaveBeenCalled();
 
-    jest.advanceTimersByTime(1900);
+    jest.advanceTimersByTime(INTRO_DURATION_MS);
+    jest.advanceTimersByTime(INTRO_DURATION_MS);
+
+    expect(mockOnComplete).toHaveBeenCalledTimes(1);
+  });
+
+  it('can be skipped with a key press', () => {
+    const mockOnComplete = jest.fn();
+    render(
+      <BookLoader
+        onComplete={mockOnComplete}
+        dict={mockDict}
+      />
+    );
+
+    fireEvent.keyDown(window, { key: 'Escape' });
+    jest.advanceTimersByTime(INTRO_DURATION_MS);
+
+    expect(mockOnComplete).toHaveBeenCalledTimes(1);
+  });
+
+  it('can be skipped with a click', () => {
+    const mockOnComplete = jest.fn();
+    render(
+      <BookLoader
+        onComplete={mockOnComplete}
+        dict={mockDict}
+      />
+    );
+
+    fireEvent.pointerDown(window);
 
     expect(mockOnComplete).toHaveBeenCalledTimes(1);
   });
@@ -72,16 +100,15 @@ describe('BookLoader', () => {
     );
 
     unmount();
-    jest.advanceTimersByTime(1900);
+    jest.advanceTimersByTime(INTRO_DURATION_MS);
 
     expect(mockOnComplete).not.toHaveBeenCalled();
   });
 
   it('applies fixed full-viewport positioning', () => {
-    const mockOnComplete = jest.fn();
     const { container } = render(
       <BookLoader
-        onComplete={mockOnComplete}
+        onComplete={jest.fn()}
         dict={mockDict}
       />
     );
@@ -99,10 +126,9 @@ describe('BookLoader', () => {
       },
     } as Dictionary;
 
-    const mockOnComplete = jest.fn();
     render(
       <BookLoader
-        onComplete={mockOnComplete}
+        onComplete={jest.fn()}
         dict={customDict}
       />
     );

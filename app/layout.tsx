@@ -9,6 +9,9 @@ import './globals.css';
 import { Suspense } from 'react';
 import { getImageProps } from 'next/image';
 import { Providers } from '@/components/providers';
+import { INTRO_SEEN_KEY } from '@/lib/cv-session';
+
+const introSkipScript = `try{if(localStorage.getItem('${INTRO_SEEN_KEY}')==='1'||matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.dataset.intro='skip'}}catch(e){}`;
 
 const neuton = Neuton({
   subsets: ['latin'],
@@ -38,6 +41,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: introSkipScript }} />
         <link
           rel='preload'
           as='image'

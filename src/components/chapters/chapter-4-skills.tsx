@@ -1,6 +1,14 @@
-import { Code2, BookOpen, Wrench, Globe, Award } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import {
+  Award,
+  BookOpen,
+  Code2,
+  Globe,
+  GraduationCap,
+  Layers,
+  Wrench,
+} from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
 import { TechBadge } from '@/components/tech-badge';
 import { TechIcon, certTechName } from '@/components/tech-icon';
 import type { Dictionary } from '@/hooks/getDictionary';
@@ -9,129 +17,169 @@ interface Chapter4SkillsProps {
   dict: Dictionary;
 }
 
-export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
+function SkillGroup({
+  icon: Icon,
+  title,
+  items,
+}: {
+  icon: LucideIcon;
+  title: string;
+  items: string[];
+}) {
   return (
-    <>
+    <div className='py-7'>
+      <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
+        <Icon
+          aria-hidden='true'
+          className='text-muted-foreground size-5'
+        />
+        {title}
+      </h3>
+      <div className='flex flex-wrap gap-3'>
+        {items.map(item => (
+          <TechBadge
+            key={item}
+            name={item}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const languageBadgeClass =
+  'border-border text-foreground rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs';
+
+/** Must render a single root element: the reader paginates by top-level children. */
+export function Chapter4Skills({ dict }: Chapter4SkillsProps) {
+  const certifications = dict.certifications.filter(
+    cert => cert.kind === 'certification'
+  );
+  const courses = dict.certifications.filter(cert => cert.kind === 'course');
+
+  return (
+    <div>
       <section className='mb-16'>
         <h1 className='text-foreground mb-6 font-serif text-3xl font-semibold tracking-tight'>
           {dict.chapters.skills}
         </h1>
         <div className='divide-border divide-y'>
-          <div>
-            <Card className='rounded-none border-0 bg-transparent px-0 py-7 shadow-none'>
-              <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
-                <Code2 className='text-primary size-6' />
-                {dict.skills.programmingLanguages}
-              </h3>
-              <div className='flex flex-wrap gap-3'>
-                {dict.skills.programmingList.map(skill => (
-                  <TechBadge
-                    key={skill}
-                    name={skill}
-                    className='text-primary'
-                  />
-                ))}
-              </div>
-            </Card>
-          </div>
-
-          <div>
-            <Card className='rounded-none border-0 bg-transparent px-0 py-7 shadow-none'>
-              <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
-                <BookOpen className='text-primary size-6' />
-                {dict.skills.frameworks}
-              </h3>
-              <div className='flex flex-wrap gap-3'>
-                {dict.skills.frameworksList.map(framework => (
-                  <TechBadge
-                    key={framework}
-                    name={framework}
-                    className='text-primary'
-                  />
-                ))}
-              </div>
-            </Card>
-          </div>
-
-          <div>
-            <Card className='rounded-none border-0 bg-transparent px-0 py-7 shadow-none'>
-              <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
-                <Wrench className='text-primary size-6' />
-                {dict.skills.tools}
-              </h3>
-              <div className='flex flex-wrap gap-3'>
-                {dict.skills.toolsList.map(tool => (
-                  <TechBadge
-                    key={tool}
-                    name={tool}
-                    className='text-primary'
-                  />
-                ))}
-              </div>
-            </Card>
-          </div>
-
-          <div>
-            <Card className='rounded-none border-0 bg-transparent px-0 py-7 shadow-none'>
-              <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
-                <Globe className='text-primary size-6' />
-                {dict.skills.spokenLanguages}
-              </h3>
-              <div className='flex flex-wrap gap-3'>
-                <Badge className='motion-colors border-border text-primary hover:border-primary/60 rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs'>
-                  {dict.languages.spanish} — {dict.languages.native}
-                </Badge>
-                <Badge className='motion-colors border-border text-primary hover:border-primary/60 rounded-none border bg-transparent px-3 py-1.5 font-mono text-xs'>
-                  {dict.languages.english} — {dict.languages.advanced}
-                </Badge>
-              </div>
-            </Card>
+          <SkillGroup
+            icon={Code2}
+            title={dict.skills.programmingLanguages}
+            items={dict.skills.programmingList}
+          />
+          <SkillGroup
+            icon={BookOpen}
+            title={dict.skills.frameworks}
+            items={dict.skills.frameworksList}
+          />
+          <SkillGroup
+            icon={Wrench}
+            title={dict.skills.tools}
+            items={dict.skills.toolsList}
+          />
+          <SkillGroup
+            icon={Layers}
+            title={dict.skills.otherTools}
+            items={dict.skills.otherList}
+          />
+          <div className='py-7'>
+            <h3 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
+              <Globe
+                aria-hidden='true'
+                className='text-muted-foreground size-5'
+              />
+              {dict.skills.spokenLanguages}
+            </h3>
+            <div className='flex flex-wrap gap-3'>
+              <Badge className={languageBadgeClass}>
+                {dict.languages.spanish} — {dict.languages.native}
+              </Badge>
+              <Badge className={languageBadgeClass}>
+                {dict.languages.english} — {dict.languages.advanced}
+              </Badge>
+            </div>
           </div>
         </div>
       </section>
 
-      <section>
+      <section className='mb-16'>
         <h2 className='text-foreground mb-6 flex items-center gap-2 font-serif text-2xl font-semibold'>
-          <Award className='text-primary size-6' />
+          <Award
+            aria-hidden='true'
+            className='text-primary size-6'
+          />
           {dict.skills.certifications}
         </h2>
-        <div className='flex flex-col gap-4'>
-          {dict.certifications.map(cert => {
+        <div className='grid gap-4 sm:grid-cols-2'>
+          {certifications.map(cert => {
             const iconName = certTechName(cert.title, cert.provider);
             return (
-              <div key={`${cert.title}-${cert.date}`}>
-                <Card className='border-border rounded-none border-x-0 border-t-2 border-b-0 bg-transparent p-0 pt-6 shadow-none'>
-                  <div className='flex flex-col justify-between gap-2 sm:flex-row sm:items-start'>
-                    <div className='flex items-start gap-3'>
-                      <span className='border-border mt-0.5 flex size-8 shrink-0 items-center justify-center border'>
-                        <TechIcon
-                          name={iconName}
-                          className={
-                            iconName === 'aws-practitioner'
-                              ? 'size-7'
-                              : 'size-4'
-                          }
-                        />
-                      </span>
-                      <div>
-                        <h3 className='text-foreground font-serif text-xl font-semibold'>
-                          {cert.title}
-                        </h3>
-                        <p className='text-muted-foreground font-serif text-base'>
-                          {cert.provider}
-                        </p>
-                      </div>
-                    </div>
-                    <span className='text-muted-foreground font-mono text-xs tracking-[0.12em] uppercase'>
-                      {cert.date}
-                    </span>
-                  </div>
-                </Card>
+              <div
+                key={`${cert.title}-${cert.date}`}
+                className='border-primary/40 flex items-start gap-4 border p-5'
+              >
+                <span className='border-border flex size-10 shrink-0 items-center justify-center border'>
+                  <TechIcon
+                    name={iconName}
+                    className={
+                      iconName === 'aws-practitioner' ? 'size-9' : 'size-5'
+                    }
+                  />
+                </span>
+                <div className='min-w-0'>
+                  <h3 className='text-foreground font-serif text-xl leading-snug font-semibold'>
+                    {cert.title}
+                  </h3>
+                  <p className='text-muted-foreground font-serif text-base'>
+                    {cert.provider}
+                  </p>
+                  <p className='text-muted-foreground mt-2 font-mono text-xs tracking-[0.12em] uppercase'>
+                    {cert.date}
+                  </p>
+                </div>
               </div>
             );
           })}
         </div>
       </section>
-    </>
+
+      <section>
+        <h2 className='text-foreground mb-4 flex items-center gap-2 font-serif text-2xl font-semibold'>
+          <GraduationCap
+            aria-hidden='true'
+            className='text-muted-foreground size-6'
+          />
+          {dict.skills.courses}
+        </h2>
+        <ul className='grid sm:grid-cols-2 sm:gap-x-10'>
+          {courses.map(course => (
+            <li
+              key={`${course.title}-${course.date}`}
+              className='border-border flex items-start justify-between gap-4 border-b py-4'
+            >
+              <div className='flex min-w-0 items-start gap-3'>
+                <TechIcon
+                  name={certTechName(course.title, course.provider)}
+                  className='text-muted-foreground mt-1 size-4'
+                />
+                <div className='min-w-0'>
+                  <p className='text-foreground font-serif text-base leading-snug font-semibold'>
+                    {course.title}
+                  </p>
+                  <p className='text-muted-foreground font-serif text-sm'>
+                    {course.provider}
+                  </p>
+                </div>
+              </div>
+              <span className='text-muted-foreground shrink-0 font-mono text-xs tracking-[0.12em] uppercase'>
+                {course.date}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
   );
 }

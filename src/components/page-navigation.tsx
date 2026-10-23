@@ -15,6 +15,8 @@ type PageNavigationProps = {
   lang: Lang;
   pageText: string;
   ofText: string;
+  chapterNames?: readonly string[];
+  navLabel?: string;
   prevPageLabel: string;
   nextPageLabel: string;
   themeLightLabel: string;
@@ -29,6 +31,8 @@ export function PageNavigation({
   lang,
   pageText,
   ofText,
+  chapterNames = [],
+  navLabel = 'Chapter navigation',
   prevPageLabel,
   nextPageLabel,
   themeLightLabel,
@@ -45,6 +49,7 @@ export function PageNavigation({
   }, []);
 
   const isDark = mounted && resolvedTheme === 'dark';
+  const chapterName = chapterNames[currentPage - 1];
 
   const toggleTheme = () => {
     setTheme(isDark ? 'light' : 'dark');
@@ -54,15 +59,15 @@ export function PageNavigation({
     const newLang = lang === 'en' ? 'es' : 'en';
     const newPath = pathname.replace(`/${lang}`, `/${newLang}`);
     saveCvSession({ page: currentPage, introSeen: true });
-    router.push(newPath);
+    router.push(`${newPath}${window.location.hash}`);
   };
 
   const nextLangLabel = lang === 'en' ? 'ES' : 'EN';
 
   return (
     <nav
-      aria-label='Chapter navigation'
-      className='border-border bg-background/92 fixed bottom-20 left-1/2 z-40 flex -translate-x-1/2 items-center gap-1 border px-2 py-2 shadow-lg backdrop-blur-md sm:bottom-28 sm:gap-2 sm:px-4'
+      aria-label={navLabel}
+      className='border-border bg-background/92 fixed bottom-4 left-1/2 z-40 flex -translate-x-1/2 items-center gap-1 border px-2 py-1.5 shadow-lg backdrop-blur-md sm:bottom-6 sm:gap-2 sm:px-3'
     >
       <Button
         variant='ghost'
@@ -75,8 +80,18 @@ export function PageNavigation({
         <ChevronLeft className='size-4' />
       </Button>
 
-      <span className='text-foreground min-w-22 text-center font-mono text-[0.65rem] tracking-[0.1em] whitespace-nowrap uppercase sm:min-w-28 sm:text-xs'>
-        {pageText} {currentPage} {ofText} {totalPages}
+      <span
+        className='flex min-w-24 flex-col items-center text-center leading-tight whitespace-nowrap sm:min-w-32'
+        aria-live='polite'
+      >
+        {chapterName && (
+          <span className='text-foreground font-serif text-sm font-semibold sm:text-base'>
+            {chapterName}
+          </span>
+        )}
+        <span className='text-muted-foreground font-mono text-[0.65rem]'>
+          {pageText} {currentPage} {ofText} {totalPages}
+        </span>
       </span>
 
       <Button
@@ -90,7 +105,7 @@ export function PageNavigation({
         <ChevronRight className='size-4' />
       </Button>
 
-      <div className='bg-border mx-1 h-5 w-px sm:h-6' />
+      <div className='bg-border mx-1 h-6 w-px' />
 
       <Button
         variant='ghost'
@@ -106,11 +121,11 @@ export function PageNavigation({
           aria-hidden='true'
         >
           <Moon
-            className='t-icon text-primary size-4'
+            className='t-icon size-4'
             data-icon='a'
           />
           <Sun
-            className='t-icon text-primary size-4'
+            className='t-icon size-4'
             data-icon='b'
           />
         </span>
@@ -120,10 +135,10 @@ export function PageNavigation({
         variant='ghost'
         size='sm'
         onClick={toggleLanguage}
-        className='motion-surface hover:bg-muted h-9 gap-1.5 px-2.5 font-mono text-xs tracking-wider'
+        className='motion-surface hover:bg-muted h-9 gap-1.5 px-2.5 font-mono text-xs'
         aria-label={`${switchLanguageLabel} ${nextLangLabel}`}
       >
-        <Languages className='text-primary size-4' />
+        <Languages className='size-4' />
         {nextLangLabel}
       </Button>
     </nav>

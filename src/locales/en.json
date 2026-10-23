@@ -15,7 +15,10 @@
     "themeDark": "Use dark theme",
     "switchLanguage": "Switch language to",
     "prevPage": "Previous chapter",
-    "nextPage": "Next chapter"
+    "nextPage": "Next chapter",
+    "chapterNavigation": "Chapter navigation",
+    "copyEmail": "Copy email",
+    "emailCopied": "Email copied"
   },
   "footer": {
     "copyright": "Alejandro Tejada"
@@ -23,14 +26,16 @@
   "profile": {
     "name": "Alejandro Tejada",
     "title": "Computer Science Engineer & Full Stack Developer",
-    "bio": "Exploring the intersection between technology, creativity, and human stories."
+    "summary": "Six-plus years building web products with React, Next.js, TypeScript, and Supabase. Former Senior Software Engineer at PayPal (Xoom).",
+    "availability": "Guatemala · Available for freelance projects"
   },
   "chapters": {
     "about": "Chapter I: About",
     "experience": "Chapter II: Experience",
     "projects": "Chapter III: Featured Projects",
     "skills": "Chapter IV: Skills & Technologies",
-    "education": "Chapter V: Education"
+    "education": "Chapter V: Education",
+    "nav": ["About", "Experience", "Projects", "Skills", "Education"]
   },
   "illustrations": {
     "chapter1": "Engraving of a laptop, a coffee mug, and an open notebook with a pen",
@@ -48,8 +53,15 @@
     "jobs": [
       {
         "title": "Freelance Full Stack Engineer",
-        "company": "PopAuctioon, Aurelia Joyería, The Men's Formula & Uwii",
-        "companyUrl": "https://themensformula.store",
+        "companies": [
+          { "name": "PopAuctioon", "url": "https://popauctioon.com" },
+          { "name": "Aurelia Joyería", "url": "https://aurelia-joyeria.store" },
+          {
+            "name": "The Men's Formula",
+            "url": "https://themensformula.store"
+          },
+          { "name": "Uwii", "url": "" }
+        ],
         "period": "Oct 2022 — Present",
         "description": "Build end-to-end web and mobile products: architecture, implementation, and operations. Led AWS integration (IVS, Cognito, IAM) for PopAuctioon, a real-time luxury auction platform on Next.js, Supabase, and Stripe, with authentication, security, and live streaming built for global scale.",
         "description2": "Shipped lead-gen catalogs in Guatemala: Aurelia Joyería GT (B2C jewelry via WhatsApp) and The Men's Formula (barbershop wholesale with tiered pricing and an admin dashboard with RLS and internal costs hidden from the public). Excel → SQL + WebP image pipeline on Supabase Storage. Also contributed to Uwii with React Native.",
@@ -69,10 +81,11 @@
       },
       {
         "title": "Senior Software Engineer",
-        "company": "Xoom, A PayPal Service",
-        "companyUrl": "https://www.xoom.com",
+        "companies": [
+          { "name": "Xoom, A PayPal Service", "url": "https://www.xoom.com" }
+        ],
         "period": "Oct 2022 — Aug 31, 2026",
-        "description": "Senior Software Engineer on Xoom’s web team, PayPal’s global digital remittances service. Contributed to the web applications ecosystem built with React, Next.js, Tailwind, JavaScript, Node.js, and AWS, improving scalability, performance, and user experience.",
+        "description": "On the web team at Xoom, PayPal’s global digital remittances service, I worked across the web applications ecosystem built with React, Next.js, Tailwind, JavaScript, Node.js, and AWS, improving scalability, performance, and user experience.",
         "description2": "Led modernization and visual consistency initiatives, owning internal apps for shared styles and components. Helped deliver the comprehensive update of Xoom.com’s header, footer, and main layout for a more cohesive, accessible experience for a global audience.",
         "tags": [
           "JavaScript",
@@ -88,8 +101,7 @@
       },
       {
         "title": "Software Engineer",
-        "company": "Cognits",
-        "companyUrl": "https://www.cognits.co",
+        "companies": [{ "name": "Cognits", "url": "https://www.cognits.co" }],
         "period": "Aug 2020 — Aug 2022",
         "description": "Worked on web and mobile application development for the financial and medical sectors, using low-code tools like Mendix and Visualizer, as well as custom environments with JavaScript and React. Participated in digital banking and insurance projects, contributing to the design of accessible interfaces and efficient workflows.",
         "description2": "Collaborated with multidisciplinary teams to define features, optimize performance, and improve user experience. This experience strengthened my skills in technical communication, UX/UI, and agile methodologies, preparing me to lead in complex and demanding environments.",
@@ -98,8 +110,9 @@
 
       {
         "title": "Software Developer",
-        "company": "Pacifiko.com",
-        "companyUrl": "https://www.pacifiko.com",
+        "companies": [
+          { "name": "Pacifiko.com", "url": "https://www.pacifiko.com" }
+        ],
         "period": "Oct 2019 — Jun 2020",
         "description": "I was part of the development team at Pacifiko Guatemala, a growing e-commerce platform. I contributed to implementing features in inventory, finance, digital marketing, and user experience, working on both front-end and back-end.",
         "description2": "This experience allowed me to apply full-stack development best practices and gain a comprehensive view of the digital product lifecycle, in a dynamic environment that combined technology and business strategy.",
@@ -107,8 +120,12 @@
       },
       {
         "title": "Teaching Assistant",
-        "company": "Universidad del Valle de Guatemala",
-        "companyUrl": "https://www.uvg.edu.gt",
+        "companies": [
+          {
+            "name": "Universidad del Valle de Guatemala",
+            "url": "https://www.uvg.edu.gt"
+          }
+        ],
         "period": "Jan 2019 — Dec 2020",
         "description": "Served as a teaching assistant in courses including physics, statistics, mathematics, algorithms, and programming, supporting students in their learning process and understanding of logical and analytical fundamentals.",
         "description2": "During this period, I strengthened my ability to communicate technical concepts, foster curiosity, and adapt content to different levels, reinforcing my interest in teaching and training in STEM disciplines.",
@@ -124,6 +141,7 @@
         "url": "https://aurelia-joyeria.store",
         "description": "Online jewelry store for Guatemala: searchable catalog with filters and SEO (sitemap, Open Graph, JSON-LD), outlet, and product pages with WhatsApp CTAs (AUR-###### reference)—no payment gateway. Admin backoffice with Supabase Auth, product and image CRUD, taxonomy, contact inbox, and home content. Postgres with RLS, CSP and rate limiting, Sharp WebP uploads, graceful public query degradation, and Sentry in production.",
         "image": "/projects/aurelia-joyeria.webp",
+        "imagePosition": "top",
         "imageAlt": "Aurelia Joyería GT online store",
         "tags": [
           "Next.js",
@@ -142,6 +160,7 @@
         "url": "https://themensformula.store",
         "description": "B2B catalog for barbershops in Guatemala: public storefront with filters, product pages with unit and volume pricing (3+, 6+, case), and WhatsApp or contact-form inquiries—no cart or payment gateway. Admin dashboard with auth, allowlist, 2-hour session, product/brand/category CRUD, message inbox, and WhatsApp settings. Supabase (Postgres, Auth, Storage) with RLS and column grants to hide internal costs; Zod-validated Server Actions; Sharp/WebP uploads; Playwright and Vitest; Sentry and Vercel Analytics.",
         "image": "/projects/the-mens-formula.webp",
+        "imagePosition": "top",
         "imageAlt": "The Men's Formula B2B barber catalog for Guatemala",
         "tags": [
           "Next.js",
@@ -160,6 +179,7 @@
         "url": "https://popauctioon.com",
         "description": "A real-time auction platform for luxury items, architected and developed from the ground up using Next.js, Supabase, Stripe, and AWS IVS. It includes advanced authentication with AWS Cognito, role management with AWS IAM, and live video streaming. The system was built to be secure, scalable, and ready for global growth.",
         "image": "",
+        "imagePosition": "center",
         "imageAlt": "PopAuctioon real-time auction platform",
         "tags": [
           "Next.js",
@@ -177,8 +197,15 @@
         "url": "https://www.xoom.com",
         "description": "Major redesign of Xoom.com, a PayPal global remittances platform. I contributed to the modernization of the header, footer, and main layout using React, Next.js, and Tailwind. The update improved accessibility, performance, and design consistency across the entire site for millions of users worldwide.",
         "image": "/xpp-logo.svg",
+        "imagePosition": "center",
         "imageAlt": "Xoom.com website redesign",
-        "tags": ["React", "Next.js", "Tailwind CSS", "TypeScript", "Accessibility"]
+        "tags": [
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "TypeScript",
+          "Accessibility"
+        ]
       },
       {
         "title": "Gloss and Glow",
@@ -186,6 +213,7 @@
         "url": "https://www.glossandglowgt.online/en",
         "description": "A modern beauty and makeup website featuring a dynamic catalog, integrated payment system, and an elegant, responsive design. Built with a focus on performance, accessibility, and user experience.",
         "image": "/gloss-and-glow.webp",
+        "imagePosition": "center 26%",
         "imageAlt": "Gloss and Glow website",
         "tags": ["Next.js", "Tailwind", "Stripe", "UX/UI", "Supabase"]
       }
@@ -218,47 +246,56 @@
     {
       "title": "AWS Certified Cloud Practitioner",
       "provider": "Amazon Web Services",
-      "date": "Sep 2025"
+      "date": "Sep 2025",
+      "kind": "certification"
     },
     {
       "title": "AWS Certified Solutions Architect – Associate (in progress)",
       "provider": "Amazon Web Services",
-      "date": "2026 — In progress"
+      "date": "2026 — In progress",
+      "kind": "certification"
     },
     {
       "title": "Full-Stack Developer Career Path",
       "provider": "Codecademy",
-      "date": "2025"
+      "date": "2025",
+      "kind": "course"
     },
     {
       "title": "Complete Intro to React, v6",
       "provider": "Frontend Masters",
-      "date": "Mar 2023"
+      "date": "Mar 2023",
+      "kind": "course"
     },
     {
       "title": "React Native",
       "provider": "Frontend Masters",
-      "date": "Feb 2023"
+      "date": "Feb 2023",
+      "kind": "course"
     },
     {
       "title": "CSS Grids and Flexbox for Responsive Web Design",
       "provider": "Frontend Masters",
-      "date": "Nov 2022"
+      "date": "Nov 2022",
+      "kind": "course"
     },
     {
       "title": "Visual Elements of User Interface Design",
       "provider": "Coursera",
-      "date": "Sep 2022"
+      "date": "Sep 2022",
+      "kind": "course"
     },
     {
       "title": "User Experience: Research & Prototyping",
       "provider": "Coursera",
-      "date": "Jul 2022"
+      "date": "Jul 2022",
+      "kind": "course"
     },
     {
       "title": "Data Visualization",
       "provider": "Frontend Masters",
-      "date": "May 2022"
+      "date": "May 2022",
+      "kind": "course"
     }
   ],
   "skills": {
@@ -267,6 +304,8 @@
     "tools": "Tools & Platforms",
     "spokenLanguages": "Spoken Languages",
     "certifications": "Certifications",
+    "courses": "Courses",
+    "otherTools": "Also worked with",
     "programmingList": [
       "JavaScript",
       "TypeScript",
@@ -288,13 +327,11 @@
       "Supabase",
       "Sentry",
       "Playwright",
-      "Mendix",
-      "Visualizer",
-      "Unity",
       "Figma",
       "AWS",
       "DevOps"
-    ]
+    ],
+    "otherList": ["Mendix", "Visualizer", "Unity"]
   },
   "languages": {
     "spanish": "Spanish",
@@ -303,9 +340,9 @@
     "advanced": "Full Professional Proficiency"
   },
   "bookLoader": {
-    "title": "CV",
+    "title": "Alejandro Tejada",
     "subtitle": "Curriculum Vitae",
-    "loading": "Opening your story..."
+    "loading": "Opening my story…"
   },
   "social": {
     "github": "GitHub",

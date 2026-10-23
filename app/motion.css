@@ -46,7 +46,39 @@
   transform: scale(var(--motion-scale-tiny));
 }
 
+.book-loader {
+  animation: book-loader-fallback-dismiss var(--dur-base) var(--ease-out) 4s
+    forwards;
+}
+
+.book-loader-book {
+  animation: book-loader-enter var(--dur-slow) var(--ease-editorial) both;
+}
+
+html[data-intro='skip'] .book-loader {
+  display: none;
+}
+
+@keyframes book-loader-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-distance-medium));
+  }
+}
+
+/* Safety net when JavaScript never hydrates: the cover must not hide the CV. */
+@keyframes book-loader-fallback-dismiss {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .book-loader {
+    display: none;
+  }
+
   .motion-surface,
   .motion-colors,
   .motion-transform,

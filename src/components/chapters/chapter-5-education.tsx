@@ -43,7 +43,7 @@ export function Chapter5Education({ dict }: Chapter5EducationProps) {
                   {edu.period}
                 </span>
               </div>
-              <p className='text-muted-foreground font-serif text-base leading-relaxed'>
+              <p className='text-foreground font-serif text-base leading-relaxed'>
                 {edu.description}
               </p>
             </Card>
